@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://i1l77n8k2vbs"]
+
+[ext_resource type="Texture2D" uid="uid://clcdp3t52k558" path="res://assets/sprites/0_Valkyrie_Walking_002.png" id="1_3vyb7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 73.0
+height = 196.0
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.315, 0.315)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_g2els")
