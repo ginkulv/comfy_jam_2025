@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq6pp3yg2pf2q"]
+
+[ext_resource type="Script" uid="uid://br5t2ogu2py56" path="res://scripts/ui/settings.gd" id="1_8wfqe"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_8wfqe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.21568628, 0.15294118, 0.20392157, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 1136.0
+offset_top = 218.0
+offset_right = 1654.0
+offset_bottom = 345.0
+
+[node name="HSlider2" type="HSlider" parent="."]
+offset_left = 1137.0
+offset_top = 364.0
+offset_right = 1655.0
+offset_bottom = 491.0
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 757.0
+offset_top = 819.0
+offset_right = 1166.0
+offset_bottom = 996.0
+text = "НАЗАД
+"
+
+[connection signal="button_up" from="BackButton" to="." method="_on_back_button_button_up"]

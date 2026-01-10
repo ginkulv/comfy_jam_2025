@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwg4kahwpqddq"]
+
+[ext_resource type="Script" uid="uid://bn1dvgupxag0u" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yqeox"]
+font_size = 120
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_sl1te")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.2158708, 0.15346408, 0.20336643, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 830.0
+offset_top = 847.0
+offset_right = 1240.0
+offset_bottom = 977.0
+text = "ВЫХОД"
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 839.0
+offset_top = 637.0
+offset_right = 1249.0
+offset_bottom = 767.0
+text = "НАСТРОЙКИ
+"
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 836.0
+offset_top = 407.0
+offset_right = 1246.0
+offset_bottom = 537.0
+text = "ИГРАТЬ"
+
+[node name="MenuLabel" type="Label" parent="."]
+offset_left = 840.0
+offset_top = 69.0
+offset_right = 1238.0
+offset_bottom = 278.0
+text = "МЕНЮ"
+label_settings = SubResource("LabelSettings_yqeox")
+
+[connection signal="button_up" from="ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="SettingsButton" to="." method="_on_settings_button_button_up"]
