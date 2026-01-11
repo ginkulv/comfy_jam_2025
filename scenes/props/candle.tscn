@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dddejuoy8amxk"]
 
-[ext_resource type="Texture2D" uid="uid://b67loa556iwfl" path="res://assets/sprites/0_Valkyrie_Idle_000.png" id="1_ctofe"]
-[ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/candle.gd" id="1_ybelu"]
+[ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/candle.gd" id="1_8hqu3"]
+[ext_resource type="Texture2D" uid="uid://b67loa556iwfl" path="res://assets/sprites/0_Valkyrie_Idle_000.png" id="2_mht1s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]
 
 [node name="candle" type="StaticBody2D"]
-script = ExtResource("1_ybelu")
+script = ExtResource("1_8hqu3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_07hkx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.325, 0.325)
-texture = ExtResource("1_ctofe")
+texture = ExtResource("2_mht1s")
