@@ -3,12 +3,29 @@
 [ext_resource type="Script" uid="uid://cvwlb8x4s3x6i" path="res://scripts/ui/inventory_ui.gd" id="1_7nagc"]
 
 [node name="InventoryUi" type="CanvasLayer"]
-layer = 999
 script = ExtResource("1_7nagc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BackgroundRect" type="ColorRect" parent="."]
 offset_left = 460.0
 offset_top = 940.0
 offset_right = 1460.0
 offset_bottom = 1040.0
+mouse_filter = 1
 color = Color(0.20511743, 0.20511743, 0.20511743, 1)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1474.0
+offset_top = 941.0
+offset_right = 1569.0
+offset_bottom = 973.0
+text = "добавить"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1475.0
+offset_top = 997.0
+offset_right = 1567.0
+offset_bottom = 1030.0
+text = "удалить"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]

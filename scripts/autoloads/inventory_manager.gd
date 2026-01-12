@@ -3,9 +3,10 @@ extends Node
 var inventory_ui = preload("res://scenes/ui/inventory_ui.tscn")
 var inventory_instance
 
-var inventory_items: Array[InventoryItem]
+var items: Array[Items.Name]
 
-signal item_added(inventory_item: InventoryItem)
+signal item_added(item_name: Items.Name)
+signal item_removed()
 
 func _ready() -> void:
     GameState.state_changed.connect(_on_game_state_changed)
@@ -13,11 +14,15 @@ func _ready() -> void:
     get_tree().root.call_deferred("add_child", inventory_instance)
     inventory_instance.hide()
 
-func add_item(inventory_item: InventoryItem) -> void: 
-    inventory_items.append(inventory_item)
-    item_added.emit(inventory_item)
+func add_item(item_name: Items.Name) -> void: 
+    item_added.emit(item_name)
+    items.append(item_name)
 
-func _on_game_state_changed(from_state: int, to_state: int) -> void:
+func remove_item(item_name: Items.Name) -> void: 
+    items.erase(item_name)
+    item_removed.emit()
+
+func _on_game_state_changed(_from_state: int, to_state: int) -> void:
     match to_state:
         GameState.PLAYING:
             inventory_instance.show()
