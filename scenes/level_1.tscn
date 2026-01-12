@@ -5,7 +5,7 @@
 
 [node name="level1" type="Node2D"]
 
-[node name="player" parent="." instance=ExtResource("1_bswci")]
-
 [node name="candle" parent="." instance=ExtResource("2_rus8k")]
 position = Vector2(417, -37)
+
+[node name="player" parent="." instance=ExtResource("1_bswci")]
