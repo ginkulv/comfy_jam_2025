@@ -5,7 +5,10 @@ extends CharacterBody2D
 
 func _physics_process(delta):
     
+
     var direction = Input.get_axis("walk_letf", "walk_right")
+
+
     if direction:
         velocity.x = direction * move_speed * delta
     else:
