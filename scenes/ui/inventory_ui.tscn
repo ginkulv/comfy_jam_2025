@@ -1,11 +1,14 @@
-[gd_scene format=3 uid="uid://dslu82upyxhcw"]
+[gd_scene load_steps=2 format=3 uid="uid://dslu82upyxhcw"]
+
+[ext_resource type="Script" uid="uid://cvwlb8x4s3x6i" path="res://scripts/ui/inventory_ui.gd" id="1_7nagc"]
 
 [node name="InventoryUi" type="CanvasLayer"]
 layer = 999
+script = ExtResource("1_7nagc")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 714.0
-offset_top = 1011.0
-offset_right = 1330.0
-offset_bottom = 1052.0
-text = "инвентарь :)"
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 460.0
+offset_top = 940.0
+offset_right = 1460.0
+offset_bottom = 1040.0
+color = Color(0.20511743, 0.20511743, 0.20511743, 1)
