@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var settings_scene = preload("res://scenes/ui/settings.tscn")
+@onready var settings_scene = preload("res://scenes/ui/settings_menu.tscn")
 
 func _ready():
     pass

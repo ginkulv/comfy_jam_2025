@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq6pp3yg2pf2q"]
 
-[ext_resource type="Script" uid="uid://br5t2ogu2py56" path="res://scripts/ui/settings.gd" id="1_8wfqe"]
+[ext_resource type="Script" uid="uid://br5t2ogu2py56" path="res://scripts/ui/settings_menu.gd" id="1_qwcqe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wfqe"]
 bg_color = Color(0.25882354, 0.12941177, 0.17254902, 1)
@@ -17,7 +17,7 @@ font_size = 90
 font_size = 40
 
 [node name="Settings" type="Node2D"]
-script = ExtResource("1_8wfqe")
+script = ExtResource("1_qwcqe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
