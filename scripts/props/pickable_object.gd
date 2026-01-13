@@ -1,7 +1,7 @@
 extends Area2D
 
 var mouse_over : bool = false
-@export var item_id = InventoryManager.Items
+@export var item_id : Items.Id
 
 func _ready():
     mouse_entered.connect(_on_mouse_entered)

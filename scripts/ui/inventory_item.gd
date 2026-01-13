@@ -12,6 +12,8 @@ func set_item_data(item_id: Items.Id) -> void:
     self.item_id = item_id
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
+    if GameState.current_state == GameState.PAUSE_MENU:
+        return null
     var preview = self.duplicate()
     set_drag_preview(preview)
     hide()

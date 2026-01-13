@@ -19,17 +19,24 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ExitButton" type="Button" parent="."]
 offset_left = 755.0
-offset_top = 850.0
+offset_top = 840.0
 offset_right = 1165.0
-offset_bottom = 980.0
-text = "ВЫХОД"
+offset_bottom = 970.0
+text = "EXIT"
 
 [node name="SettingsButton" type="Button" parent="."]
+offset_left = 756.0
+offset_top = 540.0
+offset_right = 1166.0
+offset_bottom = 670.0
+text = "SETTINGS"
+
+[node name="CreditsButton" type="Button" parent="."]
 offset_left = 755.0
-offset_top = 620.0
+offset_top = 690.0
 offset_right = 1165.0
-offset_bottom = 750.0
-text = "НАСТРОЙКИ
+offset_bottom = 820.0
+text = "CREDITS
 "
 
 [node name="PlayButton" type="Button" parent="."]
@@ -37,14 +44,14 @@ offset_left = 755.0
 offset_top = 390.0
 offset_right = 1165.0
 offset_bottom = 520.0
-text = "ИГРАТЬ"
+text = "PLAY"
 
 [node name="MenuLabel" type="Label" parent="."]
-offset_left = 770.0
-offset_top = 69.0
-offset_right = 1170.0
-offset_bottom = 234.0
-text = "МЕНЮ"
+offset_left = 682.0
+offset_top = 67.0
+offset_right = 1276.0
+offset_bottom = 232.0
+text = "NAZVANIE"
 label_settings = SubResource("LabelSettings_yqeox")
 
 [connection signal="button_up" from="ExitButton" to="." method="_on_exit_button_button_up"]

@@ -1,37 +1,82 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq6pp3yg2pf2q"]
+[gd_scene load_steps=5 format=3 uid="uid://bq6pp3yg2pf2q"]
 
 [ext_resource type="Script" uid="uid://br5t2ogu2py56" path="res://scripts/ui/settings.gd" id="1_8wfqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wfqe"]
+bg_color = Color(0.25882354, 0.12941177, 0.17254902, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8wfqe"]
+font_size = 90
+
+[sub_resource type="LabelSettings" id="LabelSettings_7pacj"]
+font_size = 40
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_8wfqe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0.26040104, 0.1291328, 0.17195648, 1)
+[node name="ColorRect" type="Panel" parent="CanvasLayer"]
+process_mode = 3
+offset_left = 480.0
+offset_top = 143.0
+offset_right = 1480.0
+offset_bottom = 843.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8wfqe")
 metadata/_edit_use_anchors_ = true
 
-[node name="HSlider" type="HSlider" parent="."]
-offset_left = 1136.0
-offset_top = 218.0
-offset_right = 1654.0
-offset_bottom = 345.0
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 100.0
+offset_right = 938.0
+offset_bottom = 227.0
 
-[node name="HSlider2" type="HSlider" parent="."]
-offset_left = 1137.0
-offset_top = 364.0
-offset_right = 1655.0
-offset_bottom = 491.0
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 200.0
+offset_right = 938.0
+offset_bottom = 327.0
 
-[node name="BackButton" type="Button" parent="."]
-offset_left = 755.0
-offset_top = 850.0
-offset_right = 1165.0
-offset_bottom = 980.0
-text = "НАЗАД
-"
+[node name="BackButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 489.0
+offset_right = 688.0
+offset_bottom = 619.0
+text = "BACK"
 
-[connection signal="button_up" from="BackButton" to="." method="_on_back_button_button_up"]
+[node name="MenuLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 12.0
+offset_right = 705.0
+offset_bottom = 177.0
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_8wfqe")
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 134.0
+offset_right = 333.0
+offset_bottom = 194.0
+text = "Music"
+label_settings = SubResource("LabelSettings_7pacj")
+
+[node name="SFXLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 231.0
+offset_right = 333.0
+offset_bottom = 291.0
+text = "SFX"
+label_settings = SubResource("LabelSettings_7pacj")
+
+[connection signal="button_up" from="CanvasLayer/ColorRect/BackButton" to="." method="_on_back_button_button_up"]

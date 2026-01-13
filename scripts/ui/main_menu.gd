@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var settings_scene = preload("res://scenes/ui/settings.tscn")
 
 func _ready():
     pass
@@ -8,7 +9,8 @@ func _on_exit_button_button_up():
     get_tree().quit()
 
 func _on_settings_button_button_up():
-    get_tree().change_scene_to_file("res://scenes/ui/settings.tscn")
+    var settings = settings_scene.instantiate()
+    add_child(settings)
 
 func _on_play_button_button_up() -> void:
     GameState.change_state(GameState.PLAYING)
