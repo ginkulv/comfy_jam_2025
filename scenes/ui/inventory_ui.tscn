@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dslu82upyxhcw"]
+[gd_scene load_steps=3 format=3 uid="uid://dslu82upyxhcw"]
 
 [ext_resource type="Script" uid="uid://cvwlb8x4s3x6i" path="res://scripts/ui/inventory_ui.gd" id="1_7nagc"]
+[ext_resource type="Script" uid="uid://b7j5m6g8ahw46" path="res://scripts/ui/debug_control.gd" id="2_4ycse"]
 
 [node name="InventoryUi" type="CanvasLayer"]
 script = ExtResource("1_7nagc")
@@ -10,7 +11,6 @@ offset_left = 460.0
 offset_top = 940.0
 offset_right = 1460.0
 offset_bottom = 1040.0
-mouse_filter = 1
 color = Color(0.20511743, 0.20511743, 0.20511743, 1)
 
 [node name="Button" type="Button" parent="."]
@@ -26,6 +26,21 @@ offset_top = 997.0
 offset_right = 1567.0
 offset_bottom = 1030.0
 text = "удалить"
+
+[node name="DebugControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 205.0
+offset_top = 908.0
+offset_right = 371.0
+offset_bottom = 1076.0
+script = ExtResource("2_4ycse")
+
+[node name="ColorRect" type="ColorRect" parent="DebugControl"]
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 168.0
+mouse_filter = 2
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]

@@ -12,17 +12,17 @@ func _ready() -> void:
 
     # TODO: пока заглушка, просто добавляю какие-то предметы в инвентарь
     for i in range(3):
-        InventoryManager.add_item(Items.Name.APPLE)
+        InventoryManager.add_item(Items.Id.APPLE)
     for i in range(3):
-        InventoryManager.add_item(Items.Name.GOLDEN_APPLE)
+        InventoryManager.add_item(Items.Id.GOLDEN_APPLE)
 
-func display_item(item: Items.Name, offset: int) -> void:
+func display_item(item_id: Items.Id, offset: int) -> void:
     var item_instance = item_scene.instantiate()
-    item_instance.set_item_data(Items.item_props[item])
+    item_instance.set_item_data(item_id)
     item_instance.position = Vector2(items_x + gap * offset, items_y)
     $BackgroundRect.add_child(item_instance)
 
-func _on_item_added(item: Items.Name) -> void:
+func _on_item_added(item: Items.Id) -> void:
     display_item(item, InventoryManager.items.size())
 
 func _on_item_removed() -> void:
@@ -37,8 +37,8 @@ func _on_item_removed() -> void:
 
 # для проверки
 func _on_button_button_up() -> void:
-    InventoryManager.add_item(Items.Name.APPLE)
+    InventoryManager.add_item(Items.Id.APPLE)
 
 func _on_button_2_button_up() -> void:
-    var item_name = InventoryManager.items[-1]
-    InventoryManager.remove_item(item_name)
+    var item_id = InventoryManager.items[-1]
+    InventoryManager.remove_item(item_id)
