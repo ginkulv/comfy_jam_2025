@@ -1,11 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dshtso86k0hty"]
+[gd_scene load_steps=6 format=3 uid="uid://dshtso86k0hty"]
 
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="1_bswci"]
-[ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/candle.tscn" id="2_rus8k"]
+[ext_resource type="Texture2D" uid="uid://dmfr6nfs1t22n" path="res://assets/images/tower_placeholder.png" id="1_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/candle.tscn" id="2_rus8k"]
+[ext_resource type="Texture2D" uid="uid://byji6lsh2ji3b" path="res://assets/images/background_placeholder.jpg" id="4_x42e6"]
+[ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="5_6761a"]
 
 [node name="level1" type="Node2D"]
 
+[node name="tower_placeholder" type="Sprite2D" parent="."]
+position = Vector2(1014.23047, -2072.0999)
+scale = Vector2(15.888847, 7.5447507)
+texture = ExtResource("1_nsrm0")
+
+[node name="background_placeholder" type="Sprite2D" parent="."]
+position = Vector2(1.9999082, -1.9311905e-05)
+scale = Vector2(1.5, 1.4944752)
+texture = ExtResource("4_x42e6")
+
 [node name="candle" parent="." instance=ExtResource("2_rus8k")]
-position = Vector2(417, -37)
+position = Vector2(322, -128)
 
 [node name="player" parent="." instance=ExtResource("1_bswci")]
+position = Vector2(-709, 212)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="matches" parent="." instance=ExtResource("5_6761a")]
+position = Vector2(-167, -202)
+item_id = Array[int]([])

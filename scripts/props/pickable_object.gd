@@ -1,0 +1,23 @@
+extends Area2D
+
+var mouse_over : bool = false
+@export var item_id = InventoryManager.Items
+
+func _ready():
+    mouse_entered.connect(_on_mouse_entered)
+    mouse_exited.connect(_on_mouse_exited)
+
+func _on_mouse_entered():
+    mouse_over = true
+
+func _on_mouse_exited():
+    mouse_over = false
+
+func _input(event):
+    if mouse_over and event is InputEventMouseButton:
+        if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+            on_left_click()
+#пока золотое яблоко для примера
+func on_left_click():
+    InventoryManager.add_item(Items.Id.GOLDEN_APPLE)
+    queue_free()

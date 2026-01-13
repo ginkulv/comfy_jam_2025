@@ -3,7 +3,7 @@ class_name Items
 
 enum Id {
     APPLE,
-    GOLDEN_APPLE
+    GOLDEN_APPLE,
 }
 
 static var item_props : Dictionary = {
@@ -17,5 +17,6 @@ static var item_props : Dictionary = {
         {
             "texture": ImageTexture.create_from_image(Image.load_from_file("res://assets/sprites/golden_apple.png")),
             "name": "Golden Apple"
-        },
+        }
+        
 }

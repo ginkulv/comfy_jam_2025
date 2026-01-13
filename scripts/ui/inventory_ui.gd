@@ -16,6 +16,7 @@ func _ready() -> void:
     for i in range(3):
         InventoryManager.add_item(Items.Id.GOLDEN_APPLE)
 
+
 func display_item(item_id: Items.Id, offset: int) -> void:
     var item_instance = item_scene.instantiate()
     item_instance.set_item_data(item_id)
