@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 InventoryManager="*res://scripts/autoloads/inventory_manager.gd"
 GameState="*res://scripts/autoloads/game_state.gd"
+AudioManager="*res://scripts/autoloads/audio_manager.gd"
 
 [display]
 
