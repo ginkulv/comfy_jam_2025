@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
 
-@export var move_speed : float = 10000
+@export var move_speed : float = 20000
+
+@export var left_boundary := -890.0
+@export var right_boundary := 2900.0
 
 func _physics_process(delta):
     
@@ -15,4 +18,6 @@ func _physics_process(delta):
         velocity.x = move_toward(velocity.x, 0, move_speed)
 
     move_and_slide()
+    
+    global_position.x = clamp(global_position.x, left_boundary, right_boundary)
   
