@@ -11,19 +11,26 @@ config_version=5
 [application]
 
 config/name="comfy-jam"
-run/main_scene="uid://dwg4kahwpqddq"
+run/main_scene="uid://dshtso86k0hty"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
 InventoryManager="*res://scripts/autoloads/inventory_manager.gd"
 GameState="*res://scripts/autoloads/game_state.gd"
+AudioManager="*res://scripts/autoloads/audio_manager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/stretch/mode="viewport"
+
+[editor]
+
+movie_writer/movie_file="D:/OBS Vids/gnomejam.avi"
+movie_writer/disable_vsync=true
 
 [input]
 
@@ -44,3 +51,7 @@ toggle_pause_menu={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0059976, 0.025467262, 0.13782999, 1)

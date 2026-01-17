@@ -14,6 +14,9 @@ func _on_mouse_exited():
     mouse_over = false
 
 func _input(event):
+    if GameState.input_locked:
+        return
+    
     if mouse_over and event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
             on_left_click()

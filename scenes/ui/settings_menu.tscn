@@ -20,6 +20,7 @@ font_size = 40
 script = ExtResource("1_qwcqe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="ColorRect" type="Panel" parent="CanvasLayer"]
 process_mode = 3
@@ -79,4 +80,6 @@ offset_bottom = 291.0
 text = "SFX"
 label_settings = SubResource("LabelSettings_7pacj")
 
+[connection signal="value_changed" from="CanvasLayer/ColorRect/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/ColorRect/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="button_up" from="CanvasLayer/ColorRect/BackButton" to="." method="_on_back_button_button_up"]

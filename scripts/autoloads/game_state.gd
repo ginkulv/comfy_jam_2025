@@ -2,6 +2,7 @@ extends Node
 
 @onready var pause_menu_scene = preload("res://scenes/ui/pause_menu.tscn")
 
+var input_locked : bool = true
 enum {
     MAIN_MENU,
     PAUSE_MENU,
@@ -16,15 +17,16 @@ var pause_menu: Node2D
 
 func _ready() -> void:
     process_mode = Node.PROCESS_MODE_ALWAYS
+    change_state(MAIN_MENU)
 
 func change_state(new_state: int) -> void:
     state_changed.emit(current_state, new_state)
     current_state = new_state
 
     match current_state:
-        PLAYING, MAIN_MENU:
+        PLAYING:
             get_tree().paused = false
-        PAUSE_MENU, CUTSCENE:
+        PAUSE_MENU, CUTSCENE, MAIN_MENU:
             get_tree().paused = true
 
 func _input(event: InputEvent) -> void:
