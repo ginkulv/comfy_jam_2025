@@ -25,13 +25,24 @@ jobs:
           godot-version: 4.5
           godot-channel: stable
 
-      # Uploads to itch.io
-      #   more info here https://github.com/dulvui/itchio-butler-upload
-      - name: Upload to itch.io
-        uses: Kwpa/itchio-butler-upload@v0.0.2
+      - name: Cache butler files
+        id: cache-butler
+        uses: actions/cache@v3
         with:
-          working-directory: html5
-          api-key: ${{ secrets.ITCH_API_KEY }}
-          user: ${{ secrets.USERNAME }}
-          game: ${{ secrets.GAMENAME }}
-          channel: html5
+          path: butler
+          key: ${{ runner.os }}-butler
+  
+      - name: Download butler https://itch.io/docs/butler/installing.html
+        if: steps.cache-butler.outputs.cache-hit != 'true'
+        shell: bash
+        run: |
+          curl -L -o butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+  
+      - name: Upload to itchio
+        shell: bash
+        env: 
+          BUTLER_API_KEY: ${{ secrets.ITCH_API_KEY }}
+        run: ./butler push html5 ${{ secrets.USERNAME }}/${{ secrets.GAMENAME }}:html5
