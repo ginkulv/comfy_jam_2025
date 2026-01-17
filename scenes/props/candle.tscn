@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://b67loa556iwfl" path="res://assets/sprites/character_placeholder.png" id="2_mht1s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]
+radius = 97.020615
 
-[node name="candle" type="StaticBody2D"]
+[node name="candle" type="Area2D"]
 script = ExtResource("1_8hqu3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 4)
 shape = SubResource("CircleShape2D_07hkx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
