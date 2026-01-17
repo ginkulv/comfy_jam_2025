@@ -2,6 +2,7 @@ extends Node
 
 @onready var pause_menu_scene = preload("res://scenes/ui/pause_menu.tscn")
 
+var input_locked : bool = false
 enum {
     MAIN_MENU,
     PAUSE_MENU,

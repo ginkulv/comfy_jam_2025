@@ -111,7 +111,7 @@ player = NodePath("../player")
 deadzone_right_ratio = 0.2
 
 [node name="matches" parent="." instance=ExtResource("5_6761a")]
-position = Vector2(-167, -202)
+position = Vector2(241, -384)
 
 [connection signal="body_entered" from="portals/1st_floor_right" to="portals/1st_floor_right" method="_on_body_entered"]
 [connection signal="body_entered" from="portals/2nd_floor_right2" to="portals/2nd_floor_right2" method="_on_body_entered"]

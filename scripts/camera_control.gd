@@ -58,6 +58,7 @@ func start_pan(
     top_bound: float = NAN,
     bottom_bound: float = NAN
     ):
+    GameState.input_locked = true
     is_panning = true
     pan_target = target_position
     
@@ -90,3 +91,4 @@ func _pan_to_target(delta):
     
     if global_position.is_equal_approx(pan_target):
         is_panning = false
+        GameState.input_locked = false
