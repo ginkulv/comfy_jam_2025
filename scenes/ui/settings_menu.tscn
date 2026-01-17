@@ -20,6 +20,7 @@ font_size = 40
 script = ExtResource("1_qwcqe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="ColorRect" type="Panel" parent="CanvasLayer"]
 process_mode = 3

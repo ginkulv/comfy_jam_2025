@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dshtso86k0hty"]
+[gd_scene load_steps=10 format=3 uid="uid://dshtso86k0hty"]
 
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="1_bswci"]
 [ext_resource type="Texture2D" uid="uid://dmfr6nfs1t22n" path="res://assets/images/tower_placeholder.png" id="1_nsrm0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cu6x46femyrye" path="res://scripts/camera_control.gd" id="5_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://binobjc342npu" path="res://scenes/props/portal.tscn" id="7_s8va5"]
 [ext_resource type="Script" uid="uid://dtp27hpsd7sjc" path="res://scripts/props/portal.gd" id="8_dga24"]
+[ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="9_dga24"]
 
 [node name="level1" type="Node2D"]
 
@@ -85,6 +86,8 @@ camera_bottom_boundary = -1520.0
 [node name="3rd_floor_right" type="Marker2D" parent="portals/4th_floor"]
 position = Vector2(598, 885)
 
+[node name="Menu" parent="." instance=ExtResource("9_dga24")]
+
 [node name="tower_placeholder" type="Sprite2D" parent="."]
 position = Vector2(1014.23047, -2072.0999)
 scale = Vector2(15.888847, 7.5447507)
@@ -104,8 +107,8 @@ left_boundary = -800.0
 right_boundary = 2800.0
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-limit_left = -969
-limit_right = 3000
+limit_left = -959
+limit_right = 3010
 script = ExtResource("5_sk5k4")
 player = NodePath("../player")
 deadzone_right_ratio = 0.2

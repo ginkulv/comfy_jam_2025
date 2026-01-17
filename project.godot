@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="comfy-jam"
-run/main_scene="uid://dwg4kahwpqddq"
+run/main_scene="uid://dshtso86k0hty"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
