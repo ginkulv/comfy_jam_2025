@@ -3,7 +3,7 @@ extends Node2D
 @onready var settings_scene = preload("res://scenes/ui/settings_menu.tscn")
 
 func _ready():
-    AudioManager.play_music("some_no_name.mp3")
+    AudioManager.start_music()
 
 func _on_exit_button_button_up():
     get_tree().quit()
