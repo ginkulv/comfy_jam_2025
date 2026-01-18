@@ -45,4 +45,4 @@ jobs:
         shell: bash
         env: 
           BUTLER_API_KEY: ${{ secrets.ITCH_API_KEY }}
-        run: ./butler push html5 ${{ secrets.USERNAME }}/${{ secrets.GAMENAME }}:html5
+        run: ./butler push ../html5 ${{ secrets.USERNAME }}/${{ secrets.GAMENAME }}:html5
