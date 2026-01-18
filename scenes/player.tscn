@@ -11,11 +11,12 @@ height = 524.0
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(53, -32)
+position = Vector2(20, 19.999996)
+scale = Vector2(0.6, 0.6)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(49, -4)
-scale = Vector2(0.245, 0.245)
+scale = Vector2(0.17, 0.17)
 texture = ExtResource("2_g2els")
 flip_h = true

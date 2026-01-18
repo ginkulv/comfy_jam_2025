@@ -11,10 +11,10 @@ func _ready() -> void:
     InventoryManager.item_removed.connect(_on_item_removed)
 
     # TODO: пока заглушка, просто добавляю какие-то предметы в инвентарь
-    for i in range(3):
-        InventoryManager.add_item(Items.Id.APPLE)
-    for i in range(3):
-        InventoryManager.add_item(Items.Id.GOLDEN_APPLE)
+    #for i in range(1):
+        #InventoryManager.add_item(Items.Id.MATCHES)
+    #for i in range(1):
+        #InventoryManager.add_item(Items.Id.RED_RUNE)
 
 
 func display_item(item_id: Items.Id, offset: int) -> void:
@@ -38,7 +38,7 @@ func _on_item_removed() -> void:
 
 # для проверки
 func _on_button_button_up() -> void:
-    InventoryManager.add_item(Items.Id.APPLE)
+    InventoryManager.add_item(Items.Id.MATCHES)
 
 func _on_button_2_button_up() -> void:
     var item_id = InventoryManager.items[-1]

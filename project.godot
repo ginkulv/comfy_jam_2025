@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 InventoryManager="*res://scripts/autoloads/inventory_manager.gd"
 GameState="*res://scripts/autoloads/game_state.gd"
 AudioManager="*res://scripts/autoloads/audio_manager.gd"
+DoorManager="*res://scripts/autoloads/door_manager.gd"
 
 [display]
 
@@ -31,6 +32,10 @@ window/stretch/mode="viewport"
 
 movie_writer/movie_file="D:/OBS Vids/gnomejam.avi"
 movie_writer/disable_vsync=true
+
+[global_group]
+
+portals=""
 
 [input]
 

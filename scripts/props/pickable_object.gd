@@ -20,7 +20,7 @@ func _input(event):
     if mouse_over and event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
             on_left_click()
-#пока золотое яблоко для примера
+            
 func on_left_click():
-    InventoryManager.add_item(Items.Id.GOLDEN_APPLE)
+    InventoryManager.add_item(item_id)
     queue_free()

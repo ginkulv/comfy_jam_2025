@@ -1,109 +1,156 @@
-[gd_scene load_steps=10 format=3 uid="uid://dshtso86k0hty"]
+[gd_scene load_steps=15 format=3 uid="uid://dshtso86k0hty"]
 
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="1_bswci"]
-[ext_resource type="Texture2D" uid="uid://dmfr6nfs1t22n" path="res://assets/images/tower_placeholder.png" id="1_nsrm0"]
+[ext_resource type="Texture2D" uid="uid://bksjfcwxhabjq" path="res://assets/images/photo_2026-01-18_02-18-50.jpg" id="1_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/candle.tscn" id="2_rus8k"]
 [ext_resource type="Texture2D" uid="uid://byji6lsh2ji3b" path="res://assets/images/background_placeholder.jpg" id="4_x42e6"]
 [ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="5_6761a"]
+[ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="5_dnkej"]
 [ext_resource type="Script" uid="uid://cu6x46femyrye" path="res://scripts/camera_control.gd" id="5_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://binobjc342npu" path="res://scenes/props/portal.tscn" id="7_s8va5"]
 [ext_resource type="Script" uid="uid://dtp27hpsd7sjc" path="res://scripts/props/portal.gd" id="8_dga24"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="9_dga24"]
+[ext_resource type="PackedScene" uid="uid://db1wlfqfgl5jh" path="res://scenes/props/door.tscn" id="10_qxy0u"]
+[ext_resource type="PackedScene" uid="uid://bqt2ik2wqtgyb" path="res://scenes/props/portal_switch.tscn" id="11_excbq"]
+[ext_resource type="PackedScene" uid="uid://dfqsawhoe5mc7" path="res://scenes/props/red_rune.tscn" id="12_iav0o"]
+[ext_resource type="PackedScene" uid="uid://dlc34kcsyiwli" path="res://scenes/props/fireplace.tscn" id="14_mm8aj"]
 
 [node name="level1" type="Node2D"]
+
+[node name="tower_sketch" type="Sprite2D" parent="."]
+position = Vector2(-1458, -2451)
+scale = Vector2(14.984378, 14.432466)
+texture = ExtResource("1_qxy0u")
+metadata/_edit_lock_ = true
+
+[node name="background_placeholder" type="Sprite2D" parent="."]
+position = Vector2(1.9999082, -1.9311905e-05)
+scale = Vector2(1.5, 1.4944752)
+texture = ExtResource("4_x42e6")
+metadata/_edit_lock_ = true
+
+[node name="portal_switch" parent="." instance=ExtResource("11_excbq")]
+position = Vector2(1859, 49)
+
+[node name="Pickables" type="Node" parent="."]
+
+[node name="matches" parent="Pickables" instance=ExtResource("5_6761a")]
+position = Vector2(-314, -225)
+
+[node name="red_rune" parent="Pickables" instance=ExtResource("12_iav0o")]
+position = Vector2(1566, -74)
+item_id = 2
+
+[node name="blue_rune" parent="Pickables" instance=ExtResource("12_iav0o")]
+position = Vector2(571, -1664)
+item_id = 3
+
+[node name="firewood" parent="Pickables" instance=ExtResource("5_dnkej")]
+position = Vector2(766, -1640)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("10_qxy0u")]
+position = Vector2(994, 42)
+door_id = 1
+
+[node name="Door2" parent="Doors" instance=ExtResource("10_qxy0u")]
+position = Vector2(1235, -1685)
+door_id = 2
+is_allowed_to_open = false
+
+[node name="Door3" parent="Doors" instance=ExtResource("10_qxy0u")]
+position = Vector2(816, -3402)
 
 [node name="portals" type="Node" parent="."]
 
 [node name="1st_floor_right" parent="portals" node_paths=PackedStringArray("destination", "camera") instance=ExtResource("7_s8va5")]
-position = Vector2(2462, 333)
+position = Vector2(2452, 185)
 script = ExtResource("8_dga24")
 destination = NodePath("2nd_floor_left")
 camera = NodePath("../../Camera2D")
 pan_delay = 1.6
-camera_top_boundary = -1370.0
-camera_bottom_boundary = -290.0
+camera_top_boundary = -2250.0
+camera_bottom_boundary = -1170.0
+pair_id = 1
 
 [node name="2nd_floor_left" type="Marker2D" parent="portals/1st_floor_right"]
-position = Vector2(-1990, -1134)
+position = Vector2(-2006, -1735)
 
 [node name="2nd_floor_right2" parent="portals" node_paths=PackedStringArray("destination", "camera") instance=ExtResource("7_s8va5")]
-position = Vector2(2447, -683)
+position = Vector2(2565, -1648)
 script = ExtResource("8_dga24")
 destination = NodePath("3rd_floor_left")
 camera = NodePath("../../Camera2D")
 pan_delay = 1.6
-camera_top_boundary = -2600.0
-camera_bottom_boundary = -1520.0
+camera_top_boundary = -3850.0
+camera_bottom_boundary = -2770.0
+pair_id = 2
 
 [node name="3rd_floor_left" type="Marker2D" parent="portals/2nd_floor_right2"]
-position = Vector2(-1990, -1134)
+position = Vector2(-2353, -1461)
 
 [node name="3rd_floor_right3" parent="portals" node_paths=PackedStringArray("destination", "camera") instance=ExtResource("7_s8va5")]
-position = Vector2(2387, -1704)
+position = Vector2(2429, -3282)
 script = ExtResource("8_dga24")
 destination = NodePath("4th_floor")
 camera = NodePath("../../Camera2D")
 pan_delay = 1.6
-camera_top_boundary = -3600.0
-camera_bottom_boundary = -2520.0
+camera_top_boundary = -5120.0
+camera_bottom_boundary = -4040.0
+pair_id = 3
 
 [node name="4th_floor" type="Marker2D" parent="portals/3rd_floor_right3"]
-position = Vector2(-1990, -1134)
+position = Vector2(-2218, -1252)
 
 [node name="2nd_floor_left" parent="portals" node_paths=PackedStringArray("destination", "camera") instance=ExtResource("7_s8va5")]
-position = Vector2(-49, -701)
+position = Vector2(-194, -1604)
 script = ExtResource("8_dga24")
 destination = NodePath("1st_floor_right")
 camera = NodePath("../../Camera2D")
 pan_delay = 1.6
 camera_top_boundary = -590.0
 camera_bottom_boundary = 590.0
+pair_id = 1
 
 [node name="1st_floor_right" type="Marker2D" parent="portals/2nd_floor_left"]
-position = Vector2(1834, 936)
+position = Vector2(1923, 1881)
 
 [node name="3rd_floor_left2" parent="portals" node_paths=PackedStringArray("destination", "camera") instance=ExtResource("7_s8va5")]
-position = Vector2(-59, -1727)
+position = Vector2(-448, -3258)
 script = ExtResource("8_dga24")
 destination = NodePath("2nd_floor_right")
 camera = NodePath("../../Camera2D")
 pan_delay = 1.6
-camera_top_boundary = -1370.0
-camera_bottom_boundary = -290.0
+camera_top_boundary = -2250.0
+camera_bottom_boundary = -1170.0
+pair_id = 2
 
 [node name="2nd_floor_right" type="Marker2D" parent="portals/3rd_floor_left2"]
-position = Vector2(1767, 921)
+position = Vector2(2450, 1687)
 
 [node name="4th_floor" parent="portals" node_paths=PackedStringArray("destination", "camera") instance=ExtResource("7_s8va5")]
-position = Vector2(1028, -2713)
+position = Vector2(858, -4593)
 script = ExtResource("8_dga24")
 destination = NodePath("3rd_floor_right")
 camera = NodePath("../../Camera2D")
 pan_delay = 1.6
-camera_top_boundary = -2600.0
-camera_bottom_boundary = -1520.0
+camera_top_boundary = -3850.0
+camera_bottom_boundary = -2770.0
+pair_id = 3
 
 [node name="3rd_floor_right" type="Marker2D" parent="portals/4th_floor"]
-position = Vector2(598, 885)
+position = Vector2(752, 1471)
 
 [node name="Menu" parent="." instance=ExtResource("9_dga24")]
-
-[node name="tower_placeholder" type="Sprite2D" parent="."]
-position = Vector2(1014.23047, -2072.0999)
-scale = Vector2(15.888847, 7.5447507)
-texture = ExtResource("1_nsrm0")
-
-[node name="background_placeholder" type="Sprite2D" parent="."]
-position = Vector2(1.9999082, -1.9311905e-05)
-scale = Vector2(1.5, 1.4944752)
-texture = ExtResource("4_x42e6")
+metadata/_edit_lock_ = true
 
 [node name="candle" parent="." instance=ExtResource("2_rus8k")]
 position = Vector2(322, -128)
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("1_bswci")]
-position = Vector2(-709, 212)
-left_boundary = -800.0
+position = Vector2(-682, 227)
+left_boundary = -1500.0
 right_boundary = 2800.0
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
@@ -112,9 +159,10 @@ limit_right = 3010
 script = ExtResource("5_sk5k4")
 player = NodePath("../player")
 deadzone_right_ratio = 0.2
+metadata/_edit_lock_ = true
 
-[node name="matches" parent="." instance=ExtResource("5_6761a")]
-position = Vector2(241, -384)
+[node name="fireplace" parent="." instance=ExtResource("14_mm8aj")]
+position = Vector2(425, 101)
 
 [connection signal="body_entered" from="portals/1st_floor_right" to="portals/1st_floor_right" method="_on_body_entered"]
 [connection signal="body_entered" from="portals/2nd_floor_right2" to="portals/2nd_floor_right2" method="_on_body_entered"]
