@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt4bh6x8fuy0x"]
+[gd_scene load_steps=3 format=3 uid="uid://dt4bh6x8fuy0x"]
 
 [ext_resource type="Script" uid="uid://dvctt26h46iao" path="res://scripts/ui/pause_menu.gd" id="1_6tw0m"]
-[ext_resource type="FontFile" uid="uid://mpde561odoeh" path="res://assets/fonts/Aloti_M.ttf" id="2_0lmf7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8wfqe"]
 font_size = 90
@@ -12,12 +11,10 @@ script = ExtResource("1_6tw0m")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MenuLabel" type="Label" parent="CanvasLayer"]
-offset_left = 859.0
-offset_top = 159.0
-offset_right = 1067.0
-offset_bottom = 283.0
-theme_override_fonts/font = ExtResource("2_0lmf7")
-theme_override_font_sizes/font_size = 40
+offset_left = 819.0
+offset_top = 161.0
+offset_right = 1114.0
+offset_bottom = 285.0
 text = "PAUSE"
 label_settings = SubResource("LabelSettings_8wfqe")
 
@@ -26,8 +23,6 @@ offset_left = 758.0
 offset_top = 301.0
 offset_right = 1168.0
 offset_bottom = 431.0
-theme_override_fonts/font = ExtResource("2_0lmf7")
-theme_override_font_sizes/font_size = 40
 text = "RESUME"
 
 [node name="SettingsButton" type="Button" parent="CanvasLayer"]
@@ -35,8 +30,6 @@ offset_left = 756.0
 offset_top = 466.0
 offset_right = 1166.0
 offset_bottom = 596.0
-theme_override_fonts/font = ExtResource("2_0lmf7")
-theme_override_font_sizes/font_size = 40
 text = "SETTINGS"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer"]
@@ -44,8 +37,6 @@ offset_left = 758.0
 offset_top = 632.0
 offset_right = 1168.0
 offset_bottom = 762.0
-theme_override_fonts/font = ExtResource("2_0lmf7")
-theme_override_font_sizes/font_size = 40
 text = "EXIT"
 
 [connection signal="button_up" from="CanvasLayer/ResumeButton" to="." method="_on_resume_button_button_up"]

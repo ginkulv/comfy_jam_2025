@@ -1,12 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwg4kahwpqddq"]
+[gd_scene load_steps=3 format=3 uid="uid://dwg4kahwpqddq"]
 
 [ext_resource type="Script" uid="uid://bn1dvgupxag0u" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
-[ext_resource type="FontFile" uid="uid://mpde561odoeh" path="res://assets/fonts/Aloti_M.ttf" id="2_fe2o3"]
-
-[sub_resource type="Theme" id="Theme_1g8jr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yqeox"]
-font = ExtResource("2_fe2o3")
 font_size = 120
 
 [node name="Menu" type="Node2D"]
@@ -17,12 +13,10 @@ process_mode = 3
 layer = 5
 
 [node name="MenuLabel" type="Label" parent="CanvasLayer"]
-offset_left = 735.0
-offset_top = 80.0
-offset_right = 1187.0
-offset_bottom = 245.0
-theme = SubResource("Theme_1g8jr")
-theme_override_fonts/font = ExtResource("2_fe2o3")
+offset_left = 682.0
+offset_top = 67.0
+offset_right = 1276.0
+offset_bottom = 232.0
 text = "NAZVANIE"
 label_settings = SubResource("LabelSettings_yqeox")
 
@@ -31,8 +25,6 @@ offset_left = 755.0
 offset_top = 390.0
 offset_right = 1165.0
 offset_bottom = 520.0
-theme_override_fonts/font = ExtResource("2_fe2o3")
-theme_override_font_sizes/font_size = 40
 text = "PLAY"
 
 [node name="CreditsButton" type="Button" parent="CanvasLayer"]
@@ -40,8 +32,6 @@ offset_left = 755.0
 offset_top = 690.0
 offset_right = 1165.0
 offset_bottom = 820.0
-theme_override_fonts/font = ExtResource("2_fe2o3")
-theme_override_font_sizes/font_size = 40
 text = "CREDITS
 "
 
@@ -50,8 +40,6 @@ offset_left = 756.0
 offset_top = 540.0
 offset_right = 1166.0
 offset_bottom = 670.0
-theme_override_fonts/font = ExtResource("2_fe2o3")
-theme_override_font_sizes/font_size = 40
 text = "SETTINGS"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer"]
@@ -59,8 +47,6 @@ offset_left = 755.0
 offset_top = 840.0
 offset_right = 1165.0
 offset_bottom = 970.0
-theme_override_fonts/font = ExtResource("2_fe2o3")
-theme_override_font_sizes/font_size = 40
 text = "EXIT"
 
 [connection signal="button_up" from="CanvasLayer/PlayButton" to="." method="_on_play_button_button_up"]
