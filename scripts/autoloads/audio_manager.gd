@@ -6,9 +6,9 @@ const fade_in_time_sec: float = 3.0
 var music_player: AudioStreamPlayer
 var sync_stream: AudioStreamSynchronized
 var music_streams: Array[Resource] = [
-    preload("res://assets/music/level_1.wav"),
-    preload("res://assets/music/level_2.wav"),
-    preload("res://assets/music/level_3.wav"),
+    load("res://assets/music/level_1.wav"),
+    load("res://assets/music/level_2.wav"),
+    load("res://assets/music/level_3.wav"),
 ]
 var sfx_players: Array[AudioStreamPlayer]
 
