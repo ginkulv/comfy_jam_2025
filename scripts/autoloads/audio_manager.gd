@@ -1,16 +1,19 @@
 extends Node
 
 const max_sfx_players: int = 10
-const music_stream_count: int = 3
-
-var bus_names = ["SFX", "Music"]
+const fade_in_time_sec: float = 3.0
 
 var music_player: AudioStreamPlayer
 var sync_stream: AudioStreamSynchronized
+var music_streams: Array[Resource] = [
+    preload("res://assets/music/level_1.wav"),
+    preload("res://assets/music/level_2.wav"),
+    preload("res://assets/music/level_3.wav"),
+]
 var sfx_players: Array[AudioStreamPlayer]
 
 var bus_index: int
-var cur_sync_stream_index: int = 0
+var sync_stream_index: int = 0
 
 @export var music_volume_ln : float = 80
 @export var sfx_volume_ln : float = 80
@@ -35,12 +38,10 @@ func _ready() -> void:
     add_child(music_player)
 
     sync_stream = AudioStreamSynchronized.new()
-    sync_stream.stream_count = music_stream_count
-    sync_stream.set_sync_stream(0, load("res://assets/music/level_1.wav"))
-    sync_stream.set_sync_stream(1, load("res://assets/music/level_2.wav"))
-    sync_stream.set_sync_stream(2, load("res://assets/music/level_3.wav"))
-    sync_stream.set_sync_stream_volume(1, linear_to_db(0))
-    sync_stream.set_sync_stream_volume(2, linear_to_db(0))
+    sync_stream.stream_count = music_streams.size()
+    for i in range(music_streams.size()):
+        sync_stream.set_sync_stream(i, music_streams[i])
+        sync_stream.set_sync_stream_volume(i, linear_to_db(0))
     music_player.stream = sync_stream
 
     for i in range(max_sfx_players):
@@ -67,16 +68,22 @@ func stop_sfx(sfx_name_with_extension: String) -> void:
             player.stop()
 
 func start_music() -> void:
+    sync_stream.set_sync_stream_volume(0, 0)
     music_player.play()
 
 func add_layer() -> void:
-    cur_sync_stream_index += 1 
-    if cur_sync_stream_index >= music_stream_count:
+    sync_stream_index += 1 
+    if sync_stream_index >= music_streams.size():
         print("Больше нечего добавлять")
         return
+
     var tween = get_tree().create_tween()
-    # tween.tween_method(_change_volume_of_synced_stream, linear_to_db(0), 0, 5.0)
-    sync_stream.set_sync_stream_volume(cur_sync_stream_index, 0)
+    tween.tween_method(
+        _change_volume_of_synced_stream, 
+        -80.0, 
+        0.0, 
+        fade_in_time_sec
+    ).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
 func stop_music():
     music_player.stop()
@@ -90,7 +97,6 @@ func change_music_volume(volume: float) -> void:
     music_volume_ln = volume
     bus_index = AudioServer.get_bus_index("Music")
     AudioServer.set_bus_volume_linear(bus_index, volume / 100)
-    print(music_volume_ln)
 
 func _change_volume_of_synced_stream(volume: float) -> void:
-    sync_stream.set_sync_stream_volume(cur_sync_stream_index, volume)
+    sync_stream.set_sync_stream_volume(sync_stream_index, volume)
