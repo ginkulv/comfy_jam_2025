@@ -5,36 +5,45 @@ extends Node
 @export var items_x : int = 100
 
 var item_scene = preload("res://scenes/ui/inventory_item.tscn")
+var inventory_size: int = 6
+var item_cells: Array[CenterContainer]
+var item_data: Dictionary[int, InventoryItem]
 
 func _ready() -> void:
     InventoryManager.item_added.connect(_on_item_added)
     InventoryManager.item_removed.connect(_on_item_removed)
 
-    # TODO: пока заглушка, просто добавляю какие-то предметы в инвентарь
-    #for i in range(1):
-        #InventoryManager.add_item(Items.Id.MATCHES)
-    #for i in range(1):
-        #InventoryManager.add_item(Items.Id.RED_RUNE)
+    for i in range(inventory_size):
+        item_cells.append(get_node("Ui_Inventory/item_cell_" + str(i)))
+        item_data[i] = null
 
+    print(item_cells)
+    print(item_data)
 
-func display_item(item_id: Items.Id, offset: int) -> void:
+func display_item(item_id: Items.Id) -> void:
     var item_instance = item_scene.instantiate()
     item_instance.set_item_data(item_id)
-    item_instance.position = Vector2(items_x + gap * offset, items_y)
-    $BackgroundRect.add_child(item_instance)
+
+    for i in range(inventory_size):
+        if item_data[i] != null:
+            continue
+        item_cells[i].add_child(item_instance)
+        item_data[i] = item_instance
+        return
+
+    print("Инвентарь полон")
 
 func _on_item_added(item: Items.Id) -> void:
-    display_item(item, InventoryManager.items.size())
+    display_item(item)
 
-func _on_item_removed() -> void:
-    for child in $BackgroundRect.get_children():
-        child.queue_free()
+func _on_item_removed(item_id: Items.Id) -> void:
+    for i in range(inventory_size):
+        if item_data[i] == null:
+            continue 
 
-    for i in range(InventoryManager.items.size()):
-        display_item(InventoryManager.items[i], i)
-
-
-
+        if item_data[i].item_id == item_id:
+            item_data[i].queue_free()
+            return
 
 # для проверки
 func _on_button_button_up() -> void:

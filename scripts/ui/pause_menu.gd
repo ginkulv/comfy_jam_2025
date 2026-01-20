@@ -4,6 +4,7 @@ extends Node
 
 func _on_resume_button_button_up() -> void:
     GameState.change_state(GameState.PLAYING)
+    print("click?")
     queue_free()
 
 func _on_settings_button_button_up() -> void:

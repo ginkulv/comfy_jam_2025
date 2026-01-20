@@ -4,9 +4,9 @@ extends Control
 var pair_number : int = 1
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-    return data.item_id == Items.Id.RED_RUNE \
-    or data.item_id == Items.Id.BLUE_RUNE \
-    or data.item_id == Items.Id.GREEN_RUNE
+    return data.item_id == Items.Id.BLUE_RUNE \
+    or data.item_id == Items.Id.PURPLE_RUNE \
+    or data.item_id == Items.Id.PINK_RUNE
     # return true
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
