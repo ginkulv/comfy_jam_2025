@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dslu82upyxhcw"]
+[gd_scene load_steps=7 format=3 uid="uid://dslu82upyxhcw"]
 
 [ext_resource type="Script" uid="uid://cvwlb8x4s3x6i" path="res://scripts/ui/inventory_ui.gd" id="1_7nagc"]
 [ext_resource type="Script" uid="uid://b7j5m6g8ahw46" path="res://scripts/ui/debug_control.gd" id="2_4ycse"]
+[ext_resource type="Texture2D" uid="uid://cim1a4wyeqjo0" path="res://assets/sprites/atlas/ui_inventory.tres" id="3_nuief"]
+[ext_resource type="FontFile" uid="uid://dgo3t53sw2gy2" path="res://assets/fonts/Junicode.ttf" id="4_bsps8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ldtye"]
+texture = ExtResource("3_nuief")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xk7lq"]
+font = ExtResource("4_bsps8")
+font_size = 24
 
 [node name="InventoryUi" type="CanvasLayer"]
 process_mode = 1
@@ -42,6 +51,111 @@ layout_mode = 0
 offset_right = 166.0
 offset_bottom = 168.0
 mouse_filter = 2
+
+[node name="New Inventory Ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ui_Inventory" type="Panel" parent="New Inventory Ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0090001
+anchor_right = 1.0
+anchor_bottom = 1.0090001
+offset_top = -207.7201
+offset_bottom = -4.720093
+theme_override_styles/panel = SubResource("StyleBoxTexture_ldtye")
+
+[node name="ui_dialog" type="Label" parent="New Inventory Ui/Ui_Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.76100004
+anchor_top = 0.527
+anchor_right = 0.76100004
+anchor_bottom = 0.527
+offset_left = -417.12012
+offset_top = -56.981003
+offset_right = 405.87988
+offset_bottom = 57.018997
+text = "Example Text Example TextExample Text Example TextExample Text Example TextExample Text Example TextExample Text Example TextExampleTextExampleText Example TextExampleTextExampleTextExampleTextExampleTextExample Example//// "
+label_settings = SubResource("LabelSettings_xk7lq")
+autowrap_mode = 3
+
+[node name="item_cell_0" type="CenterContainer" parent="New Inventory Ui/Ui_Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058000002
+anchor_top = 0.522
+anchor_right = 0.058000002
+anchor_bottom = 0.522
+offset_left = -57.36
+offset_top = -55.966003
+offset_right = 60.64
+offset_bottom = 54.033997
+
+[node name="item_cell_1" type="CenterContainer" parent="New Inventory Ui/Ui_Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058000002
+anchor_top = 0.522
+anchor_right = 0.058000002
+anchor_bottom = 0.522
+offset_left = 110.64
+offset_top = -57.966003
+offset_right = 228.64
+offset_bottom = 52.033997
+
+[node name="item_cell_2" type="CenterContainer" parent="New Inventory Ui/Ui_Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058000002
+anchor_top = 0.522
+anchor_right = 0.058000002
+anchor_bottom = 0.522
+offset_left = 273.64
+offset_top = -56.966003
+offset_right = 391.64
+offset_bottom = 53.033997
+
+[node name="item_cell_3" type="CenterContainer" parent="New Inventory Ui/Ui_Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058000002
+anchor_top = 0.522
+anchor_right = 0.058000002
+anchor_bottom = 0.522
+offset_left = 439.64
+offset_top = -53.966003
+offset_right = 557.64
+offset_bottom = 56.033997
+
+[node name="item_cell_4" type="CenterContainer" parent="New Inventory Ui/Ui_Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058000002
+anchor_top = 0.522
+anchor_right = 0.058000002
+anchor_bottom = 0.522
+offset_left = 612.64
+offset_top = -53.966003
+offset_right = 730.64
+offset_bottom = 56.033997
+
+[node name="item_cell_5" type="CenterContainer" parent="New Inventory Ui/Ui_Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058000002
+anchor_top = 0.522
+anchor_right = 0.058000002
+anchor_bottom = 0.522
+offset_left = 767.64
+offset_top = -56.966003
+offset_right = 885.64
+offset_bottom = 53.033997
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]

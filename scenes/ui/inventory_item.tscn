@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://806eu2d4e5sk"]
 
 [ext_resource type="Script" uid="uid://bd3pma8ucehpf" path="res://scripts/ui/inventory_item.gd" id="1_5nues"]
-[ext_resource type="Texture2D" uid="uid://20hgsor4kunl" path="res://assets/sprites/inventory_placeholder.png" id="2_x4amh"]
+[ext_resource type="Texture2D" uid="uid://bjpr1qxv6icq6" path="res://assets/sprites/atlas/ui_item_drova.tres" id="2_x4amh"]
 
 [node name="InventoryItem" type="Control"]
 layout_mode = 3
@@ -12,7 +12,6 @@ offset_bottom = 48.92
 script = ExtResource("1_5nues")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
-position = Vector2(25, 25)
 texture = ExtResource("2_x4amh")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
