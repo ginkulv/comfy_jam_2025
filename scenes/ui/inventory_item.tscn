@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://806eu2d4e5sk"]
 
 [ext_resource type="Script" uid="uid://bd3pma8ucehpf" path="res://scripts/ui/inventory_item.gd" id="1_5nues"]
-[ext_resource type="Texture2D" uid="uid://dga5qdvho1v5r" path="res://assets/sprites/atlas/ui_item_runa_0.tres" id="2_x4amh"]
+[ext_resource type="Texture2D" uid="uid://dga5qdvho1v5r" path="res://assets/sprites/atlas/ui_item_rune_blue.tres" id="2_x4amh"]
 
 [node name="InventoryItem" type="Control"]
 custom_minimum_size = Vector2(110, 110)

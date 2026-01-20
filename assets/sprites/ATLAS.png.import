@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://byds3uaqa1d4"
+=======
+uid="uid://d3w6fjghg6y4j"
+>>>>>>> Stashed changes
 path="res://.godot/imported/ATLAS.png-37d4fcd85707ed5b2471bcdba3ca0312.ctex"
 metadata={
 "vram_texture": false

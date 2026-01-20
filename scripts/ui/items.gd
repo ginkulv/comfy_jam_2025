@@ -4,33 +4,41 @@ class_name Items
 enum Id {
     MATCHES,
     FIREWOOD,
-    RED_RUNE,
+    PINK_RUNE,
     BLUE_RUNE,
-    GREEN_RUNE,
-    LIGHTHOUSE_RUNE
+    PURPLE_RUNE,
+    GLOWING_RUNE,
 }
 
 static var item_props : Dictionary = {
-    # TODO: стопроц можно сделать лучше...
-    Id.FIREWOOD: 
-        {
-            "texture": load("res://assets/sprites/golden_apple.png"),
-            "name": "Firewood"
-        },
     Id.MATCHES: 
         {
-            "texture": load("res://assets/sprites/golden_apple.png"),
+            "texture": load("res://assets/sprites/atlas/ui_item_spichki.tres"),
             "name": "Golden Apple"
         },
-        Id.RED_RUNE: 
+    Id.FIREWOOD: 
         {
-            "texture": load("res://assets/sprites/inventory_placeholder.png"),
-            "name": "Red Rune"
+            "texture": load("res://assets/sprites/atlas/ui_item_drova.tres"),
+            "name": "Firewood"
         },
-        Id.BLUE_RUNE: 
+    Id.PINK_RUNE: 
         {
-            "texture": load("res://assets/sprites/inventory_placeholder.png"),
-            "name": "Blue Rune"
-        }
-        
+            "texture": load("res://assets/sprites/atlas/ui_item_rune_pink.tres"),
+            "name": "Pink rune"
+        },
+    Id.BLUE_RUNE: 
+        {
+            "texture": load("res://assets/sprites/atlas/ui_item_rune_blue.tres"),
+            "name": "Blue rune"
+        },
+    Id.PURPLE_RUNE: 
+        {
+            "texture": load("res://assets/sprites/atlas/ui_item_rune_purple.tres"),
+            "name": "Purple rune"
+        },
+    Id.GLOWING_RUNE: 
+        {
+            "texture": load("res://assets/sprites/atlas/ui_item_rune_glowing.tres"),
+            "name": "Glowing rune"
+        },
 }
