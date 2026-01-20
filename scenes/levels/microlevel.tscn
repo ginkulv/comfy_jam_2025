@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=7 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Texture2D" uid="uid://f1hx0eqjoiyy" path="res://assets/images/photo_2026-01-20_10-19-51.jpg" id="1_ge2tg"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
 [ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
+[ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/candle.tscn" id="6_q1y3u"]
 
 [node name="microlevel" type="Node2D"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+light_mask = 2
+color = Color(0.9934115, 0.89138603, 0.86781704, 1)
+energy = 0.93
+blend_mode = 1
+shadow_color = Color(0, 0, 0.60784316, 0.70980394)
+height = 0.06
+max_distance = 6334.0
 
 [node name="background_sprite" type="Sprite2D" parent="."]
 position = Vector2(3, 10)
@@ -25,3 +35,6 @@ position = Vector2(-406, 177)
 position = Vector2(328, -87)
 
 [node name="music_puzzle" parent="." instance=ExtResource("5_q1y3u")]
+
+[node name="candle" parent="." instance=ExtResource("6_q1y3u")]
+position = Vector2(555, -2)
