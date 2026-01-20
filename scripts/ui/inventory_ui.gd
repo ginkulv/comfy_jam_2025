@@ -39,6 +39,7 @@ func _on_item_removed() -> void:
 # для проверки
 func _on_button_button_up() -> void:
     InventoryManager.add_item(Items.Id.MATCHES)
+    AudioManager.add_layer()
 
 func _on_button_2_button_up() -> void:
     var item_id = InventoryManager.items[-1]
