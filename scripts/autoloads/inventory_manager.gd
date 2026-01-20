@@ -6,7 +6,7 @@ var inventory_instance
 var items: Array[Items.Id]
 
 signal item_added(item_id: Items.Id)
-signal item_removed()
+signal item_removed(item_id: Items.Id)
 
 func _ready() -> void:
     GameState.state_changed.connect(_on_game_state_changed)
@@ -21,7 +21,7 @@ func add_item(item_id: Items.Id) -> void:
 
 func remove_item(item_id: Items.Id) -> void: 
     items.erase(item_id)
-    item_removed.emit()
+    item_removed.emit(item_id)
 
 func has_item(item_id: Items.Id) -> bool:
     return items.has(item_id)
