@@ -23,4 +23,5 @@ func _input(event):
             
 func on_left_click():
     InventoryManager.add_item(item_id)
+    AudioManager.play_sfx("click" + ".mp3")
     queue_free()

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3r4jskvs8x0j"]
+
+[ext_resource type="Script" uid="uid://h5haejjiphgy" path="res://scripts/props/pickable_object.gd" id="1_yk2u2"]
+[ext_resource type="Texture2D" uid="uid://bnpwl7ttonfke" path="res://assets/sprites/atlas/ui_item_key.tres" id="2_2c0bv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk2u2"]
+size = Vector2(94, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fttkb"]
+atlas = ExtResource("2_2c0bv")
+
+[node name="key" type="Area2D"]
+script = ExtResource("1_yk2u2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1.5)
+shape = SubResource("RectangleShape2D_yk2u2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_fttkb")
