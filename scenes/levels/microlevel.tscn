@@ -1,12 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=17 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Texture2D" uid="uid://f1hx0eqjoiyy" path="res://assets/images/photo_2026-01-20_10-19-51.jpg" id="1_ge2tg"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
-[ext_resource type="Script" uid="uid://cq1yig05hb1cs" path="res://scripts/props/music_puzzle.gd" id="3_nk7cr"]
-[ext_resource type="Script" uid="uid://bqi0aglpd20hm" path="res://scripts/props/music_key.gd" id="3_vsfpf"]
+[ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
+[ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
+[ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/candle.tscn" id="6_q1y3u"]
+[ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
+[ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="8_t7v5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
+size = Vector2(32, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v5p"]
+size = Vector2(32, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4psif"]
+size = Vector2(31, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfbcd"]
+size = Vector2(28, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sdmp"]
+size = Vector2(31, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13psp"]
+size = Vector2(30, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tex4q"]
+size = Vector2(31, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qa6u"]
+size = Vector2(30, 92)
 
 [node name="microlevel" type="Node2D"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+light_mask = 2
+color = Color(0.9934115, 0.89138603, 0.86781704, 1)
+energy = 0.93
+blend_mode = 1
+shadow_color = Color(0, 0, 0.60784316, 0.70980394)
+height = 0.06
+max_distance = 6334.0
 
 [node name="background_sprite" type="Sprite2D" parent="."]
 position = Vector2(3, 10)
@@ -19,56 +56,89 @@ position = Vector2(-406, 177)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="MusicPuzzle" type="Node2D" parent="."]
-script = ExtResource("3_nk7cr")
-
-[node name="Key_1" type="Area2D" parent="MusicPuzzle"]
-position = Vector2(328, -87)
-script = ExtResource("3_vsfpf")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicPuzzle/Key_1"]
-polygon = PackedVector2Array(-10, -92, 20, -93, 16, 94, -24, 96)
-
-[node name="Key_2" type="Area2D" parent="MusicPuzzle"]
-position = Vector2(368, -90)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicPuzzle/Key_2"]
-polygon = PackedVector2Array(-15, -86, 18, -87, 5, 90, -15, 91)
-
-[node name="Key_3" type="Area2D" parent="MusicPuzzle"]
-position = Vector2(404, -88)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicPuzzle/Key_3"]
-polygon = PackedVector2Array(-27, 80, 10, 80, 13, -83, -7, -82)
-
-[node name="Key_4" type="Area2D" parent="MusicPuzzle"]
-position = Vector2(438, -87)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicPuzzle/Key_4"]
-polygon = PackedVector2Array(-17, 73, 15, 73, 12, -78, -13, -78)
-
-[node name="Key_5" type="Area2D" parent="MusicPuzzle"]
-position = Vector2(474, -86)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicPuzzle/Key_5"]
-polygon = PackedVector2Array(-16, 72, 12, 72, 12, -80, -12, -76)
-
-[node name="Key_6" type="Area2D" parent="MusicPuzzle"]
-position = Vector2(508, -86)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicPuzzle/Key_6"]
-polygon = PackedVector2Array(-16, 67, 11, 65, 8, -73, -7, -72)
-
-[node name="Key_7" type="Area2D" parent="MusicPuzzle"]
-position = Vector2(539, -88)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicPuzzle/Key_7"]
-polygon = PackedVector2Array(-12, 62, 8, 62, 8, -67, -12, -67)
-
-[node name="Key_8" type="Area2D" parent="MusicPuzzle"]
-position = Vector2(567, -91)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicPuzzle/Key_8"]
-polygon = PackedVector2Array(-13, -59, 15, -59, 5, 61, -12, 62)
-
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
+
+[node name="music_puzzle" parent="." instance=ExtResource("5_q1y3u")]
+position = Vector2(457, -82)
+
+[node name="Key_1" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(-129, 0)
+note_id = 1
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_1"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_0x7r7")
+
+[node name="Key_2" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(-91, -5)
+note_id = 2
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_2"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_t7v5p")
+
+[node name="Key_3" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(-55, -10)
+note_id = 3
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_3"]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_4psif")
+
+[node name="Key_4" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(-19, -11)
+note_id = 4
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_4"]
+position = Vector2(-2, -2.5)
+shape = SubResource("RectangleShape2D_pfbcd")
+
+[node name="Key_5" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(17, -18)
+note_id = 5
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_5"]
+position = Vector2(-1.5, -1)
+shape = SubResource("RectangleShape2D_3sdmp")
+
+[node name="Key_6" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(52, -23)
+note_id = 6
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_6"]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_13psp")
+
+[node name="Key_7" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(88, -28)
+note_id = 7
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_7"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_tex4q")
+
+[node name="Key_8" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(123, -31)
+note_id = 8
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_8"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_5qa6u")
+
+[node name="candle" parent="." instance=ExtResource("6_q1y3u")]
+position = Vector2(555, -2)
+metadata/_edit_lock_ = true
+
+[node name="matches" parent="." instance=ExtResource("7_0x7r7")]
+position = Vector2(-42, 11)
+
+[node name="firewood" parent="." instance=ExtResource("8_t7v5p")]
+position = Vector2(75, -275)

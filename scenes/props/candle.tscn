@@ -1,28 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://dddejuoy8amxk"]
+[gd_scene load_steps=11 format=3 uid="uid://dddejuoy8amxk"]
 
 [ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/candle.gd" id="1_8hqu3"]
-[ext_resource type="Texture2D" uid="uid://b67loa556iwfl" path="res://assets/sprites/character_placeholder.png" id="2_mht1s"]
+[ext_resource type="Texture2D" uid="uid://cv3otec35qk6j" path="res://assets/sprites/atlas/lamp_off.tres" id="2_jthy0"]
 [ext_resource type="Script" uid="uid://x433g3oufx3l" path="res://scripts/props/candle_control.gd" id="3_mht1s"]
+[ext_resource type="Texture2D" uid="uid://bwu76snv5t3lm" path="res://assets/sprites/atlas/lamp_on.tres" id="3_xkx70"]
+[ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="4_q865l"]
+[ext_resource type="Texture2D" uid="uid://cndg202n6oagi" path="res://assets/sprites/atlas/lamp_light.tres" id="5_c3hq0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]
 radius = 97.020615
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0bva"]
+shader = ExtResource("4_q865l")
+shader_parameter/blend_mode = 7
+
+[sub_resource type="Gradient" id="Gradient_s2xve"]
+offsets = PackedFloat32Array(0.03868472, 0.13539653, 0.31334624, 0.70599616, 1)
+colors = PackedColorArray(0.99999994, 0.93390775, 0.8877934, 1, 0.99999994, 0.70084894, 0.35122404, 1, 0.91766137, 0.41072765, 1.92523e-07, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gksna"]
+gradient = SubResource("Gradient_s2xve")
+fill = 1
+fill_from = Vector2(0.50427353, 0.52136755)
+fill_to = Vector2(0, 0)
 
 [node name="candle" type="Area2D"]
 script = ExtResource("1_8hqu3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-5, 4)
 shape = SubResource("CircleShape2D_07hkx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.325, 0.325)
-texture = ExtResource("2_mht1s")
+[node name="off" type="Sprite2D" parent="."]
+position = Vector2(1, 4)
+scale = Vector2(0.32941177, 0.3274021)
+texture = ExtResource("2_jthy0")
+
+[node name="on" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.09375408, 0)
+scale = Vector2(0.32576528, 0.325)
+texture = ExtResource("3_xkx70")
+
+[node name="oreol" type="Sprite2D" parent="on"]
+self_modulate = Color(1, 1, 1, 0.48235294)
+z_as_relative = false
+material = SubResource("ShaderMaterial_a0bva")
+position = Vector2(0.2877964, -18.461538)
+scale = Vector2(1.2003795, 1.2003795)
+texture = ExtResource("5_c3hq0")
+
+[node name="PointLight2D" type="PointLight2D" parent="on"]
+position = Vector2(6.4272094, 2.347506e-05)
+scale = Vector2(15.566567, 15.847734)
+color = Color(1, 0.5914784, 0.47450465, 1)
+energy = 1.05
+texture = SubResource("GradientTexture2D_gksna")
+texture_scale = 1.17
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -67.0
-offset_top = -83.0
-offset_right = 62.0
-offset_bottom = 103.0
+offset_left = -76.0
+offset_top = -87.0
+offset_right = 53.0
+offset_bottom = 99.0
 script = ExtResource("3_mht1s")

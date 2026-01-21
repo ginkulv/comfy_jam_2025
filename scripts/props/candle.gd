@@ -17,4 +17,4 @@ func light_up():
     if is_lit:
         return
     is_lit = true
-    modulate = Color.RED
+    $on.visible = is_lit

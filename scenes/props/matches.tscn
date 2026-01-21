@@ -1,17 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmwb4y3demkxp"]
+[gd_scene load_steps=5 format=3 uid="uid://dmwb4y3demkxp"]
 
 [ext_resource type="Script" uid="uid://h5haejjiphgy" path="res://scripts/props/pickable_object.gd" id="1_23so1"]
-[ext_resource type="Texture2D" uid="uid://dtekkq2hloq32" path="res://assets/sprites/golden_apple.png" id="1_o0hy8"]
+[ext_resource type="Texture2D" uid="uid://7pog156leup4" path="res://assets/sprites/atlas/ui_item_spichki.tres" id="2_23so1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23so1"]
-size = Vector2(45, 50)
+size = Vector2(76, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfqkx"]
+atlas = ExtResource("2_23so1")
 
 [node name="matches" type="Area2D"]
 script = ExtResource("1_23so1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0)
+position = Vector2(-2, -0.5)
 shape = SubResource("RectangleShape2D_23so1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_o0hy8")
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_bfqkx")
