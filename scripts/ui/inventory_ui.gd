@@ -17,9 +17,6 @@ func _ready() -> void:
         item_cells.append(get_node("Ui_Inventory/item_cell_" + str(i)))
         item_data[i] = null
 
-    print(item_cells)
-    print(item_data)
-
 func display_item(item_id: Items.Id) -> void:
     var item_instance = item_scene.instantiate()
     item_instance.set_item_data(item_id)
