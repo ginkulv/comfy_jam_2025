@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cv3otec35qk6j" path="res://assets/sprites/atlas/lamp_off.tres" id="2_jthy0"]
 [ext_resource type="Script" uid="uid://x433g3oufx3l" path="res://scripts/props/candle_control.gd" id="3_mht1s"]
 [ext_resource type="Texture2D" uid="uid://bwu76snv5t3lm" path="res://assets/sprites/atlas/lamp_on.tres" id="3_xkx70"]
-[ext_resource type="Shader" uid="uid://vku4d4g8nuev" path="res://assets/shaders/candle.gdshader" id="4_q865l"]
+[ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="4_q865l"]
 [ext_resource type="Texture2D" uid="uid://cndg202n6oagi" path="res://assets/sprites/atlas/lamp_light.tres" id="5_c3hq0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]

@@ -17,9 +17,6 @@ func _ready() -> void:
         item_cells.append(get_node("Ui_Inventory/item_cell_" + str(i)))
         item_data[i] = null
 
-    print(item_cells)
-    print(item_data)
-
 func display_item(item_id: Items.Id) -> void:
     var item_instance = item_scene.instantiate()
     item_instance.set_item_data(item_id)
@@ -49,6 +46,7 @@ func _on_item_removed(item_id: Items.Id) -> void:
 func _on_button_button_up() -> void:
     InventoryManager.add_item(Items.Id.MATCHES)
     AudioManager.add_layer()
+    MessageManager.display_text_by_id("1")
 
 func _on_button_2_button_up() -> void:
     var item_id = InventoryManager.items[-1]

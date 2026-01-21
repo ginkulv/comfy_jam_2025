@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dslu82upyxhcw"]
+[gd_scene load_steps=8 format=3 uid="uid://dslu82upyxhcw"]
 
 [ext_resource type="Script" uid="uid://cvwlb8x4s3x6i" path="res://scripts/ui/inventory_ui.gd" id="1_7nagc"]
+[ext_resource type="Theme" uid="uid://dtiv81upl2jvn" path="res://assets/ui_theme.theme" id="3_bsps8"]
 [ext_resource type="Texture2D" uid="uid://cim1a4wyeqjo0" path="res://assets/sprites/atlas/ui_inventory.tres" id="3_nuief"]
 [ext_resource type="FontFile" uid="uid://dgo3t53sw2gy2" path="res://assets/fonts/Junicode.ttf" id="4_bsps8"]
+[ext_resource type="Script" uid="uid://boromixf52agx" path="res://scripts/ui/ui_dialog.gd" id="4_nuief"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ldtye"]
 texture = ExtResource("3_nuief")
@@ -37,9 +39,11 @@ offset_left = -417.12012
 offset_top = -56.981003
 offset_right = 405.87988
 offset_bottom = 57.018997
+theme = ExtResource("3_bsps8")
 text = "Example Text Example TextExample Text Example TextExample Text Example TextExample Text Example TextExample Text Example TextExampleTextExampleText Example TextExampleTextExampleTextExampleTextExampleTextExample Example//// "
 label_settings = SubResource("LabelSettings_xk7lq")
 autowrap_mode = 3
+script = ExtResource("4_nuief")
 
 [node name="item_cell_0" type="CenterContainer" parent="Ui_Inventory"]
 layout_mode = 1

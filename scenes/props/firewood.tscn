@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqa63r0c6ooi6"]
+[gd_scene load_steps=5 format=3 uid="uid://cqa63r0c6ooi6"]
 
-[ext_resource type="Texture2D" uid="uid://dtekkq2hloq32" path="res://assets/sprites/golden_apple.png" id="1_0cjik"]
 [ext_resource type="Script" uid="uid://h5haejjiphgy" path="res://scripts/props/pickable_object.gd" id="1_fqfv3"]
+[ext_resource type="Texture2D" uid="uid://bjpr1qxv6icq6" path="res://assets/sprites/atlas/ui_item_drova.tres" id="2_fqfv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqfv3"]
 size = Vector2(40, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtnpv"]
+atlas = ExtResource("2_fqfv3")
 
 [node name="firewood" type="Area2D"]
 script = ExtResource("1_fqfv3")
@@ -15,4 +18,5 @@ position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_fqfv3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0cjik")
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_jtnpv")
