@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=17 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Texture2D" uid="uid://f1hx0eqjoiyy" path="res://assets/images/photo_2026-01-20_10-19-51.jpg" id="1_ge2tg"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
@@ -6,10 +6,37 @@
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/candle.tscn" id="6_q1y3u"]
+[ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
+[ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="8_t7v5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
+size = Vector2(32, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v5p"]
+size = Vector2(32, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4psif"]
+size = Vector2(31, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfbcd"]
+size = Vector2(28, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sdmp"]
+size = Vector2(31, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13psp"]
+size = Vector2(30, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tex4q"]
+size = Vector2(31, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qa6u"]
+size = Vector2(30, 92)
 
 [node name="microlevel" type="Node2D"]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 light_mask = 2
 color = Color(0.9934115, 0.89138603, 0.86781704, 1)
 energy = 0.93
@@ -31,10 +58,87 @@ position = Vector2(-406, 177)
 
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
 
-[node name="Key_1" parent="." instance=ExtResource("4_ui2ab")]
-position = Vector2(328, -87)
-
 [node name="music_puzzle" parent="." instance=ExtResource("5_q1y3u")]
+position = Vector2(457, -82)
+
+[node name="Key_1" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(-129, 0)
+note_id = 1
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_1"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_0x7r7")
+
+[node name="Key_2" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(-91, -5)
+note_id = 2
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_2"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_t7v5p")
+
+[node name="Key_3" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(-55, -10)
+note_id = 3
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_3"]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_4psif")
+
+[node name="Key_4" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(-19, -11)
+note_id = 4
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_4"]
+position = Vector2(-2, -2.5)
+shape = SubResource("RectangleShape2D_pfbcd")
+
+[node name="Key_5" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(17, -18)
+note_id = 5
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_5"]
+position = Vector2(-1.5, -1)
+shape = SubResource("RectangleShape2D_3sdmp")
+
+[node name="Key_6" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(52, -23)
+note_id = 6
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_6"]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_13psp")
+
+[node name="Key_7" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(88, -28)
+note_id = 7
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_7"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_tex4q")
+
+[node name="Key_8" parent="music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
+position = Vector2(123, -31)
+note_id = 8
+puzzle = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="music_puzzle/Key_8"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_5qa6u")
 
 [node name="candle" parent="." instance=ExtResource("6_q1y3u")]
 position = Vector2(555, -2)
+metadata/_edit_lock_ = true
+
+[node name="matches" parent="." instance=ExtResource("7_0x7r7")]
+position = Vector2(-42, 11)
+
+[node name="firewood" parent="." instance=ExtResource("8_t7v5p")]
+position = Vector2(75, -275)
