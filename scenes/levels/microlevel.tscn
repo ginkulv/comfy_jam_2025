@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=18 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Texture2D" uid="uid://f1hx0eqjoiyy" path="res://assets/images/photo_2026-01-20_10-19-51.jpg" id="1_ge2tg"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/candle.tscn" id="6_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
 [ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="8_t7v5p"]
+[ext_resource type="PackedScene" uid="uid://d3r4jskvs8x0j" path="res://scenes/props/key.tscn" id="9_t7v5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
 size = Vector2(32, 165)
@@ -134,11 +135,17 @@ shape = SubResource("RectangleShape2D_5qa6u")
 position = Vector2(555, -2)
 metadata/_edit_lock_ = true
 
-[node name="matches" parent="." instance=ExtResource("7_0x7r7")]
-position = Vector2(-42, 11)
-
-[node name="firewood" parent="." instance=ExtResource("8_t7v5p")]
-position = Vector2(75, -275)
-
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
 position = Vector2(-406, 177)
+
+[node name="pickables" type="Node" parent="."]
+
+[node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
+position = Vector2(75, -275)
+
+[node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
+position = Vector2(-42, 11)
+
+[node name="key" parent="pickables" instance=ExtResource("9_t7v5p")]
+position = Vector2(587, 200)
+item_id = 6

@@ -8,6 +8,7 @@ enum Id {
     BLUE_RUNE,
     PURPLE_RUNE,
     GLOWING_RUNE,
+    KEY
 }
 
 static var item_props : Dictionary = {
@@ -41,4 +42,9 @@ static var item_props : Dictionary = {
             "texture": load("res://assets/sprites/atlas/ui_item_rune_glowing.tres"),
             "name": "Glowing rune"
         },
+        Id.KEY: 
+        {
+            "texture": load("res://assets/sprites/atlas/ui_item_key.tres"),
+            "name": "Key"
+        }
 }
