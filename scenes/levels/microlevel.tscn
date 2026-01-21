@@ -51,9 +51,6 @@ scale = Vector2(1.49375, 1.7549019)
 texture = ExtResource("1_ge2tg")
 metadata/_edit_lock_ = true
 
-[node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
-position = Vector2(-406, 177)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
@@ -142,3 +139,6 @@ position = Vector2(-42, 11)
 
 [node name="firewood" parent="." instance=ExtResource("8_t7v5p")]
 position = Vector2(75, -275)
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
+position = Vector2(-406, 177)
