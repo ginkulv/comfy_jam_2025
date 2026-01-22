@@ -7,4 +7,5 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
     InventoryManager.remove_item(data.item_id)
     GameState.set_flag("ladder_standing")
+    AudioManager.add_layer()
     queue_free()

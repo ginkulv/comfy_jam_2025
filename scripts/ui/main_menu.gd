@@ -4,7 +4,6 @@ extends Node2D
 @onready var room_light := $"../DirectionalLight2D"
 
 func _ready():
-    AudioManager.start_music()
     LightingManager.setup(room_light)
 
 func _on_exit_button_button_up():

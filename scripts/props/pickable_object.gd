@@ -28,6 +28,7 @@ func _input(event):
 func on_left_click():
     InventoryManager.add_item(item_id)
     AudioManager.play_sfx("sfx_pickitem.wav")
+    MessageManager.display_text_by_id("2")
     queue_free()
 
 func can_pick() -> bool:
