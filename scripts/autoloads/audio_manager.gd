@@ -76,32 +76,33 @@ func start_music() -> void:
     sync_stream.set_sync_stream_volume(0, 0)
     music_player.play()
 
+func is_music_playing() -> bool:
+    return music_player.playing
+
 func add_layer() -> void:
     var tween = get_tree().create_tween()
-    # специальный заказ от Коли:
-    # когда включаем 5, то выключаем 4.5
-    if sync_stream_index == 4:
-        tween = get_tree().create_tween()
-        tween.tween_method(
-            _change_volume_of_synced_stream.bind(sync_stream_index), 
-            0.0,
-            -80.0, 
-            fade_in_time_sec
-        ).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-        await tween.finished
 
     sync_stream_index += 1 
     if sync_stream_index >= music_streams.size():
         print("Больше нечего добавлять")
         return
 
-    tween = get_tree().create_tween()
     tween.tween_method(
         _change_volume_of_synced_stream.bind(sync_stream_index), 
         -80.0, 
         0.0, 
         fade_in_time_sec
     ).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+
+    if sync_stream_index == 5:
+        tween.tween_method(
+            _change_volume_of_synced_stream.bind(sync_stream_index - 1), 
+            0.0,
+            -80.0, 
+            fade_in_time_sec
+        ).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+
+    await tween.finished
 
 func stop_music():
     music_player.stop()

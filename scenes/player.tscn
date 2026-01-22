@@ -1,22 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://i1l77n8k2vbs"]
+[gd_scene load_steps=6 format=3 uid="uid://i1l77n8k2vbs"]
 
 [ext_resource type="Script" uid="uid://fpty4ovuplec" path="res://scripts/player_control.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bhlcoaovv4x5i" path="res://assets/sprites/gnom png prozr.png" id="2_g2els"]
+[ext_resource type="DragonBonesFactory" uid="uid://bj2mwc7n5hm64" path="res://assets/sprites/gnom/new_dragon_bones_factory.tres" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 255.0
-height = 524.0
+radius = 189.0
+height = 382.0
+
+[sub_resource type="Gradient" id="Gradient_g2els"]
+offsets = PackedFloat32Array(0, 0.6930693)
+colors = PackedColorArray(1, 0.88235295, 0.7411765, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
+gradient = SubResource("Gradient_g2els")
+fill = 1
+fill_from = Vector2(0.50427353, 0.4871795)
+fill_to = Vector2(0, 0)
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_g2els")
+move_speed = 10000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 19.999996)
-scale = Vector2(0.6, 0.6)
 shape = SubResource("CapsuleShape2D_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(49, -4)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("2_g2els")
-flip_h = true
+[node name="right_light" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(110.000015, 64)
+scale = Vector2(5.625, 5.625)
+texture = SubResource("GradientTexture2D_qhqgy")
+
+[node name="left_light" type="PointLight2D" parent="."]
+position = Vector2(-108.999985, 66)
+scale = Vector2(5.625, 5.625)
+texture = SubResource("GradientTexture2D_qhqgy")
+
+[node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]
+factory = ExtResource("3_qhqgy")
+armature_settings = {
+&"current_animation": "walk",
+"sub_armatures": {}
+}
+scale = Vector2(0.15999946, 0.15999946)

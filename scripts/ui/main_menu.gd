@@ -4,7 +4,6 @@ extends Node2D
 @onready var room_light := $"../DirectionalLight2D"
 
 func _ready():
-    AudioManager.start_music()
     LightingManager.setup(room_light)
 
 func _on_exit_button_button_up():
@@ -16,4 +15,5 @@ func _on_settings_button_button_up():
 
 func _on_play_button_button_up() -> void:
     GameState.change_state(GameState.PLAYING)
+    MessageManager.display_text_by_id("1")
     queue_free()

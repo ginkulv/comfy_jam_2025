@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://20a4nwenb6bk"]
 
-[ext_resource type="Texture2D" uid="uid://f1hx0eqjoiyy" path="res://assets/images/photo_2026-01-20_10-19-51.jpg" id="1_ge2tg"]
+[ext_resource type="Texture2D" uid="uid://bx1vabn754yqj" path="res://assets/images/room2.png" id="1_3sdmp"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
 [ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
@@ -14,32 +14,33 @@
 [ext_resource type="PackedScene" uid="uid://5aysjs1fwdih" path="res://scenes/props/lock.tscn" id="12_3sdmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
-size = Vector2(32, 165)
+size = Vector2(39, 189)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v5p"]
-size = Vector2(32, 156)
+size = Vector2(37, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4psif"]
-size = Vector2(31, 145)
+size = Vector2(35, 162)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfbcd"]
-size = Vector2(28, 133)
+size = Vector2(36, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sdmp"]
-size = Vector2(31, 122)
+size = Vector2(36, 139)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13psp"]
-size = Vector2(30, 113)
+size = Vector2(34, 129)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tex4q"]
-size = Vector2(31, 104)
+size = Vector2(35, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qa6u"]
-size = Vector2(30, 92)
+size = Vector2(36, 106)
 
 [node name="microlevel" type="Node2D"]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 light_mask = 2
 color = Color(0.9934115, 0.89138603, 0.86781704, 1)
 energy = 0.93
@@ -50,125 +51,161 @@ max_distance = 6334.0
 
 [node name="background_sprite" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(3, 10)
-scale = Vector2(1.49375, 1.7549019)
-texture = ExtResource("1_ge2tg")
+texture = ExtResource("1_3sdmp")
+centered = false
 metadata/_edit_lock_ = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
 z_index = 10
-position = Vector2(-406, 177)
+position = Vector2(540, 652)
+scale = Vector2(1, 1)
+left_boundary = 150.0
+right_boundary = 2200.0
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(409, -118)
+limit_left = 0
+limit_top = 0
+limit_right = 2340
+limit_bottom = 1080
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_offset = -1.0
+drag_left_margin = 0.32
+drag_top_margin = 0.22
+drag_right_margin = 0.26
+drag_bottom_margin = 0.19
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="pickables" type="Node" parent="."]
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
-position = Vector2(75, -275)
+position = Vector2(1254, 265)
 
 [node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
-position = Vector2(-42, 11)
+position = Vector2(808, 385)
 
 [node name="key" parent="pickables" instance=ExtResource("9_t7v5p")]
-position = Vector2(587, 200)
+position = Vector2(1880, 682)
 item_id = 6
 
 [node name="zones" type="Node" parent="."]
 
 [node name="fireplace" parent="zones" instance=ExtResource("6_4psif")]
-position = Vector2(-482, 151)
+position = Vector2(539, 540)
 
 [node name="lamp" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(555, -2)
+position = Vector2(338, 798)
 lamp_id = 1
 
+[node name="lamp4" parent="zones" instance=ExtResource("6_q1y3u")]
+position = Vector2(1257.9999, 460.99997)
+scale = Vector2(0.605, 0.605)
+lamp_id = 4
+
 [node name="lamp2" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(-442, -103)
+position = Vector2(1806, 527)
 lamp_id = 2
 
 [node name="lamp3" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(-868, 301)
+position = Vector2(642, 290)
 lamp_id = 3
 
 [node name="music_puzzle" parent="zones" instance=ExtResource("5_q1y3u")]
-position = Vector2(457, -82)
+position = Vector2(1712, 372)
 
 [node name="Key_1" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(-129, 0)
+position = Vector2(-146, -8)
 note_id = 1
 puzzle = NodePath("..")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_1"]
-position = Vector2(0, 1.5)
+position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_0x7r7")
+metadata/_edit_lock_ = true
 
 [node name="Key_2" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(-91, -5)
+position = Vector2(-103, -4)
 note_id = 2
 puzzle = NodePath("..")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_2"]
-position = Vector2(-2, 2)
+position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_t7v5p")
+metadata/_edit_lock_ = true
 
 [node name="Key_3" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(-55, -10)
+position = Vector2(-61, -7)
 note_id = 3
 puzzle = NodePath("..")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_3"]
-position = Vector2(-1.5, 1.5)
+position = Vector2(-1.5, -3)
 shape = SubResource("RectangleShape2D_4psif")
+metadata/_edit_lock_ = true
 
 [node name="Key_4" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(-19, -11)
+position = Vector2(-21, -10)
 note_id = 4
 puzzle = NodePath("..")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_4"]
-position = Vector2(-2, -2.5)
+position = Vector2(-2, -6)
 shape = SubResource("RectangleShape2D_pfbcd")
+metadata/_edit_lock_ = true
 
 [node name="Key_5" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(17, -18)
+position = Vector2(18, -15)
 note_id = 5
 puzzle = NodePath("..")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_5"]
-position = Vector2(-1.5, -1)
+position = Vector2(-1, -6.5)
 shape = SubResource("RectangleShape2D_3sdmp")
+metadata/_edit_lock_ = true
 
 [node name="Key_6" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(52, -23)
+position = Vector2(57, -25)
 note_id = 6
 puzzle = NodePath("..")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_6"]
-position = Vector2(-1, -1.5)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_13psp")
+metadata/_edit_lock_ = true
 
 [node name="Key_7" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(88, -28)
+position = Vector2(99, -28)
 note_id = 7
 puzzle = NodePath("..")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_7"]
-position = Vector2(-0.5, -1)
+position = Vector2(-0.5, -4.5)
 shape = SubResource("RectangleShape2D_tex4q")
+metadata/_edit_lock_ = true
 
 [node name="Key_8" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(123, -31)
+position = Vector2(141, -30)
 note_id = 8
 puzzle = NodePath("..")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_8"]
-position = Vector2(0, -4)
+position = Vector2(-2, -9)
 shape = SubResource("RectangleShape2D_5qa6u")
+metadata/_edit_lock_ = true
 
 [node name="window" parent="zones" instance=ExtResource("11_pfbcd")]
-position = Vector2(-95, -101)
+position = Vector2(925, 247)
 
 [node name="lock" parent="zones" instance=ExtResource("12_3sdmp")]
-position = Vector2(43, 310)
+position = Vector2(1299, 787)

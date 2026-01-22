@@ -5,7 +5,7 @@ class_name InventoryItem
 @export var item_name: String
 @export var texture: Texture2D
 
-func set_item_data(item_id: Items.Id) -> void:
+func set_item_data(item_id) -> void:
     var item_props = Items.item_props[item_id]
     $ItemSprite.texture = item_props["texture"]
     item_name = item_props["name"]
@@ -24,7 +24,7 @@ func _notification(what: int) -> void:
         show()
 
 func _on_mouse_entered() -> void:
-    AudioManager.play_sfx("click" + ".mp3")
+    #AudioManager.play_sfx("sfx_pickitem.wav")
     var tween = get_tree().create_tween()
     tween.tween_property($ItemSprite, "scale", Vector2(1.3, 1.3), 0.1)
 

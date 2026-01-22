@@ -5,7 +5,7 @@ extends Area2D
 @export var required_flag : String = "room_unfrozen"
 
 
-func _input_event(viewport, event, shape_idx):
+func _input_event(_viewport, event, _shape_idx):
     if can_play() == false:
         return
     
@@ -13,8 +13,9 @@ func _input_event(viewport, event, shape_idx):
     and event.pressed \
     and event.button_index == MOUSE_BUTTON_LEFT:
         puzzle.register_note(note_id)
-        AudioManager.play_sfx("click" + ".mp3")
-        print("music")
+        var note_name = str(note_id)
+        AudioManager.play_sfx("sfx_xylophone_" + note_name + ".wav")
+        print(note_name)
    
 func can_play() -> bool:
     return GameState.has_flag(required_flag)

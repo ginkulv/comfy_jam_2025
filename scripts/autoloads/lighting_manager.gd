@@ -2,7 +2,7 @@ extends Node
 
 var directional_light: DirectionalLight2D
 var base_energy : float = 0.93
-var energy_per_lamp : float = -0.2
+var energy_per_lamp : float = -0.02
 
 var lamps := {}
 var lit_count : int = 0
@@ -28,3 +28,5 @@ func update_light():
 func check_all_lit():
     if lit_count == lamps.size():
         GameState.set_flag("all_lamps_lit")
+        AudioManager.add_layer()
+        AudioManager.add_layer()
