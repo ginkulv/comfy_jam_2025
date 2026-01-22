@@ -34,13 +34,11 @@ shape = SubResource("CircleShape2D_07hkx")
 
 [node name="off" type="Sprite2D" parent="."]
 position = Vector2(1, 4)
-scale = Vector2(0.32941177, 0.3274021)
 texture = ExtResource("2_jthy0")
 
 [node name="on" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-0.09375408, 0)
-scale = Vector2(0.32576528, 0.325)
+position = Vector2(-2.28, -7.92)
 texture = ExtResource("3_xkx70")
 
 [node name="oreol" type="Sprite2D" parent="on"]
@@ -48,7 +46,7 @@ self_modulate = Color(1, 1, 1, 0.48235294)
 z_as_relative = false
 material = SubResource("ShaderMaterial_a0bva")
 position = Vector2(0.2877964, -18.461538)
-scale = Vector2(1.2003795, 1.2003795)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_c3hq0")
 
 [node name="PointLight2D" type="PointLight2D" parent="on"]

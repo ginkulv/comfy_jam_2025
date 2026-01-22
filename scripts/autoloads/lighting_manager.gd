@@ -28,3 +28,5 @@ func update_light():
 func check_all_lit():
     if lit_count == lamps.size():
         GameState.set_flag("all_lamps_lit")
+        AudioManager.add_layer()
+        AudioManager.add_layer()

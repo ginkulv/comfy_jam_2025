@@ -4,8 +4,8 @@
 [ext_resource type="DragonBonesFactory" uid="uid://bj2mwc7n5hm64" path="res://assets/sprites/gnom/new_dragon_bones_factory.tres" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 255.0
-height = 524.0
+radius = 332.0
+height = 664.0
 
 [sub_resource type="Gradient" id="Gradient_g2els"]
 offsets = PackedFloat32Array(0, 0.6930693)
@@ -22,8 +22,7 @@ script = ExtResource("1_g2els")
 move_speed = 10000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 19.999996)
-scale = Vector2(0.6, 0.6)
+position = Vector2(-2, 15)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="right_light" type="PointLight2D" parent="."]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjpr1qxv6icq6" path="res://assets/sprites/atlas/ui_item_drova.tres" id="2_fqfv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqfv3"]
-size = Vector2(40, 39)
+size = Vector2(122, 123)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtnpv"]
 atlas = ExtResource("2_fqfv3")
@@ -15,9 +15,9 @@ item_id = 1
 required_flag = "ladder_standing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -0.5)
+position = Vector2(-1, 2.5)
 shape = SubResource("RectangleShape2D_fqfv3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 texture = SubResource("AtlasTexture_jtnpv")

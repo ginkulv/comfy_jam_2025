@@ -5,7 +5,7 @@ class_name InventoryItem
 @export var item_name: String
 @export var texture: Texture2D
 
-func set_item_data(item_id: Items.Id) -> void:
+func set_item_data(item_id) -> void:
     var item_props = Items.item_props[item_id]
     $ItemSprite.texture = item_props["texture"]
     item_name = item_props["name"]
