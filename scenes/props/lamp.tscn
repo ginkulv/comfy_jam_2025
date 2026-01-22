@@ -42,23 +42,23 @@ position = Vector2(-5, 4)
 shape = SubResource("CircleShape2D_07hkx")
 
 [node name="off" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.522, 0.522)
 texture = ExtResource("2_jthy0")
 
-[node name="LampBody" type="Sprite2D" parent="."]
+[node name="on" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_838e7")
 position = Vector2(6.000002, 42.000008)
 scale = Vector2(0.521551, 0.521551)
 texture = ExtResource("4_gshpy")
 
-[node name="on" type="Sprite2D" parent="LampBody"]
+[node name="on" type="Sprite2D" parent="on"]
 modulate = Color(1, 1, 1, 0.84705883)
 material = SubResource("ShaderMaterial_gshpy")
 position = Vector2(-17.256226, -93.950554)
 texture = ExtResource("3_xkx70")
 
-[node name="oreol" type="Sprite2D" parent="LampBody"]
+[node name="oreol" type="Sprite2D" parent="on"]
 modulate = Color(3.3550003, 2.6063821, 2.0083702, 1)
 self_modulate = Color(1, 1, 1, 0.10980392)
 z_as_relative = false
@@ -67,7 +67,7 @@ position = Vector2(-21.090944, -116.958855)
 scale = Vector2(1.1358916, 1.1358916)
 texture = ExtResource("5_c3hq0")
 
-[node name="PointLight2D" type="PointLight2D" parent="LampBody"]
+[node name="PointLight2D" type="PointLight2D" parent="on"]
 position = Vector2(-15.338868, -101.61998)
 scale = Vector2(30.965082, 31.52438)
 color = Color(1.353256, 1.353256, 1.353256, 1)
