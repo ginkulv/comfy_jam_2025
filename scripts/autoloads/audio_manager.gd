@@ -1,7 +1,7 @@
 extends Node
 
 const max_sfx_players: int = 10
-const fade_in_time_sec: float = 1.0
+const fade_in_time_sec: float = 3.0
 
 var music_player: AudioStreamPlayer
 var sync_stream: AudioStreamSynchronized
