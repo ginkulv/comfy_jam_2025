@@ -13,7 +13,8 @@ func register_note(note_id: int) -> void:
         return
     
     if input_sequence.size() == correct_sequence.size():
-        DoorManager.allow_door(3)
+        print("Victory!")
+        #запускаем финальную катсцену
 
 func reset_sequence():
     input_sequence.clear()
