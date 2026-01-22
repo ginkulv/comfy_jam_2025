@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bx1vabn754yqj" path="res://assets/images/room2.png" id="1_3sdmp"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
-[ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
+[ext_resource type="PackedScene" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
-[ext_resource type="PackedScene" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
+[ext_resource type="PackedScene" uid="uid://dlc34kcsyiwli" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
 [ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/lamp.tscn" id="6_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
 [ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="8_t7v5p"]
@@ -50,50 +50,63 @@ max_distance = 6334.0
 
 [node name="background_sprite" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(67, -2)
-scale = Vector2(1.49375, 1.7549019)
 texture = ExtResource("1_3sdmp")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.57, 0.57)
+centered = false
 
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
 z_index = 10
-position = Vector2(-406, 177)
+position = Vector2(540, 652)
+scale = Vector2(1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(409, -118)
+limit_left = 0
+limit_top = 0
+limit_right = 2340
+limit_bottom = 1080
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_offset = -1.0
+drag_left_margin = 0.32
+drag_top_margin = 0.22
+drag_right_margin = 0.26
+drag_bottom_margin = 0.19
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="pickables" type="Node" parent="."]
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
-position = Vector2(172, -639)
+position = Vector2(1252, 252)
 
 [node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
-position = Vector2(-434, -263)
+position = Vector2(808, 385)
 
 [node name="key" parent="pickables" instance=ExtResource("9_t7v5p")]
-position = Vector2(1083, 226)
+position = Vector2(1880, 682)
 item_id = 6
 
 [node name="zones" type="Node" parent="."]
 
 [node name="fireplace" parent="zones" instance=ExtResource("6_4psif")]
-position = Vector2(-855, -12)
+position = Vector2(539, 540)
 
 [node name="lamp" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(984, -70)
+position = Vector2(195, 775)
 lamp_id = 1
 
 [node name="lamp2" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(-558, -373)
+position = Vector2(1749, 503)
 lamp_id = 2
 
 [node name="lamp3" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(-1306, 393)
+position = Vector2(642, 290)
 lamp_id = 3
 
 [node name="music_puzzle" parent="zones" instance=ExtResource("5_q1y3u")]
-position = Vector2(874, -307)
+position = Vector2(1762, 387)
 
 [node name="Key_1" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
 position = Vector2(-193, 2)
@@ -184,7 +197,7 @@ shape = SubResource("RectangleShape2D_5qa6u")
 metadata/_edit_lock_ = true
 
 [node name="window" parent="zones" instance=ExtResource("11_pfbcd")]
-position = Vector2(-246, -452)
+position = Vector2(925, 247)
 
 [node name="lock" parent="zones" instance=ExtResource("12_3sdmp")]
-position = Vector2(269, 407)
+position = Vector2(1299, 787)

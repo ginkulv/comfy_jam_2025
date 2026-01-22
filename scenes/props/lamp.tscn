@@ -1,22 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://dddejuoy8amxk"]
+[gd_scene load_steps=14 format=3 uid="uid://dddejuoy8amxk"]
 
 [ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/lamp.gd" id="1_8hqu3"]
 [ext_resource type="Texture2D" uid="uid://cv3otec35qk6j" path="res://assets/sprites/atlas/lamp_off.tres" id="2_jthy0"]
 [ext_resource type="Script" uid="uid://x433g3oufx3l" path="res://scripts/props/lamp_control.gd" id="3_mht1s"]
 [ext_resource type="Texture2D" uid="uid://bwu76snv5t3lm" path="res://assets/sprites/atlas/lamp_on.tres" id="3_xkx70"]
+[ext_resource type="Texture2D" uid="uid://ccobtf68ytyn2" path="res://assets/sprites/atlas/lamp_body.tres" id="4_gshpy"]
 [ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="4_q865l"]
 [ext_resource type="Texture2D" uid="uid://cndg202n6oagi" path="res://assets/sprites/atlas/lamp_light.tres" id="5_c3hq0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]
 radius = 97.020615
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_838e7"]
+shader = ExtResource("4_q865l")
+shader_parameter/blend_mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gshpy"]
+shader = ExtResource("4_q865l")
+shader_parameter/blend_mode = 0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a0bva"]
 shader = ExtResource("4_q865l")
-shader_parameter/blend_mode = 7
+shader_parameter/blend_mode = 3
 
 [sub_resource type="Gradient" id="Gradient_s2xve"]
-offsets = PackedFloat32Array(0.03868472, 0.13539653, 0.31334624, 0.70599616, 1)
-colors = PackedColorArray(0.99999994, 0.93390775, 0.8877934, 1, 0.99999994, 0.70084894, 0.35122404, 1, 0.91766137, 0.41072765, 1.92523e-07, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.1594203, 0.79227054)
+colors = PackedColorArray(1.353256, 1.1570345, 0.6991844, 1, 1, 0.6966667, 0.35000002, 0.78431374, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gksna"]
 gradient = SubResource("Gradient_s2xve")
@@ -33,27 +42,36 @@ position = Vector2(-5, 4)
 shape = SubResource("CircleShape2D_07hkx")
 
 [node name="off" type="Sprite2D" parent="."]
-position = Vector2(1, 4)
+visible = false
+scale = Vector2(0.522, 0.522)
 texture = ExtResource("2_jthy0")
 
-[node name="on" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-2.28, -7.92)
+[node name="LampBody" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_838e7")
+position = Vector2(6.000002, 42.000008)
+scale = Vector2(0.521551, 0.521551)
+texture = ExtResource("4_gshpy")
+
+[node name="on" type="Sprite2D" parent="LampBody"]
+modulate = Color(1, 1, 1, 0.84705883)
+material = SubResource("ShaderMaterial_gshpy")
+position = Vector2(-17.256226, -93.950554)
 texture = ExtResource("3_xkx70")
 
-[node name="oreol" type="Sprite2D" parent="on"]
-self_modulate = Color(1, 1, 1, 0.48235294)
+[node name="oreol" type="Sprite2D" parent="LampBody"]
+modulate = Color(3.3550003, 2.6063821, 2.0083702, 1)
+self_modulate = Color(1, 1, 1, 0.10980392)
 z_as_relative = false
 material = SubResource("ShaderMaterial_a0bva")
-position = Vector2(0.2877964, -18.461538)
-scale = Vector2(1.5, 1.5)
+position = Vector2(-21.090944, -116.958855)
+scale = Vector2(1.1358916, 1.1358916)
 texture = ExtResource("5_c3hq0")
 
-[node name="PointLight2D" type="PointLight2D" parent="on"]
-position = Vector2(6.4272094, 2.347506e-05)
-scale = Vector2(15.566567, 15.847734)
-color = Color(1, 0.5914784, 0.47450465, 1)
-energy = 1.05
+[node name="PointLight2D" type="PointLight2D" parent="LampBody"]
+position = Vector2(-15.338868, -101.61998)
+scale = Vector2(30.965082, 31.52438)
+color = Color(1.353256, 1.353256, 1.353256, 1)
+energy = 1.61
 texture = SubResource("GradientTexture2D_gksna")
 texture_scale = 1.17
 
