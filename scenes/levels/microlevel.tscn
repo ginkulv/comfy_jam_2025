@@ -14,33 +14,32 @@
 [ext_resource type="PackedScene" uid="uid://5aysjs1fwdih" path="res://scenes/props/lock.tscn" id="12_3sdmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
-size = Vector2(32, 165)
+size = Vector2(50, 247)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v5p"]
-size = Vector2(32, 156)
+size = Vector2(47, 233)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4psif"]
-size = Vector2(31, 145)
+size = Vector2(49, 216)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfbcd"]
-size = Vector2(28, 133)
+size = Vector2(47, 198)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sdmp"]
-size = Vector2(31, 122)
+size = Vector2(47, 183)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13psp"]
-size = Vector2(30, 113)
+size = Vector2(47, 172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tex4q"]
-size = Vector2(31, 104)
+size = Vector2(47, 158)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qa6u"]
-size = Vector2(30, 92)
+size = Vector2(46, 144)
 
 [node name="microlevel" type="Node2D"]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 light_mask = 2
 color = Color(0.9934115, 0.89138603, 0.86781704, 1)
 energy = 0.93
@@ -67,7 +66,7 @@ position = Vector2(-406, 177)
 [node name="pickables" type="Node" parent="."]
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
-position = Vector2(180, -481)
+position = Vector2(172, -639)
 
 [node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
 position = Vector2(-434, -263)
@@ -94,93 +93,93 @@ position = Vector2(-1306, 393)
 lamp_id = 3
 
 [node name="music_puzzle" parent="zones" instance=ExtResource("5_q1y3u")]
-position = Vector2(888, -258)
+position = Vector2(874, -307)
 
 [node name="Key_1" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(-129, 0)
-note_id = "sfx_xylophone_0"
+position = Vector2(-193, 2)
+note_id = 1
 puzzle = NodePath("..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_1"]
-position = Vector2(0, 1.5)
+position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_0x7r7")
 metadata/_edit_lock_ = true
 
 [node name="Key_2" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(-91, -5)
-note_id = "sfx_xylophone_1"
+position = Vector2(-136, -3)
+note_id = 2
 puzzle = NodePath("..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_2"]
-position = Vector2(-2, 2)
+position = Vector2(-2.5, -1.5)
 shape = SubResource("RectangleShape2D_t7v5p")
 metadata/_edit_lock_ = true
 
 [node name="Key_3" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(-55, -10)
-note_id = "sfx_xylophone_2"
+position = Vector2(-81, -8)
+note_id = 3
 puzzle = NodePath("..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_3"]
-position = Vector2(-1.5, 1.5)
+position = Vector2(-2.5, -5)
 shape = SubResource("RectangleShape2D_4psif")
 metadata/_edit_lock_ = true
 
 [node name="Key_4" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(-19, -11)
-note_id = "sfx_xylophone_3"
+position = Vector2(-28, -14)
+note_id = 4
 puzzle = NodePath("..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_4"]
-position = Vector2(-2, -2.5)
+position = Vector2(-1.5, -8)
 shape = SubResource("RectangleShape2D_pfbcd")
 metadata/_edit_lock_ = true
 
 [node name="Key_5" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(17, -18)
-note_id = "sfx_xylophone_4"
+position = Vector2(24, -25)
+note_id = 5
 puzzle = NodePath("..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_5"]
-position = Vector2(-1.5, -1)
+position = Vector2(-0.5, -4.5)
 shape = SubResource("RectangleShape2D_3sdmp")
 metadata/_edit_lock_ = true
 
 [node name="Key_6" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(52, -23)
-note_id = "sfx_xylophone_5"
+position = Vector2(78, -35)
+note_id = 6
 puzzle = NodePath("..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_6"]
-position = Vector2(-1, -1.5)
+position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_13psp")
 metadata/_edit_lock_ = true
 
 [node name="Key_7" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(88, -28)
-note_id = "sfx_xylophone_6"
+position = Vector2(132, -42)
+note_id = 7
 puzzle = NodePath("..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_7"]
-position = Vector2(-0.5, -1)
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_tex4q")
 metadata/_edit_lock_ = true
 
 [node name="Key_8" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
-position = Vector2(123, -31)
-note_id = "sfx_xylophone_7"
+position = Vector2(186, -45)
+note_id = 8
 puzzle = NodePath("..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="zones/music_puzzle/Key_8"]
-position = Vector2(0, -4)
+position = Vector2(-1, -6)
 shape = SubResource("RectangleShape2D_5qa6u")
 metadata/_edit_lock_ = true
 

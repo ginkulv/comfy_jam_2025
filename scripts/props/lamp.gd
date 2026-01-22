@@ -14,7 +14,7 @@ func light_up():
     LightingManager.on_lamp_lit()
     $on.visible = is_lit
     $off.visible = false
-    AudioManager.play_sfx("sfx_"+name+"_on.wav")
+    AudioManager.play_sfx("sfx_matches.wav")
     if not AudioManager.is_music_playing():
         AudioManager.start_music()
     
