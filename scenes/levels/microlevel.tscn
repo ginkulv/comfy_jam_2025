@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
-[ext_resource type="PackedScene" uid="uid://dlc34kcsyiwli" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
+[ext_resource type="PackedScene" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
 [ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/lamp.tscn" id="6_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
 [ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="8_t7v5p"]
