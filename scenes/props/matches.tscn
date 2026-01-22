@@ -11,6 +11,7 @@ atlas = ExtResource("2_23so1")
 
 [node name="matches" type="Area2D"]
 script = ExtResource("1_23so1")
+required_flag = "window_closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -0.5)

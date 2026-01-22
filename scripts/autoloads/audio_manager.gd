@@ -52,7 +52,8 @@ func _ready() -> void:
 
 func play_sfx(sfx_name_with_extension: String, loop: bool = false) -> void:
     var stream = load("res://assets/sfx/" + sfx_name_with_extension)
-    stream.loop = loop
+    if stream is AudioStreamMP3 or stream is AudioStreamOggVorbis:
+        stream.loop = loop
 
     for player in sfx_players:
         if !player.playing:

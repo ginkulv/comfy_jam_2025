@@ -20,6 +20,8 @@ InventoryManager="*res://scripts/autoloads/inventory_manager.gd"
 GameState="*res://scripts/autoloads/game_state.gd"
 AudioManager="*res://scripts/autoloads/audio_manager.gd"
 DoorManager="*res://scripts/autoloads/door_manager.gd"
+MessageManager="*res://scripts/autoloads/message_manager.gd"
+LightingManager="*res://scripts/autoloads/lighting_manager.gd"
 
 [display]
 

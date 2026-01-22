@@ -3,6 +3,10 @@ extends Node
 @onready var pause_menu_scene = preload("res://scenes/ui/pause_menu.tscn")
 
 var input_locked : bool =  false
+var firewood_allowed : bool = false
+var key_allowed : bool = false
+var xylophone_allowed : bool = false
+var flags := {}
 enum {
     MAIN_MENU,
     PAUSE_MENU,
@@ -39,3 +43,9 @@ func _input(event: InputEvent) -> void:
             PAUSE_MENU:
                 pause_menu.queue_free()
                 change_state(PLAYING)
+
+func set_flag(flag: String) -> void:
+    flags[flag] = true
+
+func has_flag(flag: String) -> bool:
+    return flags.get(flag, false)

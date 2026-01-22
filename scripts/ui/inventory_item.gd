@@ -24,7 +24,6 @@ func _notification(what: int) -> void:
         show()
 
 func _on_mouse_entered() -> void:
-    print("sdlkSLKD")
     AudioManager.play_sfx("click" + ".mp3")
     var tween = get_tree().create_tween()
     tween.tween_property($ItemSprite, "scale", Vector2(1.3, 1.3), 0.1)

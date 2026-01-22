@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dddejuoy8amxk"]
 
-[ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/candle.gd" id="1_8hqu3"]
+[ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/lamp.gd" id="1_8hqu3"]
 [ext_resource type="Texture2D" uid="uid://cv3otec35qk6j" path="res://assets/sprites/atlas/lamp_off.tres" id="2_jthy0"]
-[ext_resource type="Script" uid="uid://x433g3oufx3l" path="res://scripts/props/candle_control.gd" id="3_mht1s"]
+[ext_resource type="Script" uid="uid://x433g3oufx3l" path="res://scripts/props/lamp_control.gd" id="3_mht1s"]
 [ext_resource type="Texture2D" uid="uid://bwu76snv5t3lm" path="res://assets/sprites/atlas/lamp_on.tres" id="3_xkx70"]
 [ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="4_q865l"]
 [ext_resource type="Texture2D" uid="uid://cndg202n6oagi" path="res://assets/sprites/atlas/lamp_light.tres" id="5_c3hq0"]
@@ -24,7 +24,7 @@ fill = 1
 fill_from = Vector2(0.50427353, 0.52136755)
 fill_to = Vector2(0, 0)
 
-[node name="candle" type="Area2D"]
+[node name="lamp" type="Area2D"]
 script = ExtResource("1_8hqu3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
