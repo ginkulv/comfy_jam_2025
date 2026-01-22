@@ -4,19 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://bhlcoaovv4x5i" path="res://assets/sprites/gnom png prozr.png" id="2_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 255.0
-height = 524.0
+radius = 332.0
+height = 664.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 19.999996)
-scale = Vector2(0.6, 0.6)
+position = Vector2(-2, 15)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(49, -4)
-scale = Vector2(0.17, 0.17)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_g2els")
 flip_h = true

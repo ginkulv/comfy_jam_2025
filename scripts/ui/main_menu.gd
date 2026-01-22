@@ -15,4 +15,5 @@ func _on_settings_button_button_up():
 
 func _on_play_button_button_up() -> void:
     GameState.change_state(GameState.PLAYING)
+    MessageManager.display_text_by_id("1")
     queue_free()
