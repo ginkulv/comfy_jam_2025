@@ -15,25 +15,25 @@ extends CharacterBody2D
 func _physics_process(delta):
 
 
-	var direction = Input.get_axis("walk_letf", "walk_right")
+    var direction = Input.get_axis("walk_letf", "walk_right")
 
 
-	if direction:
-		velocity.x = direction * move_speed * delta
-		dragon_bones_armature.current_animation = "walk"
-	else:
-		velocity.x = move_toward(velocity.x, 0, move_speed)
-		dragon_bones_armature.current_animation = "idle"
+    if direction:
+        velocity.x = direction * move_speed * delta
+        dragon_bones_armature.current_animation = "walk"
+    else:
+        velocity.x = move_toward(velocity.x, 0, move_speed)
+        dragon_bones_armature.current_animation = "idle"
 
-	if direction > 0:
-		on_flip = true
-	elif direction < 0:
-		on_flip = false
+    if direction > 0:
+        on_flip = true
+    elif direction < 0:
+        on_flip = false
 
-	dragon_bones_armature.flip_x = on_flip
-	right_light.visible = on_flip
-	left_light.visible = !on_flip
+    dragon_bones_armature.flip_x = on_flip
+    right_light.visible = on_flip
+    left_light.visible = !on_flip
 
-	move_and_slide()
+    move_and_slide()
 
-	global_position.x = clamp(global_position.x, left_boundary, right_boundary)
+    global_position.x = clamp(global_position.x, left_boundary, right_boundary)

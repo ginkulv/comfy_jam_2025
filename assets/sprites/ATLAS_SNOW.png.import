@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x0ax23oewfk3"
-path="res://.godot/imported/DragonBonesWhite.png-fb30583581efdee7336c40dd182936e2.ctex"
+uid="uid://doff1s52oaej0"
+path="res://.godot/imported/ATLAS_SNOW.png-17cd9cbfd02a022beb478404f96f6227.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/godot_dragon_bones.daylily-zeleen/icons/DragonBonesWhite.png"
-dest_files=["res://.godot/imported/DragonBonesWhite.png-fb30583581efdee7336c40dd182936e2.ctex"]
+source_file="res://assets/sprites/ATLAS_SNOW.png"
+dest_files=["res://.godot/imported/ATLAS_SNOW.png-17cd9cbfd02a022beb478404f96f6227.ctex"]
 
 [params]
 

@@ -10,6 +10,7 @@ size = Vector2(122, 123)
 atlas = ExtResource("2_fqfv3")
 
 [node name="firewood" type="Area2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_fqfv3")
 item_id = 1
 required_flag = "ladder_standing"
