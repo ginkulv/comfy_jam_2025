@@ -10,6 +10,8 @@ extends CharacterBody2D
 @onready var dragon_bones_armature :DragonBonesArmatureView = $DragonBonesArmatureView
 @onready var left_light:PointLight2D = $left_light
 @onready var right_light:PointLight2D = $right_light
+@onready var left_light_2:PointLight2D = $left_light2
+@onready var right_light_2:PointLight2D = $right_light2
 @export var on_flip : bool = false
 
 func _physics_process(delta):
@@ -32,7 +34,9 @@ func _physics_process(delta):
 
     dragon_bones_armature.flip_x = on_flip
     right_light.visible = on_flip
+    right_light_2.visible = on_flip
     left_light.visible = !on_flip
+    left_light_2.visible = !on_flip
 
     move_and_slide()
 

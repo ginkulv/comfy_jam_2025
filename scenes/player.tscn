@@ -28,12 +28,27 @@ shape = SubResource("CapsuleShape2D_g2els")
 [node name="right_light" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(110.000015, 64)
-scale = Vector2(5.625, 5.625)
+scale = Vector2(6.1, 6.1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_qhqgy")
+
+[node name="right_light2" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(110.000015, 64)
+scale = Vector2(12, 12)
+energy = 0.4
 texture = SubResource("GradientTexture2D_qhqgy")
 
 [node name="left_light" type="PointLight2D" parent="."]
 position = Vector2(-108.999985, 66)
-scale = Vector2(5.625, 5.625)
+scale = Vector2(6.1, 6.1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_qhqgy")
+
+[node name="left_light2" type="PointLight2D" parent="."]
+position = Vector2(-108.999985, 66)
+scale = Vector2(12, 12)
+energy = 0.4
 texture = SubResource("GradientTexture2D_qhqgy")
 
 [node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]

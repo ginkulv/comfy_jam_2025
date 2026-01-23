@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
 [ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="8_t7v5p"]
 [ext_resource type="PackedScene" uid="uid://d3r4jskvs8x0j" path="res://scenes/props/key.tscn" id="9_t7v5p"]
-[ext_resource type="PackedScene" uid="uid://erxk7gmy73d2" path="res://scenes/window.tscn" id="11_pfbcd"]
+[ext_resource type="PackedScene" uid="uid://erxk7gmy73d2" path="res://scenes/props/window.tscn" id="11_pfbcd"]
 [ext_resource type="PackedScene" uid="uid://5aysjs1fwdih" path="res://scenes/props/lock.tscn" id="12_3sdmp"]
 [ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="13_tex4q"]
 [ext_resource type="FontFile" uid="uid://dgo3t53sw2gy2" path="res://assets/fonts/Junicode.ttf" id="14_5qa6u"]
@@ -201,11 +201,13 @@ collision_base_size = 4.3
 draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_4mwer")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="blizzard"]
+[node name="blizzard_loud" type="AudioStreamPlayer2D" parent="blizzard"]
 stream = ExtResource("1_vxgch")
+volume_db = 7.068
 autoplay = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 light_mask = 2
 color = Color(0.9934115, 0.89138603, 0.86781704, 1)
 energy = 16.0
@@ -228,6 +230,7 @@ position = Vector2(313, 636)
 scale = Vector2(1, 1)
 left_boundary = 150.0
 right_boundary = 2200.0
+on_flip = true
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(711, -60)
@@ -248,13 +251,13 @@ editor_draw_drag_margin = true
 [node name="pickables" type="Node" parent="."]
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
-position = Vector2(1254, 265)
+position = Vector2(1348, 169)
 
 [node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
-position = Vector2(808, 385)
+position = Vector2(830, 446)
 
 [node name="key" parent="pickables" instance=ExtResource("9_t7v5p")]
-position = Vector2(1880, 682)
+position = Vector2(2256, 846)
 item_id = 6
 
 [node name="zones" type="Node" parent="."]
@@ -267,16 +270,21 @@ position = Vector2(338, 798)
 lamp_id = 1
 
 [node name="lamp4" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(1249, 599)
+position = Vector2(1418.9999, 595)
 scale = Vector2(0.605, 0.605)
 lamp_id = 4
+
+[node name="lamp5" parent="zones" instance=ExtResource("6_q1y3u")]
+position = Vector2(1257, 358)
+scale = Vector2(0.605, 0.605)
+lamp_id = 5
 
 [node name="lamp2" parent="zones" instance=ExtResource("6_q1y3u")]
 position = Vector2(1806, 527)
 lamp_id = 2
 
 [node name="lamp3" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(642, 290)
+position = Vector2(744, 341)
 lamp_id = 3
 
 [node name="music_puzzle" parent="zones" instance=ExtResource("5_q1y3u")]
@@ -410,7 +418,7 @@ theme_override_fonts/normal_font = ExtResource("14_5qa6u")
 theme_override_font_sizes/normal_font_size = 31
 bbcode_enabled = true
 text = "[center]...There walked a luckless gnome, Gribnarr, along that path where all maps end and fears begin. He had strayed too far from the depths — to a place where the earth forgets stone, and time forgets itself. And then he saw It. The tower. The lighthouse. A silent sentinel in the pitch-black darkness. No fire of hope burned in its windows — only a cold, ancient glow, both beckoning and warning. \"And what if inside... there is no light?\" gnome whispered, yet his feet carried him toward the heavy door of their own accord.
-It did not occur to Gribnarr that this was not the end of the road. It was merely the first riddle.[/center]"
+[/center]"
 autowrap_mode = 2
 horizontal_alignment = 1
 visible_characters_behavior = 3
@@ -440,4 +448,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_vxgch")
 }
 
+[connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/narrative/RichTextLabel" method="_on_button_button_down"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/AnimationPlayer" method="play" binds= ["start_game"]]

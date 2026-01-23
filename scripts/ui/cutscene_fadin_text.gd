@@ -39,4 +39,8 @@ func _on_tween_finished():
         button_tween.tween_property(next_button, "modulate", Color.WHITE,fade_button_start)
     
     emit_signal("fade_completed")
+    
+
+
+func _on_button_button_down() -> void:
     GameState.input_locked = false
