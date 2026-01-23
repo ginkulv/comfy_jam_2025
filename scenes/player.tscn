@@ -39,7 +39,7 @@ texture = SubResource("GradientTexture2D_qhqgy")
 [node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]
 factory = ExtResource("3_qhqgy")
 armature_settings = {
-&"current_animation": "walk",
+&"current_animation": "idle",
 "sub_armatures": {}
 }
 scale = Vector2(0.15999946, 0.15999946)
