@@ -14,7 +14,7 @@ func _input_event(_viewport, event, shape_idx):
         GameState.set_flag("window_closed")
         AudioManager.play_sfx("closing_window.wav")
         AudioManager.stop_sfx("sfx_blizzard.wav")
-        AudioManager.play_sfx("sfx_blizzard_shut.wav")
+        AudioManager.play_sfx("sfx_blizzard_shut.wav", 0.05)
              
             
 func cannot_interact() -> bool:
