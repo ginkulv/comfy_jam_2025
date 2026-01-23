@@ -1,13 +1,12 @@
-[gd_scene load_steps=35 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=34 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Texture2D" uid="uid://bx1vabn754yqj" path="res://assets/images/room2.png" id="1_3sdmp"]
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scenes/levels/cutscene.gd" id="1_ql6yw"]
-[ext_resource type="AudioStream" uid="uid://dupcsyskdnj7q" path="res://assets/sfx/sfx_blizzard.wav" id="1_vxgch"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
 [ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
-[ext_resource type="PackedScene" uid="uid://dlc34kcsyiwli" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
+[ext_resource type="PackedScene" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
 [ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/lamp.tscn" id="6_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
 [ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="8_t7v5p"]
@@ -200,11 +199,6 @@ randomness = 0.36
 collision_base_size = 4.3
 draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_4mwer")
-
-[node name="blizzard_loud" type="AudioStreamPlayer2D" parent="blizzard"]
-stream = ExtResource("1_vxgch")
-volume_db = 7.068
-autoplay = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
