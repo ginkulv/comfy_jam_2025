@@ -1,57 +1,46 @@
-[gd_scene load_steps=19 format=3 uid="uid://bq6pp3yg2pf2q"]
+[gd_scene load_steps=21 format=3 uid="uid://bq6pp3yg2pf2q"]
 
 [ext_resource type="Script" uid="uid://br5t2ogu2py56" path="res://scripts/ui/settings_menu.gd" id="1_qwcqe"]
-[ext_resource type="Texture2D" uid="uid://dahir3ssc6ep" path="res://assets/sprites/ATLAS.png" id="2_yu862"]
+[ext_resource type="Texture2D" uid="uid://dne1af52dfikw" path="res://assets/sprites/atlas/ui_settings_menu.tres" id="2_ngbvi"]
 [ext_resource type="Theme" uid="uid://dtiv81upl2jvn" path="res://assets/ui_theme.theme" id="3_0b1cv"]
+[ext_resource type="Texture2D" uid="uid://ccif8poq6h7ef" path="res://assets/sprites/atlas/ui_settings_menu_button.tres" id="3_ngbvi"]
 [ext_resource type="FontFile" uid="uid://dgo3t53sw2gy2" path="res://assets/fonts/Junicode.ttf" id="4_0b1cv"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0b1cv"]
-load_path = "res://.godot/imported/ATLAS.png-37d4fcd85707ed5b2471bcdba3ca0312.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yu862"]
-atlas = SubResource("CompressedTexture2D_0b1cv")
-region = Rect2(0, 319, 384, 129)
+[ext_resource type="Texture2D" uid="uid://bmmc6qamrc7ee" path="res://assets/sprites/atlas/ui_settings_menu_slider1.tres" id="6_mishw"]
+[ext_resource type="Texture2D" uid="uid://dcbcvwr5jyr4f" path="res://assets/sprites/atlas/ui_settings_menu_slider2.tres" id="7_h271e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngbvi"]
-texture = SubResource("AtlasTexture_yu862")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0b1cv"]
-atlas = ExtResource("2_yu862")
-region = Rect2(6, 452, 393, 128)
+texture = ExtResource("2_ngbvi")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mishw"]
-texture = SubResource("AtlasTexture_0b1cv")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ywggk"]
-load_path = "res://.godot/imported/ATLAS.png-37d4fcd85707ed5b2471bcdba3ca0312.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngbvi"]
-atlas = SubResource("CompressedTexture2D_ywggk")
-region = Rect2(6, 452, 393, 128)
+texture = ExtResource("3_ngbvi")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywggk"]
-texture = SubResource("AtlasTexture_ngbvi")
+texture = ExtResource("3_ngbvi")
 modulate_color = Color(1.0885291, 1.0885291, 1.0885291, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ngbvi"]
-load_path = "res://.godot/imported/ATLAS.png-37d4fcd85707ed5b2471bcdba3ca0312.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mishw"]
-atlas = SubResource("CompressedTexture2D_ngbvi")
-region = Rect2(6, 452, 393, 128)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h271e"]
-texture = SubResource("AtlasTexture_mishw")
+texture = ExtResource("3_ngbvi")
 modulate_color = Color(1.2461101, 1.2461101, 1.2461101, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mishw"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_8wfqe"]
-font_size = 65
-
 [sub_resource type="LabelSettings" id="LabelSettings_7pacj"]
 font = ExtResource("4_0b1cv")
 font_size = 40
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iii5b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6v77"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pxswo"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ngbvi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngbvi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h271e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dpwb"]
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_qwcqe")
@@ -59,60 +48,51 @@ script = ExtResource("1_qwcqe")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 20
 
-[node name="ColorRect" type="Panel" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.46666667, 0.3019608, 0.24705882, 0.6)
+
+[node name="SettingsPanel" type="Panel" parent="CanvasLayer"]
 process_mode = 3
 anchors_preset = -1
-offset_left = 456.0
-offset_top = 278.0
-offset_right = 1456.0
-offset_bottom = 719.0
+offset_left = 522.0
+offset_top = 211.0
+offset_right = 1464.0
+offset_bottom = 753.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ngbvi")
 metadata/_edit_use_anchors_ = true
 
-[node name="BackButton" type="Button" parent="CanvasLayer/ColorRect"]
+[node name="BackButton" type="Button" parent="CanvasLayer/SettingsPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.28800002
 anchor_top = 0.80700004
 anchor_right = 0.28800002
 anchor_bottom = 0.80700004
-offset_left = -173.00003
-offset_top = -55.887024
-offset_right = 173.99997
-offset_bottom = 56.112976
+offset_left = 67.70395
+offset_top = -97.39401
+offset_right = 311.70398
+offset_bottom = -12.394012
 theme_override_styles/normal = SubResource("StyleBoxTexture_mishw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ywggk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_h271e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mishw")
 text = "BACK"
 
-[node name="MenuLabel" type="Label" parent="CanvasLayer/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingsPanel"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.47400004
-anchor_top = 0.238
-anchor_right = 0.47400004
-anchor_bottom = 0.238
-offset_left = -153.00003
-offset_top = -46.958
-offset_right = 152.99997
-offset_bottom = 47.042
-theme = ExtResource("3_0b1cv")
-theme_override_font_sizes/font_size = 25
-text = "SETTINGS"
-label_settings = SubResource("LabelSettings_8wfqe")
+offset_left = 73.0
+offset_top = 122.0
+offset_right = 779.0
+offset_bottom = 288.0
+theme_override_constants/separation = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 151.0
-offset_right = 868.0
-offset_bottom = 273.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
 layout_mode = 2
 
-[node name="SFXLabel" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer/HBoxContainer"]
+[node name="SFXLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme = ExtResource("3_0b1cv")
@@ -120,15 +100,21 @@ text = "SFX"
 label_settings = SubResource("LabelSettings_7pacj")
 horizontal_alignment = 1
 
-[node name="SFXSlider" type="HSlider" parent="CanvasLayer/ColorRect/VBoxContainer/HBoxContainer"]
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("6_mishw")
+theme_override_icons/grabber_highlight = ExtResource("6_mishw")
+theme_override_icons/grabber_disabled = ExtResource("6_mishw")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_iii5b")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_r6v77")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_pxswo")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
 layout_mode = 2
 
-[node name="MusicLabel" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer/HBoxContainer2"]
+[node name="MusicLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme = ExtResource("3_0b1cv")
@@ -136,11 +122,18 @@ text = "Music"
 label_settings = SubResource("LabelSettings_7pacj")
 horizontal_alignment = 1
 
-[node name="MusicSlider" type="HSlider" parent="CanvasLayer/ColorRect/VBoxContainer/HBoxContainer2"]
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("7_h271e")
+theme_override_icons/grabber_highlight = ExtResource("7_h271e")
+theme_override_icons/grabber_disabled = ExtResource("7_h271e")
+theme_override_icons/tick = SubResource("ImageTexture_ngbvi")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_ngbvi")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_h271e")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7dpwb")
 
-[connection signal="button_up" from="CanvasLayer/ColorRect/BackButton" to="." method="_on_back_button_button_up"]
-[connection signal="value_changed" from="CanvasLayer/ColorRect/VBoxContainer/HBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/ColorRect/VBoxContainer/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="button_up" from="CanvasLayer/SettingsPanel/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="value_changed" from="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
