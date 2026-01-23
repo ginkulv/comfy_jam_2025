@@ -1,7 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://i1l77n8k2vbs"]
+[gd_scene load_steps=31 format=3 uid="uid://i1l77n8k2vbs"]
 
 [ext_resource type="Script" uid="uid://fpty4ovuplec" path="res://scripts/player_control.gd" id="1_g2els"]
-[ext_resource type="DragonBonesFactory" uid="uid://bj2mwc7n5hm64" path="res://assets/sprites/gnom/new_dragon_bones_factory.tres" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cokhcs8pen7yk" path="res://assets/sprites/gnom_idle/Armature_idle_00.png" id="3_31cv2"]
+[ext_resource type="Texture2D" uid="uid://di08b6ygyp35q" path="res://assets/sprites/gnom_idle/Armature_idle_01.png" id="4_pf23h"]
+[ext_resource type="Texture2D" uid="uid://4gn15p1tdtgf" path="res://assets/sprites/gnom_idle/Armature_idle_02.png" id="5_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://dh1msfj32i35" path="res://assets/sprites/gnom_idle/Armature_idle_03.png" id="6_wqfne"]
+[ext_resource type="Texture2D" uid="uid://ciid3adx7wgh" path="res://assets/sprites/gnom_idle/Armature_idle_04.png" id="7_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://dcaqe1d5rfpm2" path="res://assets/sprites/gnom_idle/Armature_idle_05.png" id="8_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://codqhnmuw8xi2" path="res://assets/sprites/gnom_idle/Armature_idle_06.png" id="9_487ah"]
+[ext_resource type="Texture2D" uid="uid://6bgfidrx6gln" path="res://assets/sprites/gnom_idle/Armature_idle_07.png" id="10_md1ol"]
+[ext_resource type="Texture2D" uid="uid://dmti1cc6ui5ir" path="res://assets/sprites/gnom_idle/Armature_idle_08.png" id="11_bj30b"]
+[ext_resource type="Texture2D" uid="uid://d3eft2dt4utrk" path="res://assets/sprites/gnom_idle/Armature_idle_09.png" id="12_jc3p3"]
+[ext_resource type="Texture2D" uid="uid://dum1wjewxbk0r" path="res://assets/sprites/gnom_idle/Armature_idle_10.png" id="13_hax0n"]
+[ext_resource type="Texture2D" uid="uid://0okaequ0mmch" path="res://assets/sprites/gnom_idle/Armature_idle_11.png" id="14_t4otl"]
+[ext_resource type="Texture2D" uid="uid://banlh7v0ga643" path="res://assets/sprites/gnom_idle/Armature_idle_12.png" id="15_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://b3wvi5l2ev150" path="res://assets/sprites/gnom_idle/Armature_idle_13.png" id="16_cs1tg"]
+[ext_resource type="Texture2D" uid="uid://bw8meabufcu5x" path="res://assets/sprites/gnom_idle/Armature_idle_14.png" id="17_2dvfe"]
+[ext_resource type="Texture2D" uid="uid://cs5r4eqpk2ufl" path="res://assets/sprites/gnom_idle/Armature_idle_15.png" id="18_giy8y"]
+[ext_resource type="Texture2D" uid="uid://c7d2ypmswl120" path="res://assets/sprites/gnom_idle/Armature_idle_16.png" id="19_fdfoy"]
+[ext_resource type="Texture2D" uid="uid://dq1uooly7m2lm" path="res://assets/sprites/gnom_walk/Armature_walk_0.png" id="20_hhpqf"]
+[ext_resource type="Texture2D" uid="uid://c5er62pqkhh0i" path="res://assets/sprites/gnom_walk/Armature_walk_1.png" id="21_g5jhy"]
+[ext_resource type="Texture2D" uid="uid://clx3xe7x4j4xo" path="res://assets/sprites/gnom_walk/Armature_walk_2.png" id="22_holxr"]
+[ext_resource type="Texture2D" uid="uid://biji33q3bpya4" path="res://assets/sprites/gnom_walk/Armature_walk_3.png" id="23_mx1m4"]
+[ext_resource type="Texture2D" uid="uid://diiipih62drod" path="res://assets/sprites/gnom_walk/Armature_walk_4.png" id="24_4gjji"]
+[ext_resource type="Texture2D" uid="uid://cmfntaxp02j5b" path="res://assets/sprites/gnom_walk/Armature_walk_5.png" id="25_u2ulf"]
+[ext_resource type="Texture2D" uid="uid://ca1nj8fuoy6kt" path="res://assets/sprites/gnom_walk/Armature_walk_6.png" id="26_6e8lb"]
+[ext_resource type="Texture2D" uid="uid://oxeyy2cw5hn4" path="res://assets/sprites/gnom_walk/Armature_walk_7.png" id="27_2gdjj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 189.0
@@ -17,6 +41,94 @@ fill = 1
 fill_from = Vector2(0.50427353, 0.4871795)
 fill_to = Vector2(0, 0)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_sc3ue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_487ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_md1ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bj30b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jc3p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hax0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t4otl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j2b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cs1tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2dvfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_giy8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fdfoy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_hhpqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_g5jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_holxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mx1m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4gjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_u2ulf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6e8lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_2gdjj")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_g2els")
@@ -28,18 +140,31 @@ shape = SubResource("CapsuleShape2D_g2els")
 [node name="right_light" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(110.000015, 64)
-scale = Vector2(5.625, 5.625)
+scale = Vector2(6.1, 6.1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_qhqgy")
+
+[node name="right_light2" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(110.000015, 64)
+scale = Vector2(12, 12)
+energy = 0.4
 texture = SubResource("GradientTexture2D_qhqgy")
 
 [node name="left_light" type="PointLight2D" parent="."]
 position = Vector2(-108.999985, 66)
-scale = Vector2(5.625, 5.625)
+scale = Vector2(6.1, 6.1)
+energy = 1.2
 texture = SubResource("GradientTexture2D_qhqgy")
 
-[node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]
-factory = ExtResource("3_qhqgy")
-armature_settings = {
-&"current_animation": "idle",
-"sub_armatures": {}
-}
-scale = Vector2(0.15999946, 0.15999946)
+[node name="left_light2" type="PointLight2D" parent="."]
+position = Vector2(-108.999985, 66)
+scale = Vector2(12, 12)
+energy = 0.4
+texture = SubResource("GradientTexture2D_qhqgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_sc3ue")
+animation = &"walk"
+autoplay = "idle"

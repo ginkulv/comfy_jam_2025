@@ -30,3 +30,8 @@ func check_all_lit():
         GameState.set_flag("all_lamps_lit")
         AudioManager.add_layer()
         AudioManager.add_layer()
+        MessageManager.display_text_by_id("all_lamps_lit")
+        return
+    
+    MessageManager.display_text_by_id("lamp_lit")
+    
