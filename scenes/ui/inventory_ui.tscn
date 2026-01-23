@@ -40,7 +40,6 @@ offset_top = -56.981003
 offset_right = 405.87988
 offset_bottom = 57.018997
 theme = ExtResource("3_bsps8")
-text = "Example Text Example TextExample Text Example TextExample Text Example TextExample Text Example TextExample Text Example TextExampleTextExampleText Example TextExampleTextExampleTextExampleTextExampleTextExample Example//// "
 label_settings = SubResource("LabelSettings_xk7lq")
 autowrap_mode = 3
 script = ExtResource("4_nuief")

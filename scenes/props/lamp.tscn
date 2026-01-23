@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dddejuoy8amxk"]
+[gd_scene load_steps=17 format=3 uid="uid://dddejuoy8amxk"]
 
 [ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/lamp.gd" id="1_8hqu3"]
 [ext_resource type="Texture2D" uid="uid://cv3otec35qk6j" path="res://assets/sprites/atlas/lamp_off.tres" id="2_jthy0"]
@@ -11,17 +11,31 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]
 radius = 97.020615
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_838e7"]
-shader = ExtResource("4_q865l")
-shader_parameter/blend_mode = 0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gshpy"]
 shader = ExtResource("4_q865l")
 shader_parameter/blend_mode = 0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_838e7"]
+shader = ExtResource("4_q865l")
+shader_parameter/blend_mode = 3
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a0bva"]
 shader = ExtResource("4_q865l")
 shader_parameter/blend_mode = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fdo8x"]
+shader = ExtResource("4_q865l")
+shader_parameter/blend_mode = 7
+
+[sub_resource type="Gradient" id="Gradient_gshpy"]
+offsets = PackedFloat32Array(0, 0.983871)
+colors = PackedColorArray(1.8478714, 1.2829926, 0.75455755, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bwuqp"]
+gradient = SubResource("Gradient_gshpy")
+fill = 1
+fill_from = Vector2(0.53846157, 0.4871795)
+fill_to = Vector2(0, 0.517094)
 
 [sub_resource type="Gradient" id="Gradient_s2xve"]
 offsets = PackedFloat32Array(0, 0.1594203, 0.79227054)
@@ -37,7 +51,6 @@ fill_to = Vector2(0, 0)
 script = ExtResource("1_8hqu3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-5, 4)
 shape = SubResource("CircleShape2D_07hkx")
 
@@ -47,28 +60,36 @@ texture = ExtResource("2_jthy0")
 
 [node name="on" type="Sprite2D" parent="."]
 visible = false
-material = SubResource("ShaderMaterial_838e7")
-position = Vector2(6.000002, 42.000008)
-scale = Vector2(0.521551, 0.521551)
-texture = ExtResource("4_gshpy")
-
-[node name="on" type="Sprite2D" parent="on"]
 modulate = Color(1, 1, 1, 0.84705883)
 material = SubResource("ShaderMaterial_gshpy")
-position = Vector2(-17.256226, -93.950554)
+position = Vector2(-2.0000002, -6)
+scale = Vector2(0.521551, 0.521551)
 texture = ExtResource("3_xkx70")
+
+[node name="glass" type="Sprite2D" parent="on"]
+self_modulate = Color(5.1772804, 6.4776106, 4.310394, 0.9411765)
+material = SubResource("ShaderMaterial_838e7")
+position = Vector2(-5.7520785, -34.495842)
+scale = Vector2(1.0225909, 1.0001804)
+texture = ExtResource("4_gshpy")
 
 [node name="oreol" type="Sprite2D" parent="on"]
 modulate = Color(3.3550003, 2.6063821, 2.0083702, 1)
-self_modulate = Color(1, 1, 1, 0.10980392)
+self_modulate = Color(1, 1, 1, 0.7254902)
 z_as_relative = false
 material = SubResource("ShaderMaterial_a0bva")
-position = Vector2(-21.090944, -116.958855)
+position = Vector2(-3.8347197, -23.00829)
 scale = Vector2(1.1358916, 1.1358916)
 texture = ExtResource("5_c3hq0")
 
+[node name="Sprite2D" type="Sprite2D" parent="on"]
+material = SubResource("ShaderMaterial_fdo8x")
+position = Vector2(-3.8347156, 32.595085)
+scale = Vector2(2.1074407, 1.5705084)
+texture = SubResource("GradientTexture2D_bwuqp")
+
 [node name="PointLight2D" type="PointLight2D" parent="on"]
-position = Vector2(-15.338868, -101.61998)
+position = Vector2(-1.9173574, 34.512447)
 scale = Vector2(30.965082, 31.52438)
 color = Color(1.353256, 1.353256, 1.353256, 1)
 energy = 1.61

@@ -50,6 +50,7 @@ script = ExtResource("1_sl1te")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 5
+visible = false
 
 [node name="MenuLabel" type="Label" parent="CanvasLayer"]
 offset_left = 682.0
