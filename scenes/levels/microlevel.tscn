@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=36 format=3 uid="uid://20a4nwenb6bk"]
 
-[ext_resource type="Texture2D" uid="uid://bx1vabn754yqj" path="res://assets/images/room2.png" id="1_3sdmp"]
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scenes/levels/cutscene.gd" id="1_ql6yw"]
+[ext_resource type="Texture2D" uid="uid://duks3tphrlnq5" path="res://assets/sprites/photo_2026-01-22_05-41-21.jpg" id="1_vxgch"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
-[ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
+[ext_resource type="Texture2D" uid="uid://c5dnt0nwd556o" path="res://assets/images/room3.png" id="3_cjddn"]
+[ext_resource type="PackedScene" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://dlc34kcsyiwli" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
@@ -19,22 +20,29 @@
 
 [sub_resource type="Gradient" id="Gradient_ql6yw"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.02016129)
+offsets = PackedFloat32Array(0, 0.5685484)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vxgch"]
 gradient = SubResource("Gradient_ql6yw")
+width = 128
+height = 138
 fill = 1
-fill_from = Vector2(0.4957265, 0.517094)
+fill_from = Vector2(0.5252404, 0.4957265)
+
+[sub_resource type="Curve" id="Curve_cjddn"]
+_data = [Vector2(0.88333327, 0.9696969), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_13oey"]
+curve = SubResource("Curve_cjddn")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4mwer"]
-lifetime_randomness = 0.07
+lifetime_randomness = 0.11
 particle_flag_disable_z = true
 emission_shape_scale = Vector3(2.485, 2.335, 1)
 emission_shape = 1
-emission_sphere_radius = 51.46
+emission_sphere_radius = 68.2
 angular_velocity_min = -1.6093254e-05
 angular_velocity_max = -1.6093254e-05
 orbit_velocity_min = -0.014999906
@@ -47,6 +55,7 @@ linear_accel_max = -2.2351742e-06
 radial_accel_min = -2.2351742e-06
 radial_accel_max = 2.9899976
 scale_min = 0.0
+scale_max = 0.049999997
 alpha_curve = SubResource("CurveTexture_13oey")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
@@ -181,20 +190,55 @@ _data = {
 }
 
 [node name="microlevel" type="Node2D"]
-metadata/_edit_vertical_guides_ = [1024.0]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(-41, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
+metadata/_edit_vertical_guides_ = [960.0]
 metadata/_edit_horizontal_guides_ = [576.0]
 
 [node name="blizzard" type="CanvasLayer" parent="."]
 layer = -1
 follow_viewport_enabled = true
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="blizzard"]
-position = Vector2(926, 188)
-amount = 513
+[node name="backroung_window" type="Sprite2D" parent="blizzard"]
+self_modulate = Color(0.98307425, 0.98307425, 0.98307425, 1)
+position = Vector2(1204, 287)
+scale = Vector2(0.6724299, 0.6724299)
+texture = ExtResource("1_vxgch")
+
+[node name="snow" type="GPUParticles2D" parent="blizzard"]
+position = Vector2(883, 184)
+amount = 448
 texture = SubResource("GradientTexture2D_vxgch")
 lifetime = 2.6799999999999997
 preprocess = 2.17
-speed_scale = 1.13
+speed_scale = 0.28
 randomness = 0.36
 collision_base_size = 4.3
 draw_order = 0
@@ -210,12 +254,40 @@ height = 0.06
 max_distance = 6334.0
 
 [node name="background_sprite" type="Sprite2D" parent="."]
+light_mask = 3
 z_index = -10
-texture = ExtResource("1_3sdmp")
+texture = ExtResource("3_cjddn")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
 z_index = 5
@@ -226,7 +298,7 @@ right_boundary = 2200.0
 on_flip = true
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(711, -60)
+position = Vector2(688, -128)
 limit_left = 0
 limit_top = 0
 limit_right = 2340
@@ -241,7 +313,36 @@ drag_bottom_margin = 0.19
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="pickables" type="Node" parent="."]
+[node name="pickables" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
 position = Vector2(1348, 169)
@@ -259,7 +360,36 @@ item_id = 6
 message_1 = "key_not_found"
 message_2 = "key_found"
 
-[node name="zones" type="Node" parent="."]
+[node name="zones" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="fireplace" parent="zones" instance=ExtResource("6_4psif")]
 position = Vector2(539, 540)
@@ -287,7 +417,34 @@ position = Vector2(744, 341)
 lamp_id = 3
 
 [node name="music_puzzle" parent="zones" instance=ExtResource("5_q1y3u")]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(1712, 372)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
 
 [node name="Key_1" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
 position = Vector2(-146, -8)
@@ -377,7 +534,8 @@ shape = SubResource("RectangleShape2D_5qa6u")
 metadata/_edit_lock_ = true
 
 [node name="window" parent="zones" instance=ExtResource("11_pfbcd")]
-position = Vector2(925, 247)
+position = Vector2(998, 358)
+scale = Vector2(0.92, 0.92)
 
 [node name="lock" parent="zones" instance=ExtResource("12_3sdmp")]
 position = Vector2(1299, 787)
@@ -406,10 +564,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -720.0
-offset_top = -63.0
-offset_right = 720.0
-offset_bottom = 122.0
+offset_left = -699.0
+offset_top = 22.0
+offset_right = 741.0
+offset_bottom = 207.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -426,20 +584,18 @@ script = ExtResource("15_5qa6u")
 next_button = NodePath("../Button")
 fade_duration = 8.595
 fade_length = 120
-metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
 material = SubResource("ShaderMaterial_5qa6u")
 layout_mode = 0
-offset_left = 904.0
-offset_top = 671.0
-offset_right = 1120.0
-offset_bottom = 782.0
+offset_left = 850.0
+offset_top = 808.0
+offset_right = 1066.0
+offset_bottom = 919.0
 theme_override_fonts/font = ExtResource("14_5qa6u")
 theme_override_font_sizes/font_size = 71
 text = "Start"
 flat = true
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/begin_cutscene"]
 root_node = NodePath("../..")
