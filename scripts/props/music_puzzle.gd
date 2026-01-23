@@ -2,6 +2,8 @@ extends Node2D
 
 @export var correct_sequence: Array[int] = [1, 3, 2, 3, 4]
 
+signal OnWinningTheGame
+
 var input_sequence : Array[int] = []
 var number_of_attempts : int = 0
 
@@ -20,6 +22,7 @@ func register_note(note_id: int) -> void:
         return
     
     if input_sequence.size() == correct_sequence.size():
+        emit_signal("OnWinningTheGame")
         print("Victory!")
         #запускаем финальную катсцену
 
