@@ -11,7 +11,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
     AudioManager.play_sfx("sfx_pickitem.wav")
     AudioManager.add_layer()
     MessageManager.display_text_by_id("ladder_found")
-    lock.queue_free()
+    var tween = create_tween()
+    tween.tween_property(lock, "modulate:a", 0.0, 0.5)
+    tween.tween_callback(lock.queue_free)
 
 func _gui_input(event):
     if event is InputEventMouseButton \
