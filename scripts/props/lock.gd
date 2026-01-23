@@ -10,6 +10,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
     GameState.set_flag("ladder_standing")
     AudioManager.play_sfx("sfx_pickitem.wav")
     AudioManager.add_layer()
+    MessageManager.display_text_by_id("ladder_found")
     lock.queue_free()
 
 func _gui_input(event):
@@ -17,4 +18,5 @@ func _gui_input(event):
     and event.pressed \
     and event.button_index == MOUSE_BUTTON_LEFT:
         AudioManager.play_sfx("sfx_door_close.wav")
+        MessageManager.display_text_by_id("ladder_not_found")
     

@@ -201,7 +201,6 @@ draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_4mwer")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 light_mask = 2
 color = Color(0.9934115, 0.89138603, 0.86781704, 1)
 energy = 16.0
@@ -246,13 +245,19 @@ editor_draw_drag_margin = true
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
 position = Vector2(1348, 169)
+message_1 = "firewood_not_found"
+message_2 = "firewood_found"
 
 [node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
 position = Vector2(830, 446)
+message_1 = "matches_not_found"
+message_2 = "matches_found"
 
 [node name="key" parent="pickables" instance=ExtResource("9_t7v5p")]
 position = Vector2(2256, 846)
 item_id = 6
+message_1 = "key_not_found"
+message_2 = "key_found"
 
 [node name="zones" type="Node" parent="."]
 

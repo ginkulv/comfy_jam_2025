@@ -6,7 +6,6 @@ extends Node2D
 func _ready():
     LightingManager.setup(room_light)
     GameState.change_state(GameState.PLAYING)
-    AudioManager.play_sfx("window_open.wav", 0.3)
 
 func _on_exit_button_button_up():
     get_tree().quit()

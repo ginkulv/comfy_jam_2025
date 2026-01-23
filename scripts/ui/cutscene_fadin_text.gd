@@ -43,4 +43,7 @@ func _on_tween_finished():
 
 
 func _on_button_button_down() -> void:
+    await get_tree().create_timer(5.5).timeout
     GameState.input_locked = false
+    MessageManager.display_text_by_id("start")
+    
