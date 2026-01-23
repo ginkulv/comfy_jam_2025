@@ -54,14 +54,13 @@ func _ready() -> void:
         sfx_players.append(sfx_player)
         add_child(sfx_player)
 
-func play_sfx(sfx_name_with_extension: String, loop: bool = false) -> void:
+func play_sfx(sfx_name_with_extension: String, volume_linear: float = 1) -> void:
     var stream = load("res://assets/sfx/" + sfx_name_with_extension)
-    if stream is AudioStreamMP3 or stream is AudioStreamOggVorbis:
-        stream.loop = loop
 
-    for player in sfx_players:
+    for player: AudioStreamPlayer in sfx_players:
         if !player.playing:
             player.stream = stream
+            player.volume_linear = volume_linear
             player.play()
             break
 

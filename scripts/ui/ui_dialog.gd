@@ -6,7 +6,7 @@ func _ready() -> void:
     MessageManager.message_shown.connect(_on_message_shown)
 
 func _on_message_shown(message: String) -> void:
-    AudioManager.play_sfx("typewriter.wav", true)
+    AudioManager.play_sfx("typewriter.wav")
     visible_ratio = 0
     text = message
     var tween = get_tree().create_tween()
