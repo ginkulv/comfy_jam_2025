@@ -21,7 +21,7 @@ func _input_event(_viewport, event, _shape_idx):
         await get_tree().create_timer(0.8).timeout
         AudioManager.stop_sfx("sfx_blizzard.wav")
         AudioManager.stop_sfx("window_open.wav")
-        AudioManager.play_sfx("sfx_blizzard_shut.wav", 0.05)
+        AudioManager.play_sfx("sfx_blizzard_shut.wav", 0.1)
         await get_tree().create_timer(0.5).timeout
         MessageManager.display_text_by_id("window_closed")
              
