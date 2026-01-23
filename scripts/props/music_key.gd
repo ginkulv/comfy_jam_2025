@@ -14,7 +14,7 @@ func _input_event(_viewport, event, _shape_idx):
     and event.button_index == MOUSE_BUTTON_LEFT:
         puzzle.register_note(note_id)
         var note_name = str(note_id)
-        AudioManager.play_sfx("sfx_xylophone_" + note_name + ".wav")
+        AudioManager.play_sfx("sfx_xylophone_" + note_name + ".wav", 1.4)
         print(note_name)
    
 func can_play() -> bool:

@@ -18,6 +18,7 @@ func _input_event(_viewport, event, _shape_idx):
     and event.button_index == MOUSE_BUTTON_LEFT:
         GameState.set_flag("window_closed")
         AudioManager.play_sfx("closing_window.wav")
+        await get_tree().create_timer(0.8).timeout
         AudioManager.stop_sfx("sfx_blizzard.wav")
         AudioManager.stop_sfx("window_open.wav")
         AudioManager.play_sfx("sfx_blizzard_shut.wav", 0.05)

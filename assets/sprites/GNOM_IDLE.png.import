@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtekkq2hloq32"
-path="res://.godot/imported/golden_apple.png-6344adb88c4b5d03498783b98d2d524d.ctex"
+uid="uid://d4iojpdlgvckd"
+path="res://.godot/imported/GNOM_IDLE.png-3d3e0b50a5a0b76ae55e8b53649a1f17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/golden_apple.png"
-dest_files=["res://.godot/imported/golden_apple.png-6344adb88c4b5d03498783b98d2d524d.ctex"]
+source_file="res://assets/sprites/GNOM_IDLE.png"
+dest_files=["res://.godot/imported/GNOM_IDLE.png-3d3e0b50a5a0b76ae55e8b53649a1f17.ctex"]
 
 [params]
 
