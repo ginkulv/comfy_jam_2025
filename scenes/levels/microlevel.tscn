@@ -267,7 +267,7 @@ position = Vector2(338, 798)
 lamp_id = 1
 
 [node name="lamp4" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(1257.9999, 460.99997)
+position = Vector2(1249, 599)
 scale = Vector2(0.605, 0.605)
 lamp_id = 4
 
@@ -389,6 +389,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="cutscenes/begin_cutscene/narrative" node_paths=PackedStringArray("next_button")]
 material = SubResource("ShaderMaterial_ql6yw")
@@ -408,7 +409,7 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("14_5qa6u")
 theme_override_font_sizes/normal_font_size = 31
 bbcode_enabled = true
-text = "[center]...There walked a luckless gnome, Gribnarr, along that path where all maps end and fears begin. He had strayed too far from the depths — to a place where the earth forgets stone, and time forgets itself. And then he saw It. The tower. The lighthouse. A silent sentinel in the pitch-black darkness. No fire of hope burned in its windows — only a cold, ancient glow, both beckoning and warning. \"And what if inside... there is no light?\" he whispered, yet his feet carried him toward the heavy door of their own accord.
+text = "[center]...There walked a luckless gnome, Gribnarr, along that path where all maps end and fears begin. He had strayed too far from the depths — to a place where the earth forgets stone, and time forgets itself. And then he saw It. The tower. The lighthouse. A silent sentinel in the pitch-black darkness. No fire of hope burned in its windows — only a cold, ancient glow, both beckoning and warning. \"And what if inside... there is no light?\" gnome whispered, yet his feet carried him toward the heavy door of their own accord.
 It did not occur to Gribnarr that this was not the end of the road. It was merely the first riddle.[/center]"
 autowrap_mode = 2
 horizontal_alignment = 1
@@ -418,6 +419,7 @@ script = ExtResource("15_5qa6u")
 next_button = NodePath("../Button")
 fade_duration = 8.595
 fade_length = 120
+metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
 material = SubResource("ShaderMaterial_5qa6u")
@@ -430,6 +432,7 @@ theme_override_fonts/font = ExtResource("14_5qa6u")
 theme_override_font_sizes/font_size = 71
 text = "Start"
 flat = true
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/begin_cutscene"]
 root_node = NodePath("../..")
