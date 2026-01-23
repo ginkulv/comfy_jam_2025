@@ -1,10 +1,10 @@
 [gd_scene load_steps=35 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Texture2D" uid="uid://bx1vabn754yqj" path="res://assets/images/room2.png" id="1_3sdmp"]
-[ext_resource type="Script" uid="uid://dxn1cbs5fame3" path="res://scenes/levels/cutscene.gd" id="1_ql6yw"]
+[ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scenes/levels/cutscene.gd" id="1_ql6yw"]
 [ext_resource type="AudioStream" uid="uid://dupcsyskdnj7q" path="res://assets/sfx/sfx_blizzard.wav" id="1_vxgch"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
-[ext_resource type="PackedScene" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
+[ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://dlc34kcsyiwli" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://5aysjs1fwdih" path="res://scenes/props/lock.tscn" id="12_3sdmp"]
 [ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="13_tex4q"]
 [ext_resource type="FontFile" uid="uid://dgo3t53sw2gy2" path="res://assets/fonts/Junicode.ttf" id="14_5qa6u"]
-[ext_resource type="Script" uid="uid://co7wrul3cmlhu" path="res://scripts/ui/cutscene_fadin_text.gd" id="15_5qa6u"]
+[ext_resource type="Script" uid="uid://bl5uldjmqbeg0" path="res://scripts/ui/cutscene_fadin_text.gd" id="15_5qa6u"]
 
 [sub_resource type="Gradient" id="Gradient_ql6yw"]
 interpolation_mode = 1
@@ -223,6 +223,7 @@ metadata/_edit_lock_ = true
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
+z_index = 5
 position = Vector2(313, 636)
 scale = Vector2(1, 1)
 left_boundary = 150.0
@@ -380,6 +381,7 @@ script = ExtResource("1_ql6yw")
 [node name="begin_cutscene" type="Node" parent="cutscenes"]
 
 [node name="narrative" type="Control" parent="cutscenes/begin_cutscene"]
+z_index = 20
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
