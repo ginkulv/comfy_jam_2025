@@ -1,8 +1,125 @@
-[gd_scene load_steps=8 format=3 uid="uid://dddejuoy8amxk"]
+[gd_scene load_steps=16 format=3 uid="uid://dddejuoy8amxk"]
 
 [ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/lamp.gd" id="1_8hqu3"]
+[ext_resource type="Texture2D" uid="uid://d0c6b16c2at6m" path="res://assets/sprites/atlas/lamp_base.tres" id="2_fdo8x"]
+[ext_resource type="Texture2D" uid="uid://bf557oyarxpy1" path="res://assets/sprites/atlas/lamp_fire.tres" id="3_gshpy"]
 [ext_resource type="Script" uid="uid://x433g3oufx3l" path="res://scripts/props/lamp_control.gd" id="3_mht1s"]
+[ext_resource type="Texture2D" uid="uid://bivle5ty4pym5" path="res://assets/sprites/atlas/lamp_glass.tres" id="4_bwuqp"]
 [ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="4_q865l"]
+[ext_resource type="Texture2D" uid="uid://btuklphk2re1p" path="res://assets/sprites/atlas/lamp_glass_light.tres" id="5_838e7"]
+[ext_resource type="Texture2D" uid="uid://cpr8v6jh23sco" path="res://assets/sprites/atlas/lamp_galo2.tres" id="6_bwuqp"]
+[ext_resource type="Texture2D" uid="uid://dyl5lj7dw7pa1" path="res://assets/sprites/atlas/lamp_galo.tres" id="8_838e7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]
+radius = 97.020615
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gshpy"]
+shader = ExtResource("4_q865l")
+shader_parameter/blend_mode = 0
+
+[sub_resource type="Shader" id="Shader_oygg1"]
+code = "shader_type canvas_item;
+render_mode unshaded;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
+uniform int blend_mode : hint_enum(
+	\"Normal\", // 0
+	\"Darken\", // 1
+	\"Multiply\", // 2
+	\"Lighten\", // 3
+	\"Screen\", // 4
+	\"Overlay\", // 5
+	\"Hard Light\", // 6
+	\"Add\", // 7
+	\"Subtract\", // 8
+	\"Difference\", // 9
+	\"Invert\", // 10
+	\"Alpha\", // 11
+	\"Erase\" // 12
+) = 0;
+
+// most from https://godotshaders.com/snippet/blending-modes/
+vec3 multiply(vec3 base, vec3 blend){
+	return base * blend;
+}
+
+vec3 screen(vec3 base, vec3 blend){
+	return 1.0 - (1.0 - base) * (1.0 - blend);
+}
+
+vec3 darken(vec3 base, vec3 blend){
+	return min(base, blend);
+}
+
+vec3 lighten(vec3 base, vec3 blend){
+	return max(base, blend);
+}
+
+vec3 difference(vec3 base, vec3 blend){
+	return abs(base - blend);
+}
+
+vec3 overlay(vec3 base, vec3 blend){
+	vec3 limit = step(0.5, base);
+	return mix(2.0 * base * blend, 1.0 - 2.0 * (1.0 - base) * (1.0 - blend), limit);
+}
+
+vec3 linear_dodge(vec3 base, vec3 blend) {
+	return base + blend;
+}
+
+vec3 subtract(vec3 base, vec3 blend) {
+	return base - blend;
+}
+
+vec3 invert(vec3 base) {
+	return vec3(1.0) - base;
+}
+
+void fragment() {
+	if (blend_mode > 0) {
+		vec4 screen_c = texture(SCREEN_TEXTURE, SCREEN_UV);
+		switch (blend_mode) {
+			case 1:
+				COLOR.rgb = darken(COLOR.rgb, screen_c.rgb);
+				break;
+			case 2:
+				COLOR.rgb = multiply(COLOR.rgb, screen_c.rgb);
+				break;
+			case 3:
+				COLOR.rgb = lighten(COLOR.rgb, screen_c.rgb);
+				break;
+			case 4:
+				COLOR.rgb = screen(COLOR.rgb, screen_c.rgb);
+				break;
+			case 5:
+				COLOR.rgb = overlay(screen_c.rgb, COLOR.rgb);
+				break;
+			case 6:
+				COLOR.rgb = overlay(COLOR.rgb, screen_c.rgb);
+				break;
+			case 7:
+				COLOR.rgb = linear_dodge(COLOR.rgb, screen_c.rgb);
+				break;
+			case 8:
+				COLOR.rgb = subtract(screen_c.rgb, COLOR.rgb);
+				break;
+			case 9:
+				COLOR.rgb = difference(COLOR.rgb, screen_c.rgb);
+				break;
+			case 10:
+				COLOR.rgb = invert(screen_c.rgb);
+				break;
+			case 11: // adobe animate skill issue
+			case 12:
+				discard;
+				break;
+		}
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxu02"]
+shader = SubResource("Shader_oygg1")
+shader_parameter/blend_mode = 7
 
 [sub_resource type="Gradient" id="Gradient_s2xve"]
 offsets = PackedFloat32Array(0, 0.1594203, 0.79227054)
@@ -14,33 +131,70 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]
-radius = 97.020615
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gshpy"]
-shader = ExtResource("4_q865l")
-shader_parameter/blend_mode = 0
-
 [node name="lamp" type="Area2D"]
+scale = Vector2(0.6473421, 0.6473421)
 script = ExtResource("1_8hqu3")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(16.14987, 16.441572)
-color = Color(1.353256, 1.353256, 1.353256, 1)
-energy = 1.61
-texture = SubResource("GradientTexture2D_gksna")
-texture_scale = 1.17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_07hkx")
 
+[node name="LampBase" type="Sprite2D" parent="."]
+position = Vector2(13, 54)
+texture = ExtResource("2_fdo8x")
+
 [node name="off" type="Node2D" parent="."]
 scale = Vector2(0.522, 0.522)
 
+[node name="LampGlass" type="Sprite2D" parent="off"]
+position = Vector2(-5.7470703, -130.26819)
+scale = Vector2(1.9157089, 1.9157089)
+texture = ExtResource("4_bwuqp")
+
 [node name="on" type="Node2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.84705883)
 material = SubResource("ShaderMaterial_gshpy")
 scale = Vector2(0.521551, 0.521551)
+
+[node name="LampGlassLight" type="Sprite2D" parent="on"]
+material = SubResource("ShaderMaterial_yxu02")
+position = Vector2(-1.917358, -126.54562)
+scale = Vector2(1.917358, 1.917358)
+texture = ExtResource("5_838e7")
+
+[node name="LampGalo2" type="Sprite2D" parent="on"]
+modulate = Color(1, 1, 1, 0.3372549)
+material = SubResource("ShaderMaterial_yxu02")
+position = Vector2(-5.752136, -109.289406)
+scale = Vector2(2.2011776, 2.2011776)
+texture = ExtResource("6_bwuqp")
+
+[node name="LampGalo3" type="Sprite2D" parent="on"]
+modulate = Color(2.056219, 2.056219, 2.056219, 0.4745098)
+material = SubResource("ShaderMaterial_yxu02")
+position = Vector2(-3.834732, -17.256256)
+scale = Vector2(1.0753604, 1.0753604)
+texture = ExtResource("6_bwuqp")
+
+[node name="LampFire" type="Sprite2D" parent="on"]
+material = SubResource("ShaderMaterial_yxu02")
+position = Vector2(-1.9174196, -11.5041485)
+scale = Vector2(1.917358, 1.917358)
+texture = ExtResource("3_gshpy")
+
+[node name="LampGalo" type="Sprite2D" parent="on"]
+material = SubResource("ShaderMaterial_yxu02")
+position = Vector2(-1.9174196, -116.95883)
+scale = Vector2(1.917358, 1.917358)
+texture = ExtResource("8_838e7")
+
+[node name="PointLight2D" type="PointLight2D" parent="on"]
+position = Vector2(-3.8347156, -115.041466)
+scale = Vector2(30.965082, 31.52438)
+color = Color(1.353256, 1.353256, 1.353256, 1)
+energy = 1.61
+texture = SubResource("GradientTexture2D_gksna")
+texture_scale = 1.17
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
