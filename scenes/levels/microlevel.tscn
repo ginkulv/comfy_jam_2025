@@ -357,6 +357,7 @@ draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_4mwer")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 light_mask = 2
 color = Color(0.9934115, 0.89138603, 0.86781704, 1)
 energy = 16.0
@@ -424,7 +425,9 @@ message_2 = "key_found"
 [node name="zones" type="Node2D" parent="."]
 
 [node name="fireplace" parent="zones" instance=ExtResource("6_4psif")]
-position = Vector2(538, 539)
+z_index = -2
+position = Vector2(543, 543)
+scale = Vector2(0.555, 0.555)
 
 [node name="lamp" parent="zones" instance=ExtResource("6_q1y3u")]
 position = Vector2(393.00003, 829.00006)

@@ -3,7 +3,7 @@ extends Area2D
 var window_closed : bool = false
 func _ready() -> void:
     AudioManager.play_sfx("sfx_blizzard.wav")
-    AudioManager.play_sfx("window_open.wav", 0.3)
+    AudioManager.play_sfx("window_open.wav", 0.6)
     get_node("Node2D/open").visible = true 
     get_node("Node2D/close").visible = false
 

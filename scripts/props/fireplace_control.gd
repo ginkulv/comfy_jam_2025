@@ -8,7 +8,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
     InventoryManager.remove_item(data.item_id)
-    AudioManager.play_sfx("sfx_matches.wav")
+    AudioManager.play_sfx("sfx_fireplace.wav")
     GameState.set_flag("room_unfrozen")
     AudioManager.add_layer()
     MessageManager.display_text_by_id("fireplace_lit")
