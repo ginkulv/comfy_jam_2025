@@ -288,8 +288,8 @@ centered = false
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
-z_index = 5
-position = Vector2(313, 636)
+z_index = -1
+position = Vector2(305, 646)
 scale = Vector2(1, 1)
 left_boundary = 150.0
 right_boundary = 2200.0
@@ -314,11 +314,13 @@ editor_draw_drag_margin = true
 [node name="pickables" type="Node2D" parent="."]
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
+z_index = -2
 position = Vector2(1348, 169)
 message_1 = "firewood_not_found"
 message_2 = "firewood_found"
 
 [node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
+z_index = -2
 position = Vector2(830, 446)
 message_1 = "matches_not_found"
 message_2 = "matches_found"
@@ -339,20 +341,24 @@ position = Vector2(338, 798)
 lamp_id = 1
 
 [node name="lamp4" parent="zones" instance=ExtResource("6_q1y3u")]
+z_index = -2
 position = Vector2(1418.9999, 595)
 scale = Vector2(0.605, 0.605)
 lamp_id = 4
 
 [node name="lamp5" parent="zones" instance=ExtResource("6_q1y3u")]
+z_index = -2
 position = Vector2(1257, 358)
 scale = Vector2(0.605, 0.605)
 lamp_id = 5
 
 [node name="lamp2" parent="zones" instance=ExtResource("6_q1y3u")]
+z_index = -2
 position = Vector2(1806, 527)
 lamp_id = 2
 
 [node name="lamp3" parent="zones" instance=ExtResource("6_q1y3u")]
+z_index = -2
 position = Vector2(744, 341)
 lamp_id = 3
 
@@ -452,6 +458,7 @@ scale = Vector2(0.92, 0.92)
 metadata/_edit_lock_ = true
 
 [node name="lock" parent="zones" instance=ExtResource("12_3sdmp")]
+z_index = -2
 position = Vector2(1299, 787)
 
 [node name="cutscenes" type="Node" parent="."]
@@ -471,6 +478,7 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="cutscenes/begin_cutscene/narrative" node_paths=PackedStringArray("next_button")]
+z_index = -2
 material = SubResource("ShaderMaterial_ql6yw")
 layout_mode = 1
 anchors_preset = 8

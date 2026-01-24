@@ -12,7 +12,7 @@ func _input_event(_viewport, event, _shape_idx):
         return
     
     if window_closed:
-        MessageManager.display_text_by_id("window_after")
+        #MessageManager.display_text_by_id("window_after")
         return
     
     if event is InputEventMouseButton \
@@ -26,6 +26,7 @@ func _input_event(_viewport, event, _shape_idx):
         AudioManager.stop_sfx("sfx_blizzard.wav")
         AudioManager.stop_sfx("window_open.wav")
         AudioManager.play_sfx("sfx_blizzard_shut.wav", 0.1)
+        window_closed = true
         await get_tree().create_timer(0.5).timeout
         MessageManager.display_text_by_id("window_closed")
              
