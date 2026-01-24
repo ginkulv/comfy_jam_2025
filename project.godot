@@ -39,6 +39,7 @@ movie_writer/disable_vsync=true
 
 portals=""
 player=""
+snow=""
 
 [input]
 
