@@ -11,3 +11,7 @@ func play_game() -> void:
     
 func play_cutscene() -> void:
     GameState.change_state(GameState.CUTSCENE)
+
+
+func _on_music_puzzle_on_winning_the_game() -> void:
+    play_cutscene()

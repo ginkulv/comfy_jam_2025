@@ -1,9 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlc34kcsyiwli"]
+[gd_scene load_steps=10 format=3 uid="uid://dlc34kcsyiwli"]
 
 [ext_resource type="Script" uid="uid://cag5po0r5qil2" path="res://scripts/props/fireplace_control.gd" id="1_hjt24"]
+[ext_resource type="Texture2D" uid="uid://dkoy14o7g0420" path="res://assets/sprites/fire/Fire_1.png" id="2_1nfp5"]
+[ext_resource type="Texture2D" uid="uid://gpadm8fplaps" path="res://assets/sprites/fire/Fire_2.png" id="3_3o33p"]
+[ext_resource type="Texture2D" uid="uid://cj6728ferdsjy" path="res://assets/sprites/fire/Fire_3.png" id="4_mgsgx"]
+[ext_resource type="Texture2D" uid="uid://pgufcelfddy5" path="res://assets/sprites/fire/Fire_4.png" id="5_ohvu1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0i4f"]
 size = Vector2(278, 233)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfs4q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1nfp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3o33p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mgsgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ohvu1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_1nfp5"]
+offsets = PackedFloat32Array(0, 0.6333333)
+colors = PackedColorArray(0.79, 0.49506667, 0.23700002, 0.50980395, 1, 0.8235294, 0.32156864, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3o33p"]
+gradient = SubResource("Gradient_1nfp5")
+fill = 1
+fill_from = Vector2(0.4813084, 0.50934577)
+fill_to = Vector2(0.8598131, 0.17757009)
 
 [node name="fireplace" type="Area2D"]
 
@@ -28,3 +62,14 @@ color = Color(1, 1, 1, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, -17.5)
 shape = SubResource("RectangleShape2D_d0i4f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_vfs4q")
+autoplay = "default"
+frame_progress = 0.31490222
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
+position = Vector2(-1.999999, 33)
+scale = Vector2(4.28125, 3.640625)
+texture = SubResource("GradientTexture2D_3o33p")

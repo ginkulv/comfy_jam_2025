@@ -8,6 +8,8 @@ signal fade_completed
 @export var fade_length: int = 10
 @export var fade_button_start: float = 3
 
+var input_timeout : float = 5.5
+
 func _ready() -> void:
     start_fade_effect()
     GameState.input_locked = true
@@ -43,7 +45,7 @@ func _on_tween_finished():
 
 
 func _on_button_button_down() -> void:
-    await get_tree().create_timer(5.5).timeout
+    await get_tree().create_timer(input_timeout).timeout
     GameState.input_locked = false
     MessageManager.display_text_by_id("start")
     

@@ -1,8 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=43 format=3 uid="uid://20a4nwenb6bk"]
 
-[ext_resource type="Texture2D" uid="uid://bx1vabn754yqj" path="res://assets/images/room2.png" id="1_3sdmp"]
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scenes/levels/cutscene.gd" id="1_ql6yw"]
+[ext_resource type="Texture2D" uid="uid://duks3tphrlnq5" path="res://assets/sprites/photo_2026-01-22_05-41-21.jpg" id="1_vxgch"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
+[ext_resource type="Texture2D" uid="uid://dyvh1abad2rj6" path="res://assets/images/room3.png" id="3_cjddn"]
 [ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
@@ -16,25 +17,36 @@
 [ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="13_tex4q"]
 [ext_resource type="FontFile" uid="uid://dgo3t53sw2gy2" path="res://assets/fonts/Junicode.ttf" id="14_5qa6u"]
 [ext_resource type="Script" uid="uid://bl5uldjmqbeg0" path="res://scripts/ui/cutscene_fadin_text.gd" id="15_5qa6u"]
+[ext_resource type="Script" uid="uid://bwm3tpl4i4t36" path="res://scripts/ui/final_cutscene.gd" id="18_13oey"]
+[ext_resource type="Texture2D" uid="uid://2p8yw2wmx40k" path="res://assets/photo_2026-01-23_00-09-10.jpg" id="19_4mwer"]
+[ext_resource type="Texture2D" uid="uid://crw3l5a5rtih6" path="res://assets/images/photo_2026-01-18_02-18-48.jpg" id="20_4hadc"]
+[ext_resource type="Texture2D" uid="uid://bksjfcwxhabjq" path="res://assets/images/photo_2026-01-18_02-18-50.jpg" id="21_gv4x6"]
 
 [sub_resource type="Gradient" id="Gradient_ql6yw"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.02016129)
+offsets = PackedFloat32Array(0, 0.5685484)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vxgch"]
 gradient = SubResource("Gradient_ql6yw")
+width = 128
+height = 138
 fill = 1
-fill_from = Vector2(0.4957265, 0.517094)
+fill_from = Vector2(0.5252404, 0.4957265)
+
+[sub_resource type="Curve" id="Curve_cjddn"]
+_data = [Vector2(0.88333327, 0.9696969), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_13oey"]
+curve = SubResource("Curve_cjddn")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4mwer"]
-lifetime_randomness = 0.07
+lifetime_randomness = 0.11
 particle_flag_disable_z = true
 emission_shape_scale = Vector3(2.485, 2.335, 1)
 emission_shape = 1
-emission_sphere_radius = 51.46
+emission_sphere_radius = 68.2
 angular_velocity_min = -1.6093254e-05
 angular_velocity_max = -1.6093254e-05
 orbit_velocity_min = -0.014999906
@@ -47,6 +59,7 @@ linear_accel_max = -2.2351742e-06
 radial_accel_min = -2.2351742e-06
 radial_accel_max = 2.9899976
 scale_min = 0.0
+scale_max = 0.049999997
 alpha_curve = SubResource("CurveTexture_13oey")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
@@ -180,21 +193,78 @@ _data = {
 &"start_game": SubResource("Animation_5qa6u")
 }
 
+[sub_resource type="Animation" id="Animation_35dfi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ending_cutscene/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_4mwer")]
+}
+
+[sub_resource type="Animation" id="Animation_2qbig"]
+resource_name = "win"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ending_cutscene/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_4mwer"), ExtResource("20_4hadc"), ExtResource("21_gv4x6")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ending_cutscene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"quit_game"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gv4x6"]
+_data = {
+&"RESET": SubResource("Animation_35dfi"),
+&"win": SubResource("Animation_2qbig")
+}
+
 [node name="microlevel" type="Node2D"]
-metadata/_edit_vertical_guides_ = [1024.0]
+metadata/_edit_vertical_guides_ = [960.0]
 metadata/_edit_horizontal_guides_ = [576.0]
 
 [node name="blizzard" type="CanvasLayer" parent="."]
 layer = -1
 follow_viewport_enabled = true
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="blizzard"]
-position = Vector2(926, 188)
-amount = 513
+[node name="backroung_window" type="Sprite2D" parent="blizzard"]
+self_modulate = Color(0.98307425, 0.98307425, 0.98307425, 1)
+position = Vector2(1204, 287)
+scale = Vector2(0.6724299, 0.6724299)
+texture = ExtResource("1_vxgch")
+
+[node name="snow" type="GPUParticles2D" parent="blizzard"]
+position = Vector2(883, 184)
+amount = 448
 texture = SubResource("GradientTexture2D_vxgch")
 lifetime = 2.6799999999999997
 preprocess = 2.17
-speed_scale = 1.13
+speed_scale = 0.28
 randomness = 0.36
 collision_base_size = 4.3
 draw_order = 0
@@ -210,10 +280,10 @@ height = 0.06
 max_distance = 6334.0
 
 [node name="background_sprite" type="Sprite2D" parent="."]
+light_mask = 3
 z_index = -10
-texture = ExtResource("1_3sdmp")
+texture = ExtResource("3_cjddn")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
 
@@ -226,7 +296,7 @@ right_boundary = 2200.0
 on_flip = true
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(711, -60)
+position = Vector2(688, -128)
 limit_left = 0
 limit_top = 0
 limit_right = 2340
@@ -241,7 +311,7 @@ drag_bottom_margin = 0.19
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="pickables" type="Node" parent="."]
+[node name="pickables" type="Node2D" parent="."]
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
 position = Vector2(1348, 169)
@@ -259,10 +329,10 @@ item_id = 6
 message_1 = "key_not_found"
 message_2 = "key_found"
 
-[node name="zones" type="Node" parent="."]
+[node name="zones" type="Node2D" parent="."]
 
 [node name="fireplace" parent="zones" instance=ExtResource("6_4psif")]
-position = Vector2(539, 540)
+position = Vector2(538, 539)
 
 [node name="lamp" parent="zones" instance=ExtResource("6_q1y3u")]
 position = Vector2(338, 798)
@@ -377,7 +447,9 @@ shape = SubResource("RectangleShape2D_5qa6u")
 metadata/_edit_lock_ = true
 
 [node name="window" parent="zones" instance=ExtResource("11_pfbcd")]
-position = Vector2(925, 247)
+position = Vector2(998, 358)
+scale = Vector2(0.92, 0.92)
+metadata/_edit_lock_ = true
 
 [node name="lock" parent="zones" instance=ExtResource("12_3sdmp")]
 position = Vector2(1299, 787)
@@ -406,17 +478,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -720.0
-offset_top = -63.0
-offset_right = 720.0
-offset_bottom = 177.0
+offset_left = -699.0
+offset_top = 22.0
+offset_right = 741.0
+offset_bottom = 207.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("14_5qa6u")
 theme_override_font_sizes/normal_font_size = 31
 bbcode_enabled = true
-text = "[center]...There walked a luckless gnome, Gribnarr, along that path where all maps end and fears begin. He had strayed too far from the depths — to a place where the earth forgets stone, and time forgets itself. And then he saw It. The tower. The lighthouse. A silent sentinel in the pitch-black darkness. No fire of hope burned in its windows — only a cold, ancient glow, both beckoning and warning. \"And what if inside... there is no light?\" gnome whispered, yet his feet carried him toward the heavy door of their own accord.
+text = "[center]...Once there was a gnome who lost his way in a winter forest. He wandered and wandered, and when he had nearly given up all hope, he stumbled upon a tower. It stood dark and silent, cold and unwelcoming. But in such a blizzard, any roof is better than none — or so the gnome thought as he stepped inside.
 [/center]"
 autowrap_mode = 2
 horizontal_alignment = 1
@@ -426,20 +498,18 @@ script = ExtResource("15_5qa6u")
 next_button = NodePath("../Button")
 fade_duration = 8.595
 fade_length = 120
-metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
 material = SubResource("ShaderMaterial_5qa6u")
 layout_mode = 0
-offset_left = 904.0
-offset_top = 732.0
-offset_right = 1120.0
-offset_bottom = 843.0
+offset_left = 850.0
+offset_top = 808.0
+offset_right = 1066.0
+offset_bottom = 919.0
 theme_override_fonts/font = ExtResource("14_5qa6u")
 theme_override_font_sizes/font_size = 71
 text = "Start"
 flat = true
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/begin_cutscene"]
 root_node = NodePath("../..")
@@ -447,5 +517,27 @@ libraries = {
 &"": SubResource("AnimationLibrary_vxgch")
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="cutscenes"]
+
+[node name="ending_cutscene" type="Node" parent="cutscenes/CanvasLayer"]
+script = ExtResource("18_13oey")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/CanvasLayer/ending_cutscene"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_gv4x6")
+}
+
+[node name="TextureRect" type="TextureRect" parent="cutscenes/CanvasLayer/ending_cutscene"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_4mwer")
+
+[connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes" method="_on_music_puzzle_on_winning_the_game"]
+[connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes/CanvasLayer/ending_cutscene" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/narrative/RichTextLabel" method="_on_button_button_down"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/AnimationPlayer" method="play" binds= ["start_game"]]
