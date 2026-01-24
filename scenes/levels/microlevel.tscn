@@ -426,7 +426,7 @@ message_2 = "key_found"
 
 [node name="fireplace" parent="zones" instance=ExtResource("6_4psif")]
 z_index = -2
-position = Vector2(543, 543)
+position = Vector2(540, 552)
 scale = Vector2(0.555, 0.555)
 
 [node name="lamp" parent="zones" instance=ExtResource("6_q1y3u")]
