@@ -1,20 +1,22 @@
-extends Area2D
+extends PointLight2D
 
 var is_lit : bool = false
 @export var lamp_id: int
 
 func _ready():
-    LightingManager.register(self)
-    
+	LightingManager.register(self)
+	enabled = false
+	
 
 func light_up():
-    if is_lit:
-        return
-    is_lit = true
-    LightingManager.on_lamp_lit()
-    $on.visible = is_lit
-    $off.visible = false
-    AudioManager.play_sfx("sfx_matches.wav")
-    if not AudioManager.is_music_playing():
-        AudioManager.start_music()
-    
+	if is_lit:
+		return
+	is_lit = true
+	LightingManager.on_lamp_lit()
+	$lamp/on.visible = is_lit
+	$lamp/off.visible = false
+	enabled = true
+	AudioManager.play_sfx("sfx_matches.wav")
+	if not AudioManager.is_music_playing():
+		AudioManager.start_music()
+	
