@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=54 format=3 uid="uid://20a4nwenb6bk"]
 
-[ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scenes/levels/cutscene.gd" id="1_ql6yw"]
+[ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scripts/ui/cutscene.gd" id="1_ql6yw"]
 [ext_resource type="Texture2D" uid="uid://duks3tphrlnq5" path="res://assets/sprites/photo_2026-01-22_05-41-21.jpg" id="1_vxgch"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
-[ext_resource type="Texture2D" uid="uid://dyvh1abad2rj6" path="res://assets/images/room3.png" id="3_cjddn"]
+[ext_resource type="Texture2D" uid="uid://bej0e87c8llti" path="res://assets/images/room_final_final.png" id="2_4hadc"]
+[ext_resource type="Texture2D" uid="uid://cqbt2mebb5rro" path="res://assets/images/decor.png" id="3_2qbig"]
 [ext_resource type="PackedScene" uid="uid://cl6s36krg6rpb" path="res://scenes/props/music_key.tscn" id="4_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
@@ -21,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://2p8yw2wmx40k" path="res://assets/photo_2026-01-23_00-09-10.jpg" id="19_4mwer"]
 [ext_resource type="Texture2D" uid="uid://crw3l5a5rtih6" path="res://assets/images/photo_2026-01-18_02-18-48.jpg" id="20_4hadc"]
 [ext_resource type="Texture2D" uid="uid://bksjfcwxhabjq" path="res://assets/images/photo_2026-01-18_02-18-50.jpg" id="21_gv4x6"]
+[ext_resource type="Script" uid="uid://bj72sstg6ewd6" path="res://scripts/ladder_cutscene.gd" id="23_8sm3x"]
+[ext_resource type="Texture2D" uid="uid://ca1aqmp6s2ptk" path="res://assets/sprites/atlas/ladder_big.tres" id="23_35dfi"]
+[ext_resource type="Texture2D" uid="uid://djcycjk8xt41l" path="res://assets/sprites/atlas/ladder_small.tres" id="23_c7o10"]
+[ext_resource type="Texture2D" uid="uid://crenil64k002y" path="res://assets/sprites/atlas/ladder_medium.tres" id="24_8sm3x"]
 
 [sub_resource type="Gradient" id="Gradient_ql6yw"]
 interpolation_mode = 1
@@ -244,6 +249,87 @@ _data = {
 &"win": SubResource("Animation_2qbig")
 }
 
+[sub_resource type="Animation" id="Animation_a1hpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("23_35dfi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1471, 480.00003)]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2pcn"]
+atlas = ExtResource("23_c7o10")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muj0h"]
+atlas = ExtResource("24_8sm3x")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjvsw"]
+atlas = ExtResource("23_35dfi")
+
+[sub_resource type="Animation" id="Animation_c7o10"]
+resource_name = "ladder_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_p2pcn"), SubResource("AtlasTexture_muj0h"), SubResource("AtlasTexture_mjvsw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1430, 720), Vector2(1430, 650), Vector2(1430, 580), Vector2(1500, 470)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../zones/lock")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8sm3x"]
+_data = {
+&"RESET": SubResource("Animation_a1hpf"),
+&"ladder_out": SubResource("Animation_c7o10")
+}
+
 [node name="microlevel" type="Node2D"]
 metadata/_edit_vertical_guides_ = [960.0]
 metadata/_edit_horizontal_guides_ = [576.0]
@@ -282,24 +368,28 @@ max_distance = 6334.0
 [node name="background_sprite" type="Sprite2D" parent="."]
 light_mask = 3
 z_index = -10
-texture = ExtResource("3_cjddn")
+texture = ExtResource("2_4hadc")
 centered = false
+metadata/_edit_lock_ = true
+
+[node name="middleground_sprite" type="Sprite2D" parent="."]
+z_index = -9
+position = Vector2(1349, 610)
+texture = ExtResource("3_2qbig")
 
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
-z_index = 5
-position = Vector2(313, 636)
+position = Vector2(292, 659)
 scale = Vector2(1, 1)
 left_boundary = 150.0
-right_boundary = 2200.0
-on_flip = true
+right_boundary = 3000.0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(688, -128)
 limit_left = 0
 limit_top = 0
-limit_right = 2340
+limit_right = 2800
 limit_bottom = 1080
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -314,17 +404,19 @@ editor_draw_drag_margin = true
 [node name="pickables" type="Node2D" parent="."]
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
-position = Vector2(1348, 169)
+z_index = -2
+position = Vector2(1473, 142)
 message_1 = "firewood_not_found"
 message_2 = "firewood_found"
 
 [node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
+z_index = -2
 position = Vector2(830, 446)
 message_1 = "matches_not_found"
 message_2 = "matches_found"
 
 [node name="key" parent="pickables" instance=ExtResource("9_t7v5p")]
-position = Vector2(2256, 846)
+position = Vector2(2657, 822)
 item_id = 6
 message_1 = "key_not_found"
 message_2 = "key_found"
@@ -335,29 +427,34 @@ message_2 = "key_found"
 position = Vector2(538, 539)
 
 [node name="lamp" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(338, 798)
+position = Vector2(393.00003, 829.00006)
 lamp_id = 1
 
 [node name="lamp4" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(1418.9999, 595)
-scale = Vector2(0.605, 0.605)
+z_index = -2
+position = Vector2(1706, 554)
+scale = Vector2(0.44, 0.44)
 lamp_id = 4
 
 [node name="lamp5" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(1257, 358)
-scale = Vector2(0.605, 0.605)
+z_index = -2
+position = Vector2(1390, 342)
+scale = Vector2(0.34, 0.34)
 lamp_id = 5
 
 [node name="lamp2" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(1806, 527)
+z_index = -2
+position = Vector2(2276.0002, 520)
 lamp_id = 2
 
 [node name="lamp3" parent="zones" instance=ExtResource("6_q1y3u")]
+z_index = -2
 position = Vector2(744, 341)
 lamp_id = 3
 
 [node name="music_puzzle" parent="zones" instance=ExtResource("5_q1y3u")]
-position = Vector2(1712, 372)
+position = Vector2(2186, 364)
+metadata/_edit_lock_ = true
 
 [node name="Key_1" parent="zones/music_puzzle" node_paths=PackedStringArray("puzzle") instance=ExtResource("4_ui2ab")]
 position = Vector2(-146, -8)
@@ -452,7 +549,9 @@ scale = Vector2(0.92, 0.92)
 metadata/_edit_lock_ = true
 
 [node name="lock" parent="zones" instance=ExtResource("12_3sdmp")]
+z_index = -1
 position = Vector2(1299, 787)
+metadata/_edit_lock_ = true
 
 [node name="cutscenes" type="Node" parent="."]
 script = ExtResource("1_ql6yw")
@@ -471,6 +570,7 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="cutscenes/begin_cutscene/narrative" node_paths=PackedStringArray("next_button")]
+z_index = -2
 material = SubResource("ShaderMaterial_ql6yw")
 layout_mode = 1
 anchors_preset = 8
@@ -498,6 +598,7 @@ script = ExtResource("15_5qa6u")
 next_button = NodePath("../Button")
 fade_duration = 8.595
 fade_length = 120
+metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
 material = SubResource("ShaderMaterial_5qa6u")
@@ -510,6 +611,7 @@ theme_override_fonts/font = ExtResource("14_5qa6u")
 theme_override_font_sizes/font_size = 71
 text = "Start"
 flat = true
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/begin_cutscene"]
 root_node = NodePath("../..")
@@ -536,6 +638,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("19_4mwer")
+
+[node name="ladder_cutscene" type="Node" parent="cutscenes"]
+script = ExtResource("23_8sm3x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/ladder_cutscene"]
+libraries = {
+&"": SubResource("AnimationLibrary_8sm3x")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="cutscenes/ladder_cutscene"]
+visible = false
+z_index = -1
+position = Vector2(1471, 480.00003)
+scale = Vector2(0.815, 0.815)
+texture = ExtResource("23_35dfi")
 
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes/CanvasLayer/ending_cutscene" method="_on_music_puzzle_on_winning_the_game"]

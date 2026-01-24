@@ -2,6 +2,8 @@ extends Node
 
 @onready var pause_menu_scene = preload("res://scenes/ui/pause_menu.tscn")
 
+signal OnOpeningTrapDoor
+
 var input_locked : bool =  false
 var flags := {}
 enum {
