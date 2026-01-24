@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=55 format=3 uid="uid://20a4nwenb6bk"]
-=======
-[gd_scene load_steps=71 format=3 uid="uid://20a4nwenb6bk"]
->>>>>>> 2e993ce3cbdfa79e1b5080031aa4db3505143ca3
+[gd_scene load_steps=72 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scripts/ui/cutscene.gd" id="1_ql6yw"]
 [ext_resource type="Texture2D" uid="uid://duks3tphrlnq5" path="res://assets/sprites/photo_2026-01-22_05-41-21.jpg" id="1_vxgch"]
@@ -31,11 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://ca1aqmp6s2ptk" path="res://assets/sprites/atlas/ladder_big.tres" id="23_35dfi"]
 [ext_resource type="Texture2D" uid="uid://djcycjk8xt41l" path="res://assets/sprites/atlas/ladder_small.tres" id="23_c7o10"]
 [ext_resource type="Texture2D" uid="uid://crenil64k002y" path="res://assets/sprites/atlas/ladder_medium.tres" id="24_8sm3x"]
-[ext_resource type="Script" uid="uid://c4dwk715g7skb" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
+[ext_resource type="Script" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
 [ext_resource type="Texture2D" uid="uid://drnenmcy0k5ca" path="res://assets/sprites/atlas_snow/snow_12.tres" id="27_44426"]
 [ext_resource type="Texture2D" uid="uid://xnavcf00t7e6" path="res://assets/sprites/atlas_snow/snow_11.tres" id="27_muj0h"]
 [ext_resource type="Texture2D" uid="uid://dlnjm63ain16r" path="res://assets/sprites/atlas_snow/snow_10.tres" id="28_mjvsw"]
-[ext_resource type="Script" uid="uid://cfdga3qg15f6u" path="res://scripts/props/snow.gd" id="29_qoveh"]
+[ext_resource type="Script" path="res://scripts/props/snow.gd" id="29_qoveh"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
 [ext_resource type="Texture2D" uid="uid://nxvguluw5yes" path="res://assets/sprites/atlas_snow/snow_5.tres" id="32_qoveh"]
@@ -460,15 +456,8 @@ position = Vector2(393.00003, 829.00006)
 texture_scale = 21.38
 lamp_id = 1
 
-<<<<<<< HEAD
 [node name="candle" parent="zones" instance=ExtResource("11_p2pcn")]
 position = Vector2(1903, 568.00006)
-=======
-[node name="lamp4" parent="zones" instance=ExtResource("6_q1y3u")]
-z_index = 5
-position = Vector2(1706, 554)
-scale = Vector2(0.44, 0.44)
->>>>>>> 2e993ce3cbdfa79e1b5080031aa4db3505143ca3
 lamp_id = 4
 
 [node name="lamp5" parent="zones" instance=ExtResource("6_q1y3u")]
