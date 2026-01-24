@@ -133,38 +133,37 @@ animations = [{
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_g2els")
 move_speed = 10000.0
+on_flip = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="right_light" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(110.000015, 64)
 scale = Vector2(6.1, 6.1)
 energy = 1.2
 texture = SubResource("GradientTexture2D_qhqgy")
 
-[node name="right_light2" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(110.000015, 64)
-scale = Vector2(12, 12)
+[node name="right_light2" type="PointLight2D" parent="right_light"]
+scale = Vector2(1.9672133, 1.9672133)
 energy = 0.4
 texture = SubResource("GradientTexture2D_qhqgy")
 
 [node name="left_light" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(-108.999985, 66)
 scale = Vector2(6.1, 6.1)
 energy = 1.2
 texture = SubResource("GradientTexture2D_qhqgy")
 
-[node name="left_light2" type="PointLight2D" parent="."]
-position = Vector2(-108.999985, 66)
-scale = Vector2(12, 12)
+[node name="left_light2" type="PointLight2D" parent="left_light"]
+scale = Vector2(1.9672133, 1.9672133)
 energy = 0.4
 texture = SubResource("GradientTexture2D_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_sc3ue")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
+flip_h = true
