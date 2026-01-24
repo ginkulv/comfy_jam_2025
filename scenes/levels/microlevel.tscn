@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=71 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scripts/ui/cutscene.gd" id="1_ql6yw"]
 [ext_resource type="Texture2D" uid="uid://duks3tphrlnq5" path="res://assets/sprites/photo_2026-01-22_05-41-21.jpg" id="1_vxgch"]
@@ -26,6 +26,22 @@
 [ext_resource type="Texture2D" uid="uid://ca1aqmp6s2ptk" path="res://assets/sprites/atlas/ladder_big.tres" id="23_35dfi"]
 [ext_resource type="Texture2D" uid="uid://djcycjk8xt41l" path="res://assets/sprites/atlas/ladder_small.tres" id="23_c7o10"]
 [ext_resource type="Texture2D" uid="uid://crenil64k002y" path="res://assets/sprites/atlas/ladder_medium.tres" id="24_8sm3x"]
+[ext_resource type="Texture2D" uid="uid://drnenmcy0k5ca" path="res://assets/sprites/atlas_snow/snow_12.tres" id="27_44426"]
+[ext_resource type="Texture2D" uid="uid://xnavcf00t7e6" path="res://assets/sprites/atlas_snow/snow_11.tres" id="27_muj0h"]
+[ext_resource type="Texture2D" uid="uid://dlnjm63ain16r" path="res://assets/sprites/atlas_snow/snow_10.tres" id="28_mjvsw"]
+[ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
+[ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
+[ext_resource type="Texture2D" uid="uid://nxvguluw5yes" path="res://assets/sprites/atlas_snow/snow_5.tres" id="32_qoveh"]
+[ext_resource type="Texture2D" uid="uid://hh8syhc24bw" path="res://assets/sprites/atlas_snow/snow_6.tres" id="33_wgf40"]
+[ext_resource type="Texture2D" uid="uid://dxomw8bqt2ha5" path="res://assets/sprites/atlas_snow/snow_14.tres" id="34_q8148"]
+[ext_resource type="Texture2D" uid="uid://pp2n4qd82c3m" path="res://assets/sprites/atlas_snow/snow_17.tres" id="35_vrlke"]
+[ext_resource type="Texture2D" uid="uid://dyljexq8duxe1" path="res://assets/sprites/atlas_snow/snow_16.tres" id="36_nr8hd"]
+[ext_resource type="Texture2D" uid="uid://n1uwt20oohvy" path="res://assets/sprites/atlas_snow/snow_18.tres" id="37_qn3wp"]
+[ext_resource type="Texture2D" uid="uid://bw21xt45lciy2" path="res://assets/sprites/atlas_snow/snow_19.tres" id="38_vj8sx"]
+[ext_resource type="Texture2D" uid="uid://dj3by4svyge2x" path="res://assets/sprites/atlas_snow/snow_20.tres" id="39_4jcq5"]
+[ext_resource type="Texture2D" uid="uid://1fxg8uvnpqi4" path="res://assets/sprites/atlas_snow/snow_7.tres" id="40_wkwk4"]
+[ext_resource type="Texture2D" uid="uid://cb1qxbyeosjf8" path="res://assets/sprites/atlas_snow/snow_9.tres" id="41_cmqin"]
+[ext_resource type="Texture2D" uid="uid://doff1s52oaej0" path="res://assets/sprites/ATLAS_SNOW.png" id="42_rij7s"]
 
 [sub_resource type="Gradient" id="Gradient_ql6yw"]
 interpolation_mode = 1
@@ -330,6 +346,10 @@ _data = {
 &"ladder_out": SubResource("Animation_c7o10")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_txdia"]
+atlas = ExtResource("42_rij7s")
+region = Rect2(693.6594, 528.2317, 140.49615, 132.23169)
+
 [node name="microlevel" type="Node2D"]
 metadata/_edit_vertical_guides_ = [960.0]
 metadata/_edit_horizontal_guides_ = [576.0]
@@ -381,6 +401,7 @@ texture = ExtResource("3_2qbig")
 [node name="Menu" parent="." instance=ExtResource("5_ui2ab")]
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_0rrht")]
+visible = false
 position = Vector2(292, 659)
 scale = Vector2(1, 1)
 left_boundary = 150.0
@@ -406,7 +427,7 @@ editor_draw_drag_margin = true
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
 z_index = -2
-position = Vector2(1473, 142)
+position = Vector2(1478, 163)
 message_1 = "firewood_not_found"
 message_2 = "firewood_found"
 
@@ -562,6 +583,7 @@ script = ExtResource("1_ql6yw")
 [node name="begin_cutscene" type="Node" parent="cutscenes"]
 
 [node name="narrative" type="Control" parent="cutscenes/begin_cutscene"]
+visible = false
 z_index = 20
 layout_mode = 3
 anchors_preset = 15
@@ -623,6 +645,7 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="cutscenes"]
+visible = false
 
 [node name="ending_cutscene" type="Node" parent="cutscenes/CanvasLayer"]
 script = ExtResource("18_13oey")
@@ -656,6 +679,128 @@ z_index = -1
 position = Vector2(1471, 480.00003)
 scale = Vector2(0.815, 0.815)
 texture = ExtResource("23_35dfi")
+
+[node name="SnowManager" type="Node" parent="."]
+
+[node name="Snow12" type="Sprite2D" parent="SnowManager"]
+position = Vector2(718, 760)
+texture = ExtResource("27_44426")
+
+[node name="Snow11" type="Sprite2D" parent="SnowManager"]
+position = Vector2(2191, 361)
+texture = ExtResource("27_muj0h")
+
+[node name="Snow10" type="Sprite2D" parent="SnowManager"]
+position = Vector2(2600, 479)
+texture = ExtResource("28_mjvsw")
+
+[node name="Snow15" type="Sprite2D" parent="SnowManager"]
+position = Vector2(435, 664)
+texture = ExtResource("30_kqe1q")
+
+[node name="Snow8" type="Sprite2D" parent="SnowManager"]
+position = Vector2(524, 277)
+texture = ExtResource("31_8pgdl")
+
+[node name="Snow5" type="Sprite2D" parent="SnowManager"]
+position = Vector2(784, 333)
+texture = ExtResource("32_qoveh")
+
+[node name="Snow6" type="Sprite2D" parent="SnowManager"]
+position = Vector2(790, 418)
+texture = ExtResource("33_wgf40")
+
+[node name="Snow14" type="Sprite2D" parent="SnowManager"]
+position = Vector2(805, 564)
+texture = ExtResource("34_q8148")
+
+[node name="Snow16" type="Sprite2D" parent="SnowManager"]
+position = Vector2(852, 638)
+texture = ExtResource("30_kqe1q")
+
+[node name="Snow17" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1040, 660)
+texture = ExtResource("35_vrlke")
+
+[node name="Snow18" type="Sprite2D" parent="SnowManager"]
+position = Vector2(2433, 675)
+texture = ExtResource("36_nr8hd")
+
+[node name="Snow19" type="Sprite2D" parent="SnowManager"]
+position = Vector2(2169, 259)
+texture = ExtResource("37_qn3wp")
+
+[node name="Snow20" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1501, 170)
+texture = ExtResource("38_vj8sx")
+
+[node name="Snow21" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1510, 453)
+texture = ExtResource("39_4jcq5")
+flip_h = true
+
+[node name="Snow22" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1410, 640)
+texture = ExtResource("30_kqe1q")
+
+[node name="Snow23" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1504, 354)
+texture = ExtResource("39_4jcq5")
+flip_h = true
+
+[node name="Snow7" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1487, 264)
+texture = ExtResource("40_wkwk4")
+
+[node name="Snow24" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1865, 591)
+texture = ExtResource("37_qn3wp")
+
+[node name="Snow9" type="Sprite2D" parent="SnowManager"]
+position = Vector2(2625, 862)
+texture = ExtResource("41_cmqin")
+
+[node name="Snow13" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1523, 649)
+texture = ExtResource("31_8pgdl")
+
+[node name="Snow25" type="Sprite2D" parent="SnowManager"]
+position = Vector2(108, 1392)
+texture = SubResource("AtlasTexture_txdia")
+
+[node name="Snow26" type="Sprite2D" parent="SnowManager"]
+position = Vector2(46, 1266)
+texture = ExtResource("34_q8148")
+
+[node name="Snow27" type="Sprite2D" parent="SnowManager"]
+position = Vector2(36, 1542)
+texture = ExtResource("30_kqe1q")
+
+[node name="Snow28" type="Sprite2D" parent="SnowManager"]
+position = Vector2(2322, 632)
+texture = ExtResource("30_kqe1q")
+
+[node name="Snow29" type="Sprite2D" parent="SnowManager"]
+position = Vector2(2001, 649)
+scale = Vector2(1.415, 1.415)
+texture = ExtResource("38_vj8sx")
+
+[node name="Snow30" type="Sprite2D" parent="SnowManager"]
+position = Vector2(2132, 724)
+texture = ExtResource("30_kqe1q")
+
+[node name="Snow31" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1730, 778)
+texture = ExtResource("31_8pgdl")
+
+[node name="Snow32" type="Sprite2D" parent="SnowManager"]
+position = Vector2(1145, 799)
+texture = ExtResource("35_vrlke")
+flip_h = true
+
+[node name="Snow33" type="Sprite2D" parent="SnowManager"]
+position = Vector2(312, 894)
+texture = ExtResource("40_wkwk4")
 
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes/CanvasLayer/ending_cutscene" method="_on_music_puzzle_on_winning_the_game"]
