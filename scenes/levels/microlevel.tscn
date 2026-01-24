@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=43 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scenes/levels/cutscene.gd" id="1_ql6yw"]
 [ext_resource type="Texture2D" uid="uid://duks3tphrlnq5" path="res://assets/sprites/photo_2026-01-22_05-41-21.jpg" id="1_vxgch"]
@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://bl5uldjmqbeg0" path="res://scripts/ui/cutscene_fadin_text.gd" id="15_5qa6u"]
 [ext_resource type="Script" uid="uid://bwm3tpl4i4t36" path="res://scripts/ui/final_cutscene.gd" id="18_13oey"]
 [ext_resource type="Texture2D" uid="uid://2p8yw2wmx40k" path="res://assets/photo_2026-01-23_00-09-10.jpg" id="19_4mwer"]
+[ext_resource type="Texture2D" uid="uid://crw3l5a5rtih6" path="res://assets/images/photo_2026-01-18_02-18-48.jpg" id="20_4hadc"]
+[ext_resource type="Texture2D" uid="uid://bksjfcwxhabjq" path="res://assets/images/photo_2026-01-18_02-18-50.jpg" id="21_gv4x6"]
 
 [sub_resource type="Gradient" id="Gradient_ql6yw"]
 interpolation_mode = 1
@@ -191,42 +193,42 @@ _data = {
 &"start_game": SubResource("Animation_5qa6u")
 }
 
-[sub_resource type="Animation" id="Animation_4hadc"]
-resource_name = "cutscene"
-length = 5.0
-tracks/0/type = "method"
+[sub_resource type="Animation" id="Animation_2qbig"]
+resource_name = "win"
+length = 10.0
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ending_cutscene")
+tracks/0/path = NodePath("CanvasLayer/ending_cutscene/TextureRect:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(5),
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_4mwer"), ExtResource("20_4hadc"), ExtResource("21_gv4x6")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ending_cutscene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(10),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"quit_game"
 }]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ending_cutscene/Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("19_4mwer")]
-}
 
-[sub_resource type="Animation" id="Animation_13oey"]
+[sub_resource type="Animation" id="Animation_35dfi"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ending_cutscene/Sprite2D:texture")
+tracks/0/path = NodePath("CanvasLayer/ending_cutscene/TextureRect:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -238,8 +240,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gv4x6"]
 _data = {
-&"RESET": SubResource("Animation_13oey"),
-&"cutscene": SubResource("Animation_4hadc")
+&"RESET": SubResource("Animation_35dfi"),
+&"win": SubResource("Animation_2qbig")
 }
 
 [node name="microlevel" type="Node2D"]
@@ -269,6 +271,7 @@ draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_4mwer")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 light_mask = 2
 color = Color(0.9934115, 0.89138603, 0.86781704, 1)
 energy = 16.0
@@ -514,19 +517,27 @@ libraries = {
 &"": SubResource("AnimationLibrary_vxgch")
 }
 
-[node name="ending_cutscene" type="Node" parent="cutscenes"]
+[node name="CanvasLayer" type="CanvasLayer" parent="cutscenes"]
+
+[node name="ending_cutscene" type="Node" parent="cutscenes/CanvasLayer"]
 script = ExtResource("18_13oey")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/ending_cutscene"]
-root_node = NodePath("../..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/CanvasLayer/ending_cutscene"]
+root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_gv4x6")
 }
 
-[node name="Sprite2D" type="Sprite2D" parent="cutscenes/ending_cutscene"]
+[node name="TextureRect" type="TextureRect" parent="cutscenes/CanvasLayer/ending_cutscene"]
 visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("19_4mwer")
 
-[connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes/ending_cutscene" method="_on_music_puzzle_on_winning_the_game"]
+[connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes" method="_on_music_puzzle_on_winning_the_game"]
+[connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes/CanvasLayer/ending_cutscene" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/narrative/RichTextLabel" method="_on_button_button_down"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/AnimationPlayer" method="play" binds= ["start_game"]]
