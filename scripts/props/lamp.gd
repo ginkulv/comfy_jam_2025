@@ -16,7 +16,7 @@ func light_up():
     if not OS.has_feature("web"):
         $lamp/on.visible = is_lit
     # ?? 
-    $lamp/off.visible = false
+    # $lamp/off.visible = false
     enabled = true
     AudioManager.play_sfx("sfx_matches.wav")
     if not AudioManager.is_music_playing():
