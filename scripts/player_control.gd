@@ -8,8 +8,8 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 #@onready var sprite :Sprite2D = $Sprite2D
-@onready var left_light:PointLight2D = $left_light
-@onready var right_light:PointLight2D = $right_light
+@onready var left_light:Node2D = $left_light
+@onready var right_light:Node2D = $right_light
 @export var on_flip : bool = false
 
 func _physics_process(delta):

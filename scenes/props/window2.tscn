@@ -80,7 +80,6 @@ z_index = 4
 material = SubResource("CanvasItemMaterial_wgf40")
 position = Vector2(1.0869141, 6.5217285)
 scale = Vector2(1.0869565, 1.0869565)
-emitting = false
 amount = 68
 texture = SubResource("GradientTexture2D_vxgch")
 lifetime = 2.6799999999999997

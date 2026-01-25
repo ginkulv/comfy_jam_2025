@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://i1l77n8k2vbs"]
+[gd_scene load_steps=36 format=3 uid="uid://i1l77n8k2vbs"]
 
 [ext_resource type="Script" uid="uid://fpty4ovuplec" path="res://scripts/player_control.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cpr8v6jh23sco" path="res://assets/sprites/atlas/lamp_galo2.tres" id="2_31cv2"]
 [ext_resource type="Texture2D" uid="uid://cokhcs8pen7yk" path="res://assets/sprites/gnom_idle/Armature_idle_00.png" id="3_31cv2"]
 [ext_resource type="Texture2D" uid="uid://di08b6ygyp35q" path="res://assets/sprites/gnom_idle/Armature_idle_01.png" id="4_pf23h"]
 [ext_resource type="Texture2D" uid="uid://4gn15p1tdtgf" path="res://assets/sprites/gnom_idle/Armature_idle_02.png" id="5_dt7fs"]
@@ -31,15 +32,27 @@
 radius = 189.0
 height = 382.0
 
-[sub_resource type="Gradient" id="Gradient_g2els"]
-offsets = PackedFloat32Array(0, 0.6930693)
-colors = PackedColorArray(1, 0.88235295, 0.7411765, 1, 1, 1, 1, 0)
+[sub_resource type="Gradient" id="Gradient_s2xve"]
+offsets = PackedFloat32Array(0, 0.1594203, 0.79227054)
+colors = PackedColorArray(1.353256, 1.1570345, 0.6991844, 1, 1, 0.6966667, 0.35000002, 0.78431374, 0, 0, 0, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
-gradient = SubResource("Gradient_g2els")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ujl30"]
+gradient = SubResource("Gradient_s2xve")
 fill = 1
-fill_from = Vector2(0.50427353, 0.4871795)
+fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_31cv2"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wqfne"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pf23h"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dt7fs"]
+blend_mode = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sc3ue"]
 animations = [{
@@ -138,28 +151,70 @@ on_flip = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g2els")
 
-[node name="right_light" type="PointLight2D" parent="."]
+[node name="right_light" type="Node2D" parent="."]
+visible = false
 position = Vector2(110.000015, 64)
 scale = Vector2(6.1, 6.1)
-energy = 1.2
-texture = SubResource("GradientTexture2D_qhqgy")
 
 [node name="right_light2" type="PointLight2D" parent="right_light"]
 scale = Vector2(1.9672133, 1.9672133)
-energy = 0.4
-texture = SubResource("GradientTexture2D_qhqgy")
+energy = 1.04
+texture = SubResource("GradientTexture2D_ujl30")
 
-[node name="left_light" type="PointLight2D" parent="."]
-visible = false
+[node name="LampGalo4" type="Sprite2D" parent="right_light"]
+modulate = Color(1, 1, 1, 0.22352941)
+material = SubResource("CanvasItemMaterial_31cv2")
+position = Vector2(-1.6448574, 0.885476)
+scale = Vector2(0.21649562, 0.21649562)
+texture = ExtResource("2_31cv2")
+
+[node name="LampGalo5" type="Sprite2D" parent="right_light"]
+modulate = Color(2.056219, 2.056219, 2.056219, 0.4745098)
+self_modulate = Color(1, 1, 1, 0.34901962)
+material = SubResource("CanvasItemMaterial_31cv2")
+position = Vector2(-1.5355663, 2.8526897)
+scale = Vector2(0.078578405, 0.07857839)
+texture = ExtResource("2_31cv2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="right_light"]
+modulate = Color(1, 1, 1, 0.45490196)
+z_index = 1
+material = SubResource("CanvasItemMaterial_wqfne")
+position = Vector2(-1.6393471, 3.4426222)
+scale = Vector2(0.024931695, 0.034153007)
+texture = ExtResource("2_31cv2")
+
+[node name="left_light" type="Node2D" parent="."]
 position = Vector2(-108.999985, 66)
 scale = Vector2(6.1, 6.1)
-energy = 1.2
-texture = SubResource("GradientTexture2D_qhqgy")
 
 [node name="left_light2" type="PointLight2D" parent="left_light"]
 scale = Vector2(1.9672133, 1.9672133)
-energy = 0.4
-texture = SubResource("GradientTexture2D_qhqgy")
+energy = 1.04
+texture = SubResource("GradientTexture2D_ujl30")
+
+[node name="LampGalo2" type="Sprite2D" parent="left_light"]
+modulate = Color(1, 1, 1, 0.22352941)
+material = SubResource("CanvasItemMaterial_pf23h")
+position = Vector2(1.1420288, 0.22973476)
+scale = Vector2(0.21649562, 0.2164956)
+texture = ExtResource("2_31cv2")
+
+[node name="LampGalo3" type="Sprite2D" parent="left_light"]
+modulate = Color(2.056219, 2.056219, 2.056219, 0.4745098)
+self_modulate = Color(1, 1, 1, 0.34509805)
+material = SubResource("CanvasItemMaterial_dt7fs")
+position = Vector2(1.2513084, 2.1969492)
+scale = Vector2(0.078578405, 0.07857839)
+texture = ExtResource("2_31cv2")
+
+[node name="Sprite2D" type="Sprite2D" parent="left_light"]
+modulate = Color(1, 1, 1, 0.45490196)
+z_index = 1
+material = SubResource("CanvasItemMaterial_wqfne")
+position = Vector2(1.3661163, 3.6065574)
+scale = Vector2(0.024931695, 0.035231523)
+texture = ExtResource("2_31cv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
