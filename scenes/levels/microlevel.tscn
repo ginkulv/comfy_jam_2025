@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://b7pqdcak0e21c" path="res://assets/images/гирлянда выкл.png" id="28_wgf40"]
 [ext_resource type="Texture2D" uid="uid://dytff8d8en4fv" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://cvyqwhu6a5vh4" path="res://assets/images/гирлянда свет.png" id="29_q8148"]
-[ext_resource type="Script" uid="uid://cfdga3qg15f6u" path="res://scripts/props/snow.gd" id="29_qoveh"]
+[ext_resource type="Script" path="res://scripts/props/snow.gd" id="29_qoveh"]
 [ext_resource type="Texture2D" uid="uid://dq5rfptcyn7p5" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
@@ -53,15 +53,15 @@
 [ext_resource type="Texture2D" uid="uid://dj3by4svyge2x" path="res://assets/sprites/atlas_snow/snow_20.tres" id="39_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://1fxg8uvnpqi4" path="res://assets/sprites/atlas_snow/snow_7.tres" id="40_wkwk4"]
 [ext_resource type="Texture2D" uid="uid://cb1qxbyeosjf8" path="res://assets/sprites/atlas_snow/snow_9.tres" id="41_cmqin"]
-[ext_resource type="Texture2D" uid="uid://cgq3dl7m1p4qt" path="res://assets/images/доб гирлянда выкл.png" id="42_u3x7i"]
-[ext_resource type="Texture2D" uid="uid://bqujynu54fvff" path="res://assets/images/доп гирлянда свет.png" id="43_yohhn"]
+[ext_resource type="Texture2D" uid="uid://boakdaq65t3rm" path="res://assets/images/доб гирлянда выкл.png" id="42_u3x7i"]
+[ext_resource type="Texture2D" uid="uid://bxblkje1b5gnt" path="res://assets/images/доп гирлянда свет.png" id="43_yohhn"]
 [ext_resource type="Script" uid="uid://c63ey5e5o0hjj" path="res://scripts/girlanda.gd" id="44_yohhn"]
 [ext_resource type="Texture2D" uid="uid://075ydffrfqjp" path="res://assets/images/window_backround/месяц.png" id="47_vj8sx"]
 [ext_resource type="Texture2D" uid="uid://bs1mhvyckn83a" path="res://assets/images/window_backround/небо.png" id="48_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://duhdtit5raqe1" path="res://assets/images/window_backround/облака.png" id="49_wkwk4"]
 [ext_resource type="Texture2D" uid="uid://d3p0ukx7iivmv" path="res://assets/images/window_backround/2 план.png" id="50_cmqin"]
 [ext_resource type="Texture2D" uid="uid://bcdybxgf7xmw2" path="res://assets/images/window_backround/1 план.png" id="51_rij7s"]
-[ext_resource type="Texture2D" uid="uid://bmbyc2tisbe5v" path="res://assets/images/доп лёд для гирлянды.png" id="61_e6cir"]
+[ext_resource type="Texture2D" uid="uid://v5b7pdliuf7f" path="res://assets/images/доп лёд для гирлянды.png" id="61_e6cir"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2r6g7"]
 blend_mode = 1
@@ -1503,7 +1503,7 @@ script = ExtResource("44_yohhn")
 
 [node name="SnowManager" type="Node" parent="."]
 script = ExtResource("27_8pgdl")
-wave_delay = 0.635
+melt_time = 2.0
 
 [node name="Snow_0" type="Sprite2D" parent="SnowManager" groups=["snow"]]
 position = Vector2(524, 277)
