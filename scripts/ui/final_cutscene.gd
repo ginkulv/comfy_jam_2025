@@ -1,10 +1,10 @@
 extends Node
 
-@onready var layer = $TextureRect
+#@onready var layer = $Layer
 @onready var anim = $AnimationPlayer
 
 func play():
-    layer.visible = true
+    #layer.visible = true
     anim.play("win")
 
     

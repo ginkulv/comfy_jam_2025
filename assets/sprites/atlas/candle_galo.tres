@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cpdpy0uq70h1d"]
+
+[ext_resource type="Texture2D" uid="uid://dahir3ssc6ep" path="res://assets/sprites/ATLAS.png" id="1_vubob"]
+
+[resource]
+atlas = ExtResource("1_vubob")
+region = Rect2(609.0004, 895.0002, 95.00018, 120.00018)

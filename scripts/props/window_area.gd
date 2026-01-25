@@ -3,7 +3,7 @@ extends Area2D
 var window_closed : bool = false
 func _ready() -> void:
     AudioManager.play_sfx("sfx_blizzard.wav")
-    AudioManager.play_sfx("window_open.wav", 0.3)
+    AudioManager.play_sfx("window_open.wav", 0.6)
     get_node("Node2D/open").visible = true 
     get_node("Node2D/close").visible = false
 
@@ -27,6 +27,8 @@ func _input_event(_viewport, event, _shape_idx):
         AudioManager.stop_sfx("window_open.wav")
         AudioManager.play_sfx("sfx_blizzard_shut.wav", 0.1)
         window_closed = true
+        $snow2.emitting = false
+        
         await get_tree().create_timer(0.5).timeout
         MessageManager.display_text_by_id("window_closed")
              

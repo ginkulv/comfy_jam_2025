@@ -45,6 +45,7 @@ func _on_tween_finished():
 
 
 func _on_button_button_down() -> void:
+    $"../../AnimationPlayer".play("start_game")
     await get_tree().create_timer(input_timeout).timeout
     GameState.input_locked = false
     MessageManager.display_text_by_id("start")

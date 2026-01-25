@@ -1,7 +1,8 @@
 extends Node
 
 const max_sfx_players: int = 10
-const fade_in_time_sec: float = 3.0
+const layer_fade_in_time_sec: float = 3.0
+const ending_fade_time_sec: float = 10
 
 var music_player: AudioStreamPlayer
 var sync_stream: AudioStreamSynchronized
@@ -71,6 +72,18 @@ func stop_sfx(sfx_name_with_extension: String) -> void:
         if player.stream.resource_path.get_file() == sfx_name_with_extension:
             player.stop()
 
+func fade_in_sfx(sfx_name_with_extension: String, volume_linear: float = 1) -> void:
+    var stream = load("res://assets/sfx/" + sfx_name_with_extension)
+
+    for player: AudioStreamPlayer in sfx_players:
+        if !player.playing:
+            player.stream = stream
+            player.volume_linear = 0
+            player.play()
+            var tween = get_tree().create_tween() 
+            tween.tween_property(player, "volume_linear", volume_linear, ending_fade_time_sec)
+            break
+
 func start_music() -> void:
     sync_stream.set_sync_stream_volume(0, 0)
     music_player.play()
@@ -90,7 +103,7 @@ func add_layer() -> void:
         _change_volume_of_synced_stream.bind(sync_stream_index), 
         -80.0, 
         0.0, 
-        fade_in_time_sec
+        layer_fade_in_time_sec
     ).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
     if sync_stream_index == 5:
@@ -98,13 +111,18 @@ func add_layer() -> void:
             _change_volume_of_synced_stream.bind(sync_stream_index - 1), 
             0.0,
             -80.0, 
-            fade_in_time_sec
+            layer_fade_in_time_sec
         ).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
     await tween.finished
 
 func stop_music():
     music_player.stop()
+
+func fade_out_music():
+    var tween = get_tree().create_tween() 
+    tween.tween_property(music_player, "volume_linear", 0, ending_fade_time_sec)
+
 
 func change_sfx_volume(volume: float) -> void:
     sfx_volume_ln = volume
