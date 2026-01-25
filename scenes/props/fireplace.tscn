@@ -169,7 +169,6 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-2, -17.5)
 shape = SubResource("RectangleShape2D_d0i4f")
 
@@ -178,6 +177,7 @@ visible = false
 
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="fireplace"]
 material = SubResource("CanvasItemMaterial_vfs4q")
+position = Vector2(15.5000305, -18)
 amount = 50
 texture = ExtResource("9_kfb1j")
 lifetime = 5.43
@@ -191,12 +191,13 @@ process_material = SubResource("ParticleProcessMaterial_mk35c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fireplace"]
 modulate = Color(1.4740754, 1.4740754, 1.4740754, 1)
 material = SubResource("CanvasItemMaterial_me31e")
+position = Vector2(11, -26)
 sprite_frames = SubResource("SpriteFrames_vfs4q")
 autoplay = "default"
 frame_progress = 0.31490222
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="fireplace"]
-position = Vector2(-16, 19)
+position = Vector2(-0.49996948, 1)
 amount = 138
 amount_ratio = 0.534
 texture = ExtResource("7_147kk")
@@ -209,7 +210,7 @@ process_material = SubResource("ParticleProcessMaterial_tu4pb")
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="fireplace"]
 modulate = Color(2.678172, 2.678172, 0, 1)
 material = SubResource("CanvasItemMaterial_me31e")
-position = Vector2(-26.49999, 28.499987)
+position = Vector2(-10.99996, 10.499987)
 scale = Vector2(0.75400007, 0.49799997)
 sprite_frames = SubResource("SpriteFrames_vfs4q")
 autoplay = "default"
@@ -223,7 +224,7 @@ scale = Vector2(9.34375, 4.7265625)
 texture = SubResource("GradientTexture2D_3o33p")
 
 [node name="PointLight2D" type="PointLight2D" parent="fireplace"]
-position = Vector2(-6.2500067, 11.885247)
+position = Vector2(9.250024, -6.114753)
 scale = Vector2(14.601563, 7.3862424)
 color = Color(0.8647905, 0.8556097, 7.70092e-07, 1)
 energy = 1.8

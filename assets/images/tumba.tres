@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://col3uimcyxard"]
+
+[ext_resource type="Texture2D" uid="uid://bshdamlu6jmtj" path="res://assets/images/мебель.png" id="1_lrp3f"]
+
+[resource]
+atlas = ExtResource("1_lrp3f")
+region = Rect2(1652.0895, 0.3000641, 211.91052, 329.69995)

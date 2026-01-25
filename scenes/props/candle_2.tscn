@@ -1,30 +1,28 @@
-[gd_scene load_steps=16 format=3 uid="uid://dddejuoy8amxk"]
+[gd_scene load_steps=14 format=3 uid="uid://be8i8rt02o20s"]
 
-[ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/lamp.gd" id="1_8hqu3"]
-[ext_resource type="Texture2D" uid="uid://d0c6b16c2at6m" path="res://assets/sprites/atlas/lamp_base.tres" id="2_fdo8x"]
-[ext_resource type="Texture2D" uid="uid://bf557oyarxpy1" path="res://assets/sprites/atlas/lamp_fire.tres" id="3_gshpy"]
-[ext_resource type="Script" uid="uid://x433g3oufx3l" path="res://scripts/props/lamp_control.gd" id="3_mht1s"]
-[ext_resource type="Texture2D" uid="uid://bivle5ty4pym5" path="res://assets/sprites/atlas/lamp_glass.tres" id="4_bwuqp"]
-[ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="4_q865l"]
-[ext_resource type="Texture2D" uid="uid://btuklphk2re1p" path="res://assets/sprites/atlas/lamp_glass_light.tres" id="5_838e7"]
-[ext_resource type="Texture2D" uid="uid://cpr8v6jh23sco" path="res://assets/sprites/atlas/lamp_galo2.tres" id="6_bwuqp"]
-[ext_resource type="Texture2D" uid="uid://dyl5lj7dw7pa1" path="res://assets/sprites/atlas/lamp_galo.tres" id="8_838e7"]
+[ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/lamp.gd" id="1_x604k"]
+[ext_resource type="Texture2D" uid="uid://22t43nejgc2g" path="res://assets/sprites/atlas/candle_2.tres" id="2_x604k"]
+[ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="3_2qtdy"]
+[ext_resource type="Texture2D" uid="uid://cbbf6rpbkky84" path="res://assets/sprites/atlas/candle_fire_0.tres" id="4_yuk6r"]
+[ext_resource type="Texture2D" uid="uid://cpr8v6jh23sco" path="res://assets/sprites/atlas/lamp_galo2.tres" id="5_uo5js"]
+[ext_resource type="Texture2D" uid="uid://dyl5lj7dw7pa1" path="res://assets/sprites/atlas/lamp_galo.tres" id="6_ybh5k"]
+[ext_resource type="Script" uid="uid://x433g3oufx3l" path="res://scripts/props/lamp_control.gd" id="7_b6cvx"]
 
 [sub_resource type="Gradient" id="Gradient_s2xve"]
-offsets = PackedFloat32Array(0, 0.99646646)
-colors = PackedColorArray(1.353256, 1.277295, 1.1061893, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.18727915, 0.48409894, 1)
+colors = PackedColorArray(1.3532559, 1.1969359, 0.83997786, 1, 1.1872381, 1.104383, 0.9151826, 0.5300354, 1.0122898, 1.0068514, 0.9944328, 0.03478998, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gksna"]
 gradient = SubResource("Gradient_s2xve")
 fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0, 0.517094)
+fill_from = Vector2(0.50427353, 0.525641)
+fill_to = Vector2(0, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07hkx"]
 radius = 97.020615
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gshpy"]
-shader = ExtResource("4_q865l")
+shader = ExtResource("3_2qtdy")
 shader_parameter/blend_mode = 0
 
 [sub_resource type="Shader" id="Shader_oygg1"]
@@ -133,31 +131,26 @@ shader_parameter/blend_mode = 7
 
 [node name="PointLight2D" type="PointLight2D"]
 z_index = -1
-position = Vector2(-3.8347156, -115.041466)
 scale = Vector2(0.635, 0.647)
-color = Color(1.353256, 1.353256, 1.353256, 1)
+color = Color(0.8539608, 0.6066461, 0.3926257, 1)
 energy = 1.61
 texture = SubResource("GradientTexture2D_gksna")
 texture_scale = 14.13
-script = ExtResource("1_8hqu3")
+script = ExtResource("1_x604k")
 
 [node name="lamp" type="Area2D" parent="."]
+position = Vector2(4.7683716e-07, 9.273569)
 scale = Vector2(0.647342, 0.647342)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lamp"]
 shape = SubResource("CircleShape2D_07hkx")
 
 [node name="LampBase" type="Sprite2D" parent="lamp"]
-position = Vector2(13, 54)
-texture = ExtResource("2_fdo8x")
+position = Vector2(-9.536743e-07, 26.263618)
+texture = ExtResource("2_x604k")
 
 [node name="off" type="Node2D" parent="lamp"]
 scale = Vector2(0.522, 0.522)
-
-[node name="LampGlass" type="Sprite2D" parent="lamp/off"]
-position = Vector2(-5.7470703, -130.26819)
-scale = Vector2(1.9157089, 1.9157089)
-texture = ExtResource("4_bwuqp")
 
 [node name="on" type="Node2D" parent="lamp"]
 visible = false
@@ -167,35 +160,29 @@ scale = Vector2(0.521551, 0.521551)
 
 [node name="LampGlassLight" type="Sprite2D" parent="lamp/on"]
 material = SubResource("ShaderMaterial_yxu02")
-position = Vector2(-1.917358, -126.54562)
+position = Vector2(0, -36.623104)
 scale = Vector2(1.917358, 1.917358)
-texture = ExtResource("5_838e7")
+texture = ExtResource("4_yuk6r")
 
 [node name="LampGalo2" type="Sprite2D" parent="lamp/on"]
-modulate = Color(1, 1, 1, 0.3372549)
+modulate = Color(1, 1, 1, 0.20784314)
 material = SubResource("ShaderMaterial_yxu02")
-position = Vector2(-5.752136, -109.289406)
-scale = Vector2(2.2011776, 2.2011776)
-texture = ExtResource("6_bwuqp")
+position = Vector2(-9.536743e-07, -59.512543)
+scale = Vector2(1.3870139, 1.3870139)
+texture = ExtResource("5_uo5js")
 
 [node name="LampGalo3" type="Sprite2D" parent="lamp/on"]
-modulate = Color(2.056219, 2.056219, 2.056219, 0.4745098)
+modulate = Color(2.056219, 2.056219, 2.056219, 0.33333334)
 material = SubResource("ShaderMaterial_yxu02")
-position = Vector2(-3.834732, -17.256256)
+position = Vector2(-5.4353523, -59.322723)
 scale = Vector2(1.0753604, 1.0753604)
-texture = ExtResource("6_bwuqp")
-
-[node name="LampFire" type="Sprite2D" parent="lamp/on"]
-material = SubResource("ShaderMaterial_yxu02")
-position = Vector2(-1.9174196, -11.5041485)
-scale = Vector2(1.917358, 1.917358)
-texture = ExtResource("3_gshpy")
+texture = ExtResource("5_uo5js")
 
 [node name="LampGalo" type="Sprite2D" parent="lamp/on"]
 material = SubResource("ShaderMaterial_yxu02")
-position = Vector2(-1.9174196, -116.95883)
-scale = Vector2(1.917358, 1.917358)
-texture = ExtResource("8_838e7")
+position = Vector2(0, -59.512535)
+scale = Vector2(0.8075037, 0.80750376)
+texture = ExtResource("6_ybh5k")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -204,4 +191,4 @@ offset_left = -45.313942
 offset_top = -56.96608
 offset_right = 83.68606
 offset_bottom = 129.03392
-script = ExtResource("3_mht1s")
+script = ExtResource("7_b6cvx")
