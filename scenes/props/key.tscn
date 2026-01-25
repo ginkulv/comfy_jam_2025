@@ -14,9 +14,10 @@ script = ExtResource("1_yk2u2")
 required_flag = "all_lamps_lit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 1.5)
+position = Vector2(48, 23)
 shape = SubResource("RectangleShape2D_yk2u2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(42, 18.000002)
 scale = Vector2(0.8, 0.8)
 texture = SubResource("AtlasTexture_fttkb")

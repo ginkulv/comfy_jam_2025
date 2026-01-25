@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://dlc34kcsyiwli" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
-[ext_resource type="Texture2D" uid="uid://dgdsnf26sc8lj" path="res://assets/images/room_final2.png" id="6_e6cir"]
+[ext_resource type="Texture2D" uid="uid://cp8bdwjl1yhy5" path="res://assets/images/room_final2.png" id="6_e6cir"]
 [ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/lamp.tscn" id="6_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
 [ext_resource type="Texture2D" uid="uid://calmw670lvrb3" path="res://assets/images/stol.tres" id="8_6da8u"]
@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://b7pqdcak0e21c" path="res://assets/images/гирлянда выкл.png" id="28_wgf40"]
 [ext_resource type="Texture2D" uid="uid://dytff8d8en4fv" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://cvyqwhu6a5vh4" path="res://assets/images/гирлянда свет.png" id="29_q8148"]
-[ext_resource type="Script" path="res://scripts/props/snow.gd" id="29_qoveh"]
+[ext_resource type="Script" uid="uid://cfdga3qg15f6u" path="res://scripts/props/snow.gd" id="29_qoveh"]
 [ext_resource type="Texture2D" uid="uid://dq5rfptcyn7p5" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
@@ -59,7 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://cb1qxbyeosjf8" path="res://assets/sprites/atlas_snow/snow_9.tres" id="41_cmqin"]
 [ext_resource type="Texture2D" uid="uid://cgq3dl7m1p4qt" path="res://assets/images/доб гирлянда выкл.png" id="42_u3x7i"]
 [ext_resource type="Texture2D" uid="uid://bqujynu54fvff" path="res://assets/images/доп гирлянда свет.png" id="43_yohhn"]
-[ext_resource type="Script" uid="uid://c63ey5e5o0hjj" path="res://scripts/girlanda.gd" id="44_yohhn"]
+[ext_resource type="Script" uid="uid://bgahe0lrqtw36" path="res://scripts/girlanda.gd" id="44_yohhn"]
 [ext_resource type="Texture2D" uid="uid://075ydffrfqjp" path="res://assets/images/window_backround/месяц.png" id="47_vj8sx"]
 [ext_resource type="Texture2D" uid="uid://bs1mhvyckn83a" path="res://assets/images/window_backround/небо.png" id="48_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://duhdtit5raqe1" path="res://assets/images/window_backround/облака.png" id="49_wkwk4"]
@@ -1105,20 +1105,20 @@ editor_draw_drag_margin = true
 
 [node name="firewood" parent="pickables" instance=ExtResource("8_t7v5p")]
 z_index = 4
-position = Vector2(1478, 163)
+position = Vector2(1452, 114)
 message_1 = "firewood_not_found"
 message_2 = "firewood_found"
 
 [node name="key" parent="pickables" instance=ExtResource("9_t7v5p")]
 z_index = 10
-position = Vector2(2657, 822)
+position = Vector2(2651, 782.99994)
 rotation = 0.44232458
 item_id = 6
 message_1 = "key_not_found"
 message_2 = "key_found"
 
 [node name="matches2" parent="pickables" instance=ExtResource("7_0x7r7")]
-position = Vector2(1172, 730)
+position = Vector2(1138, 667)
 message_1 = "matches_not_found"
 message_2 = "matches_found"
 
@@ -1154,10 +1154,9 @@ color = Color(0.9526482, 0.814454, 0.70148224, 1)
 energy = 0.93
 blend_mode = 2
 texture_scale = 15.12
-lamp_id = 4
+lamp_id = 7
 
 [node name="lamp5" parent="zones" instance=ExtResource("6_q1y3u")]
-visible = false
 z_index = 151
 position = Vector2(1379, 448)
 scale = Vector2(0.5, 0.5)
@@ -1295,14 +1294,13 @@ z_index = -1
 position = Vector2(1299, 787)
 metadata/_edit_lock_ = true
 
-[node name="PointLight2D" type="PointLight2D" parent="zones"]
-
 [node name="PointLight2D2" parent="zones" instance=ExtResource("22_3mfa6")]
 position = Vector2(1270, 313.00006)
 color = Color(1, 1, 1, 1)
 energy = 0.58
 blend_mode = 2
 texture_scale = 4.95
+lamp_id = 6
 
 [node name="LampGalo2" parent="zones/PointLight2D2/lamp/on" index="1"]
 modulate = Color(1, 1, 1, 0.08235294)
@@ -1524,6 +1522,10 @@ texture = ExtResource("35_kbi6t")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -54.0
+offset_right = -41.0
+offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
