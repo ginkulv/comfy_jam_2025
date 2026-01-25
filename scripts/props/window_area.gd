@@ -5,6 +5,8 @@ func _ready() -> void:
     AudioManager.play_sfx("sfx_blizzard.wav")
     AudioManager.play_sfx("window_open.wav", 0.6)
     get_node("Node2D/open").visible = true 
+    if OS.has_feature("web"):
+        $Node2D/open/WindowGlass0.visible = false
     get_node("Node2D/close").visible = false
 
 func _input_event(_viewport, event, _shape_idx):
@@ -20,6 +22,8 @@ func _input_event(_viewport, event, _shape_idx):
     and event.button_index == MOUSE_BUTTON_LEFT:
         get_node("Node2D/open").visible = false 
         get_node("Node2D/close").visible = true 
+        if OS.has_feature("web"):
+            $Node2D/close/WindowGlass1.visible = false
         GameState.set_flag("window_closed")
         AudioManager.play_sfx("closing_window.wav")
         await get_tree().create_timer(0.8).timeout
