@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=98 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scripts/ui/cutscene.gd" id="1_ql6yw"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
@@ -19,7 +19,6 @@
 [ext_resource type="FontFile" uid="uid://dgo3t53sw2gy2" path="res://assets/fonts/Junicode.ttf" id="14_5qa6u"]
 [ext_resource type="Script" uid="uid://bl5uldjmqbeg0" path="res://scripts/ui/cutscene_fadin_text.gd" id="15_5qa6u"]
 [ext_resource type="Script" uid="uid://bwm3tpl4i4t36" path="res://scripts/ui/final_cutscene.gd" id="18_13oey"]
-[ext_resource type="Texture2D" uid="uid://2p8yw2wmx40k" path="res://assets/photo_2026-01-23_00-09-10.jpg" id="19_4mwer"]
 [ext_resource type="Script" uid="uid://bj72sstg6ewd6" path="res://scripts/ladder_cutscene.gd" id="23_8sm3x"]
 [ext_resource type="Texture2D" uid="uid://ca1aqmp6s2ptk" path="res://assets/sprites/atlas/ladder_big.tres" id="23_35dfi"]
 [ext_resource type="Texture2D" uid="uid://djcycjk8xt41l" path="res://assets/sprites/atlas/ladder_small.tres" id="23_c7o10"]
@@ -29,24 +28,24 @@
 [ext_resource type="Script" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
 [ext_resource type="Texture2D" uid="uid://drnenmcy0k5ca" path="res://assets/sprites/atlas_snow/snow_12.tres" id="27_44426"]
 [ext_resource type="Texture2D" uid="uid://xnavcf00t7e6" path="res://assets/sprites/atlas_snow/snow_11.tres" id="27_muj0h"]
-[ext_resource type="Texture2D" uid="uid://5rpgug7btc7e" path="res://assets/images/cutscene/8.png" id="28_4f2b1"]
+[ext_resource type="Texture2D" uid="uid://2k7dj8wfheqa" path="res://assets/images/cutscene/8.png" id="28_4f2b1"]
 [ext_resource type="Texture2D" uid="uid://dlnjm63ain16r" path="res://assets/sprites/atlas_snow/snow_10.tres" id="28_mjvsw"]
 [ext_resource type="Texture2D" uid="uid://8aj4p1lbd7q0" path="res://assets/images/cutscene/zamok_2.tres" id="28_u3x7i"]
 [ext_resource type="Texture2D" uid="uid://b7pqdcak0e21c" path="res://assets/images/гирлянда выкл.png" id="28_wgf40"]
-[ext_resource type="Texture2D" uid="uid://dr74glbfk0n6w" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
+[ext_resource type="Texture2D" uid="uid://d0i5ewkuatkq3" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://cvyqwhu6a5vh4" path="res://assets/images/гирлянда свет.png" id="29_q8148"]
 [ext_resource type="Script" path="res://scripts/props/snow.gd" id="29_qoveh"]
-[ext_resource type="Texture2D" uid="uid://t782byw8mo3s" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
+[ext_resource type="Texture2D" uid="uid://bx0fq64rvw0ua" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
-[ext_resource type="Texture2D" uid="uid://ba43utrwjnhn8" path="res://assets/images/cutscene/5.png" id="31_u3x7i"]
+[ext_resource type="Texture2D" uid="uid://dhkao8ng2fdsv" path="res://assets/images/cutscene/5.png" id="31_u3x7i"]
 [ext_resource type="Texture2D" uid="uid://nxvguluw5yes" path="res://assets/sprites/atlas_snow/snow_5.tres" id="32_qoveh"]
-[ext_resource type="Texture2D" uid="uid://df1hxewdk64lc" path="res://assets/images/cutscene/4.png" id="32_yohhn"]
-[ext_resource type="Texture2D" uid="uid://krcetxoie5mm" path="res://assets/images/cutscene/3.png" id="33_e6cir"]
+[ext_resource type="Texture2D" uid="uid://ch0vburut5qut" path="res://assets/images/cutscene/4.png" id="32_yohhn"]
+[ext_resource type="Texture2D" uid="uid://tb284utevhw1" path="res://assets/images/cutscene/3.png" id="33_e6cir"]
 [ext_resource type="Texture2D" uid="uid://hh8syhc24bw" path="res://assets/sprites/atlas_snow/snow_6.tres" id="33_wgf40"]
-[ext_resource type="Texture2D" uid="uid://bntajc0qd8a0q" path="res://assets/images/cutscene/2.png" id="34_6da8u"]
+[ext_resource type="Texture2D" uid="uid://bkbqejsfycxvn" path="res://assets/images/cutscene/2.png" id="34_6da8u"]
 [ext_resource type="Texture2D" uid="uid://dxomw8bqt2ha5" path="res://assets/sprites/atlas_snow/snow_14.tres" id="34_q8148"]
-[ext_resource type="Texture2D" uid="uid://dujf8s1388r7b" path="res://assets/images/cutscene/1.png" id="35_kbi6t"]
+[ext_resource type="Texture2D" uid="uid://c1hsdepfynkoq" path="res://assets/images/cutscene/1.png" id="35_kbi6t"]
 [ext_resource type="Texture2D" uid="uid://pp2n4qd82c3m" path="res://assets/sprites/atlas_snow/snow_17.tres" id="35_vrlke"]
 [ext_resource type="Texture2D" uid="uid://dyljexq8duxe1" path="res://assets/sprites/atlas_snow/snow_16.tres" id="36_nr8hd"]
 [ext_resource type="Texture2D" uid="uid://n1uwt20oohvy" path="res://assets/sprites/atlas_snow/snow_18.tres" id="37_qn3wp"]
@@ -54,11 +53,11 @@
 [ext_resource type="Texture2D" uid="uid://dj3by4svyge2x" path="res://assets/sprites/atlas_snow/snow_20.tres" id="39_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://1fxg8uvnpqi4" path="res://assets/sprites/atlas_snow/snow_7.tres" id="40_wkwk4"]
 [ext_resource type="Texture2D" uid="uid://cb1qxbyeosjf8" path="res://assets/sprites/atlas_snow/snow_9.tres" id="41_cmqin"]
-[ext_resource type="Texture2D" uid="uid://bwp1g4ih082uf" path="res://assets/images/window_backround/месяц.png" id="47_vj8sx"]
-[ext_resource type="Texture2D" uid="uid://bqu11s740e1ea" path="res://assets/images/window_backround/небо.png" id="48_4jcq5"]
+[ext_resource type="Texture2D" uid="uid://c2j83splqj37v" path="res://assets/images/window_backround/месяц.png" id="47_vj8sx"]
+[ext_resource type="Texture2D" uid="uid://fiwykmj41yk0" path="res://assets/images/window_backround/небо.png" id="48_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://duhdtit5raqe1" path="res://assets/images/window_backround/облака.png" id="49_wkwk4"]
-[ext_resource type="Texture2D" uid="uid://blheafbrax146" path="res://assets/images/window_backround/2 план.png" id="50_cmqin"]
-[ext_resource type="Texture2D" uid="uid://c1wubnyfww58y" path="res://assets/images/window_backround/1 план.png" id="51_rij7s"]
+[ext_resource type="Texture2D" uid="uid://cona7hq7qsqy6" path="res://assets/images/window_backround/2 план.png" id="50_cmqin"]
+[ext_resource type="Texture2D" uid="uid://b3fxpjmdw0bo7" path="res://assets/images/window_backround/1 план.png" id="51_rij7s"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2r6g7"]
 blend_mode = 1
@@ -164,9 +163,16 @@ alpha_curve = SubResource("CurveTexture_13oey")
 shader = ExtResource("13_tex4q")
 shader_parameter/blend_mode = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qa6u"]
-shader = ExtResource("13_tex4q")
-shader_parameter/blend_mode = 0
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4f2b1"]
+light_mode = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5ku6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nbgv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3x7i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4f2b1"]
 
 [sub_resource type="Animation" id="Animation_ql6yw"]
 length = 0.001
@@ -189,18 +195,6 @@ tracks/1/path = NodePath("begin_cutscene/narrative:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("begin_cutscene/narrative/Button:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -248,18 +242,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("begin_cutscene/narrative/Button:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxgch"]
 _data = {
@@ -272,80 +254,164 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ending_cutscene/Node2D/TextureRect:texture")
+tracks/0/path = NodePath("CanvasLayer/ending_cutscene/Images:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("19_4mwer")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/ending_cutscene/Node2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_2qbig"]
-resource_name = "win"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ending_cutscene/Node2D/TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.033333335, 4, 8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("26_c5ku6"), ExtResource("27_1nbgv"), ExtResource("28_u3x7i")]
-}
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/ending_cutscene")
+tracks/1/path = NodePath("CanvasLayer/ending_cutscene/Images/TextureRect2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(10),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ending_cutscene/Images/TextureRect3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ending_cutscene/narrative2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1078)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/ending_cutscene/ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/ending_cutscene/Images:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2qbig"]
+resource_name = "win"
+length = 40.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ending_cutscene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(38.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"quit_game"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ending_cutscene/Images:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.19999999, 0.1, 1.6333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.027100384), Color(1, 1, 1, 1)]
+}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/ending_cutscene/Node2D/TextureRect:texture")
+tracks/2/path = NodePath("CanvasLayer/ending_cutscene/Images/TextureRect2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0.1, 2.4766667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": []
+"values": [false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/ending_cutscene/Node2D:modulate")
+tracks/3/path = NodePath("CanvasLayer/ending_cutscene/Images/TextureRect3:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.96666664, 3.1),
+"times": PackedFloat32Array(0.099999994, 4.0266666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/ending_cutscene/narrative2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(7.247033, 30),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(0, 1078), Vector2(0, -1082)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/ending_cutscene/ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 27.7, 35.233334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/ending_cutscene/Images:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gv4x6"]
@@ -522,7 +588,7 @@ max_distance = 6334.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("ShaderMaterial_224lv")
-color = Color(0.69240695, 0.79439634, 0.99160784, 1)
+color = Color(0.7175305, 0.8118557, 0.99269515, 1)
 
 [node name="background_sprite" type="Sprite2D" parent="CanvasModulate"]
 light_mask = 3
@@ -781,22 +847,26 @@ visible_characters_behavior = 3
 text_direction = 1
 script = ExtResource("15_5qa6u")
 next_button = NodePath("../Button")
-fade_duration = 8.595
+fade_duration = 6.619
+fade_start_offset = -2.525
 fade_length = 120
 metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
-material = SubResource("ShaderMaterial_5qa6u")
+material = SubResource("CanvasItemMaterial_4f2b1")
 layout_mode = 0
-offset_left = 850.0
-offset_top = 808.0
-offset_right = 1066.0
-offset_bottom = 919.0
+offset_left = 812.0
+offset_top = 695.0
+offset_right = 1201.0
+offset_bottom = 994.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("14_5qa6u")
-theme_override_font_sizes/font_size = 71
+theme_override_font_sizes/font_size = 81
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c5ku6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1nbgv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u3x7i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4f2b1")
 text = "Start"
-flat = true
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/begin_cutscene"]
 root_node = NodePath("../..")
@@ -809,64 +879,138 @@ libraries = {
 [node name="ending_cutscene" type="Node" parent="cutscenes/CanvasLayer"]
 script = ExtResource("18_13oey")
 
+[node name="narrative2" type="Control" parent="cutscenes/CanvasLayer/ending_cutscene"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1078.0
+offset_bottom = 1078.009
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="cutscenes/CanvasLayer/ending_cutscene/narrative2" node_paths=PackedStringArray("next_button")]
+z_index = -2
+material = SubResource("ShaderMaterial_ql6yw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("14_5qa6u")
+theme_override_font_sizes/normal_font_size = 31
+bbcode_enabled = true
+text = "LUMINA'S LAST STAND
+
+Directed by Alistair Thorne
+
+Written by Elara Vance
+
+Lead Artist Julian Frost
+
+Lead Animator Silas Grey
+
+Technical Director Marcus Sterling
+
+Music by Amara Lyra
+
+Sound Design Victor Low
+
+Voice Cast The Wanderer - Elias Kael The Shadow - Morgana Blackwood The Spirit - Sarah Bright
+
+Special Thanks The Midnight Coffee Society Professor Barnaby And all our supporters
+
+(C) 2026 NOIR LIGHT STUDIOS"
+autowrap_mode = 2
+horizontal_alignment = 1
+visible_characters_behavior = 3
+text_direction = 1
+script = ExtResource("15_5qa6u")
+next_button = NodePath("")
+fade_duration = 8.595
+fade_length = 120
+metadata/_edit_lock_ = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/CanvasLayer/ending_cutscene"]
 root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_gv4x6")
 }
 
-[node name="Node2D" type="Node2D" parent="cutscenes/CanvasLayer/ending_cutscene"]
+[node name="Images" type="Node2D" parent="cutscenes/CanvasLayer/ending_cutscene"]
 visible = false
 
-[node name="8" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="8" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("28_4f2b1")
 
-[node name="7" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="7" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("29_c5ku6")
 
-[node name="6" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="6" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("30_1nbgv")
 
-[node name="5" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="5" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("31_u3x7i")
 
-[node name="4" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="4" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("32_yohhn")
 
-[node name="TextureRect" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
-position = Vector2(970, 544)
-scale = Vector2(0.92721295, 0.92721295)
-texture = ExtResource("19_4mwer")
+[node name="TextureRect" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
+position = Vector2(958.99994, 584)
+texture = ExtResource("26_c5ku6")
 
-[node name="3" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="TextureRect2" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
+visible = false
+position = Vector2(980, 565)
+texture = ExtResource("27_1nbgv")
+
+[node name="TextureRect3" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
+visible = false
+position = Vector2(971, 541)
+texture = ExtResource("28_u3x7i")
+
+[node name="3" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("33_e6cir")
 
-[node name="2" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="2" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("34_6da8u")
 
-[node name="9" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="9" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("34_6da8u")
 
-[node name="1" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+[node name="1" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Images"]
 position = Vector2(956.67004, 543.5081)
 scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("35_kbi6t")
+
+[node name="ColorRect" type="ColorRect" parent="cutscenes/CanvasLayer/ending_cutscene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [node name="ladder_cutscene" type="Node" parent="cutscenes"]
 script = ExtResource("23_8sm3x")
@@ -1162,6 +1306,5 @@ snow_id = 25
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes/CanvasLayer/ending_cutscene" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/narrative/RichTextLabel" method="_on_button_button_down"]
-[connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/AnimationPlayer" method="play" binds= ["start_game"]]
 
 [editable path="zones/lamp2"]
