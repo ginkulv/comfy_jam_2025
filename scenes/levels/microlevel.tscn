@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cag4ty2tywqe0" path="res://scenes/props/music_puzzle.tscn" id="5_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dwg4kahwpqddq" path="res://scenes/ui/main_menu.tscn" id="5_ui2ab"]
 [ext_resource type="PackedScene" uid="uid://dlc34kcsyiwli" path="res://scenes/props/fireplace.tscn" id="6_4psif"]
-[ext_resource type="Texture2D" uid="uid://dgdsnf26sc8lj" path="res://assets/images/room_final2.png" id="6_e6cir"]
+[ext_resource type="Texture2D" uid="uid://ctounu14u8od1" path="res://assets/images/room_final2.png" id="6_e6cir"]
 [ext_resource type="PackedScene" uid="uid://dddejuoy8amxk" path="res://scenes/props/lamp.tscn" id="6_q1y3u"]
 [ext_resource type="PackedScene" uid="uid://dmwb4y3demkxp" path="res://scenes/props/matches.tscn" id="7_0x7r7"]
 [ext_resource type="Texture2D" uid="uid://calmw670lvrb3" path="res://assets/images/stol.tres" id="8_6da8u"]
@@ -1365,9 +1365,10 @@ visible_characters_behavior = 3
 text_direction = 1
 script = ExtResource("15_5qa6u")
 next_button = NodePath("../Button")
-fade_duration = 6.619
+fade_duration = 5.0
 fade_start_offset = -2.525
-fade_length = 120
+fade_length = 75
+fade_button_start = 1.0
 metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
