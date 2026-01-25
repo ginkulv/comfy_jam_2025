@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://b7pqdcak0e21c" path="res://assets/images/гирлянда выкл.png" id="28_wgf40"]
 [ext_resource type="Texture2D" uid="uid://dytff8d8en4fv" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://cvyqwhu6a5vh4" path="res://assets/images/гирлянда свет.png" id="29_q8148"]
-[ext_resource type="Script" path="res://scripts/props/snow.gd" id="29_qoveh"]
+[ext_resource type="Script" uid="uid://cfdga3qg15f6u" path="res://scripts/props/snow.gd" id="29_qoveh"]
 [ext_resource type="Texture2D" uid="uid://dq5rfptcyn7p5" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
@@ -430,7 +430,7 @@ tracks/5/path = NodePath("CanvasLayer/ending_cutscene/ColorRect:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 27.7, 35.233334),
+"times": PackedFloat32Array(0, 28.466667, 35.233334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -446,6 +446,20 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(7.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop_music_on_ending"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gv4x6"]
@@ -1216,10 +1230,10 @@ metadata/_edit_lock_ = true
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
 material = SubResource("CanvasItemMaterial_4f2b1")
 layout_mode = 0
-offset_left = 812.0
-offset_top = 695.0
-offset_right = 1201.0
-offset_bottom = 994.0
+offset_left = 805.0
+offset_top = 652.0
+offset_right = 1194.0
+offset_bottom = 951.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("14_5qa6u")
 theme_override_font_sizes/font_size = 81
@@ -1247,7 +1261,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 1078.0
-offset_bottom = 1078.009
+offset_bottom = 1078.0166
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
