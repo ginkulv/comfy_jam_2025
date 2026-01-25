@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://crenil64k002y" path="res://assets/sprites/atlas/ladder_medium.tres" id="24_8sm3x"]
 [ext_resource type="Texture2D" uid="uid://bf1wlcq2kt7lj" path="res://assets/images/cutscene/zamok_0.tres" id="26_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://dlkp3ccirgs03" path="res://assets/images/cutscene/zamok_1.tres" id="27_1nbgv"]
-[ext_resource type="Script" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
+[ext_resource type="Script" uid="uid://c4dwk715g7skb" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
 [ext_resource type="Texture2D" uid="uid://drnenmcy0k5ca" path="res://assets/sprites/atlas_snow/snow_12.tres" id="27_44426"]
 [ext_resource type="Texture2D" uid="uid://xnavcf00t7e6" path="res://assets/sprites/atlas_snow/snow_11.tres" id="27_muj0h"]
 [ext_resource type="Texture2D" uid="uid://dys3ig045bih2" path="res://assets/images/cutscene/8.png" id="28_4f2b1"]
@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://b7pqdcak0e21c" path="res://assets/images/гирлянда выкл.png" id="28_wgf40"]
 [ext_resource type="Texture2D" uid="uid://dytff8d8en4fv" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://cvyqwhu6a5vh4" path="res://assets/images/гирлянда свет.png" id="29_q8148"]
-[ext_resource type="Script" path="res://scripts/props/snow.gd" id="29_qoveh"]
+[ext_resource type="Script" uid="uid://cfdga3qg15f6u" path="res://scripts/props/snow.gd" id="29_qoveh"]
 [ext_resource type="Texture2D" uid="uid://dq5rfptcyn7p5" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
@@ -426,7 +426,7 @@ tracks/5/path = NodePath("CanvasLayer/ending_cutscene/ColorRect:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 27.7, 35.233334),
+"times": PackedFloat32Array(0, 28.466667, 35.233334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -442,6 +442,20 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(7.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop_music_on_ending"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gv4x6"]
@@ -961,7 +975,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 1078.0
-offset_bottom = 1078.009
+offset_bottom = 1078.0166
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
