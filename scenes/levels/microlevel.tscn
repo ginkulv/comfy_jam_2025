@@ -1,7 +1,6 @@
-[gd_scene load_steps=72 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=83 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scripts/ui/cutscene.gd" id="1_ql6yw"]
-[ext_resource type="Texture2D" uid="uid://duks3tphrlnq5" path="res://assets/sprites/photo_2026-01-22_05-41-21.jpg" id="1_vxgch"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
 [ext_resource type="Texture2D" uid="uid://bej0e87c8llti" path="res://assets/images/room_final_final.png" id="2_4hadc"]
 [ext_resource type="Texture2D" uid="uid://cqbt2mebb5rro" path="res://assets/images/decor.png" id="3_2qbig"]
@@ -31,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://drnenmcy0k5ca" path="res://assets/sprites/atlas_snow/snow_12.tres" id="27_44426"]
 [ext_resource type="Texture2D" uid="uid://xnavcf00t7e6" path="res://assets/sprites/atlas_snow/snow_11.tres" id="27_muj0h"]
 [ext_resource type="Texture2D" uid="uid://dlnjm63ain16r" path="res://assets/sprites/atlas_snow/snow_10.tres" id="28_mjvsw"]
+[ext_resource type="Texture2D" uid="uid://b7pqdcak0e21c" path="res://assets/images/гирлянда выкл.png" id="28_wgf40"]
+[ext_resource type="Texture2D" uid="uid://cvyqwhu6a5vh4" path="res://assets/images/гирлянда свет.png" id="29_q8148"]
 [ext_resource type="Script" path="res://scripts/props/snow.gd" id="29_qoveh"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
@@ -44,6 +45,11 @@
 [ext_resource type="Texture2D" uid="uid://dj3by4svyge2x" path="res://assets/sprites/atlas_snow/snow_20.tres" id="39_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://1fxg8uvnpqi4" path="res://assets/sprites/atlas_snow/snow_7.tres" id="40_wkwk4"]
 [ext_resource type="Texture2D" uid="uid://cb1qxbyeosjf8" path="res://assets/sprites/atlas_snow/snow_9.tres" id="41_cmqin"]
+[ext_resource type="Texture2D" uid="uid://075ydffrfqjp" path="res://assets/images/window_backround/месяц.png" id="47_vj8sx"]
+[ext_resource type="Texture2D" uid="uid://bs1mhvyckn83a" path="res://assets/images/window_backround/небо.png" id="48_4jcq5"]
+[ext_resource type="Texture2D" uid="uid://duhdtit5raqe1" path="res://assets/images/window_backround/облака.png" id="49_wkwk4"]
+[ext_resource type="Texture2D" uid="uid://d3p0ukx7iivmv" path="res://assets/images/window_backround/2 план.png" id="50_cmqin"]
+[ext_resource type="Texture2D" uid="uid://bcdybxgf7xmw2" path="res://assets/images/window_backround/1 план.png" id="51_rij7s"]
 
 [sub_resource type="Gradient" id="Gradient_ql6yw"]
 interpolation_mode = 1
@@ -69,7 +75,7 @@ lifetime_randomness = 0.11
 particle_flag_disable_z = true
 emission_shape_scale = Vector3(2.485, 2.335, 1)
 emission_shape = 1
-emission_sphere_radius = 68.2
+emission_sphere_radius = 37.85
 angular_velocity_min = -1.6093254e-05
 angular_velocity_max = -1.6093254e-05
 orbit_velocity_min = -0.014999906
@@ -82,7 +88,7 @@ linear_accel_max = -2.2351742e-06
 radial_accel_min = -2.2351742e-06
 radial_accel_max = 2.9899976
 scale_min = 0.0
-scale_max = 0.049999997
+scale_max = 0.04
 alpha_curve = SubResource("CurveTexture_13oey")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
@@ -108,6 +114,33 @@ size = Vector2(35, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qa6u"]
 size = Vector2(36, 106)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wgf40"]
+light_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q8148"]
+lifetime_randomness = 0.11
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(2.485, 2.335, 1)
+emission_shape = 1
+emission_sphere_radius = 37.85
+inherit_velocity_ratio = 0.289
+initial_velocity_min = -2.37
+initial_velocity_max = 4.48
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+orbit_velocity_min = -0.014999906
+orbit_velocity_max = 0.030000096
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = -2.2351742e-05
+gravity = Vector3(38.445, 98.825, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = -2.2351742e-06
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 2.9899976
+scale_min = 0.0
+scale_max = 0.03
+alpha_curve = SubResource("CurveTexture_13oey")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ql6yw"]
 shader = ExtResource("13_tex4q")
@@ -348,6 +381,20 @@ _data = {
 &"ladder_out": SubResource("Animation_c7o10")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrlke"]
+shader = ExtResource("13_tex4q")
+shader_parameter/blend_mode = 4
+
+[sub_resource type="Gradient" id="Gradient_nr8hd"]
+offsets = PackedFloat32Array(0, 0.7765958)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qn3wp"]
+gradient = SubResource("Gradient_nr8hd")
+fill = 1
+fill_from = Vector2(0.5, 0.47435898)
+fill_to = Vector2(1, 0.43589744)
+
 [node name="microlevel" type="Node2D"]
 metadata/_edit_vertical_guides_ = [960.0]
 metadata/_edit_horizontal_guides_ = [576.0]
@@ -356,14 +403,48 @@ metadata/_edit_horizontal_guides_ = [576.0]
 layer = -1
 follow_viewport_enabled = true
 
-[node name="backroung_window" type="Sprite2D" parent="blizzard"]
-self_modulate = Color(0.98307425, 0.98307425, 0.98307425, 1)
-position = Vector2(1204, 287)
-scale = Vector2(0.6724299, 0.6724299)
-texture = ExtResource("1_vxgch")
+[node name="backroung_window2" type="Parallax2D" parent="blizzard"]
+scale = Vector2(0.48844528, 0.48844528)
+scroll_offset = Vector2(893, -26)
+
+[node name="Parallax2D" type="Parallax2D" parent="blizzard/backroung_window2"]
+scroll_scale = Vector2(0.95, 0.95)
+scroll_offset = Vector2(571.52374, -84.70064)
+
+[node name="Небо" type="Sprite2D" parent="blizzard/backroung_window2/Parallax2D"]
+position = Vector2(-90.00012, 909)
+texture = ExtResource("48_4jcq5")
+
+[node name="Месяц" type="Sprite2D" parent="blizzard/backroung_window2/Parallax2D"]
+position = Vector2(-387.26553, 850.39545)
+texture = ExtResource("47_vj8sx")
+
+[node name="Parallax2D2" type="Parallax2D" parent="blizzard/backroung_window2"]
+scroll_scale = Vector2(0.9, 0.9)
+scroll_offset = Vector2(571.52374, -84.70064)
+
+[node name="Облака" type="Sprite2D" parent="blizzard/backroung_window2/Parallax2D2"]
+position = Vector2(-52.383057, 865.7503)
+texture = ExtResource("49_wkwk4")
+
+[node name="Parallax2D3" type="Parallax2D" parent="blizzard/backroung_window2"]
+scroll_scale = Vector2(0.85, 0.85)
+scroll_offset = Vector2(571.52374, -84.70064)
+
+[node name="2План" type="Sprite2D" parent="blizzard/backroung_window2/Parallax2D3"]
+position = Vector2(-98.59451, 856.53735)
+texture = ExtResource("50_cmqin")
+
+[node name="Parallax2D4" type="Parallax2D" parent="blizzard/backroung_window2"]
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(571.52374, -84.70064)
+
+[node name="1План" type="Sprite2D" parent="blizzard/backroung_window2/Parallax2D4"]
+position = Vector2(-602.2335, 858.5847)
+texture = ExtResource("51_rij7s")
 
 [node name="snow" type="GPUParticles2D" parent="blizzard"]
-position = Vector2(883, 184)
+position = Vector2(925, 170)
 amount = 448
 texture = SubResource("GradientTexture2D_vxgch")
 lifetime = 2.6799999999999997
@@ -376,21 +457,24 @@ process_material = SubResource("ParticleProcessMaterial_4mwer")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 light_mask = 2
-color = Color(0.9934115, 0.89138603, 0.86781704, 1)
+color = Color(0.99215686, 0.8901961, 0.8666667, 1)
 energy = 16.0
 blend_mode = 1
 shadow_color = Color(0, 0, 0.60784316, 0.70980394)
 height = 0.06
 max_distance = 6334.0
 
-[node name="background_sprite" type="Sprite2D" parent="."]
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.69240695, 0.79439634, 0.99160784, 1)
+
+[node name="background_sprite" type="Sprite2D" parent="CanvasModulate"]
 light_mask = 3
 z_index = -10
 texture = ExtResource("2_4hadc")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="middleground_sprite" type="Sprite2D" parent="."]
+[node name="middleground_sprite" type="Sprite2D" parent="CanvasModulate"]
 z_index = 5
 position = Vector2(1349, 610)
 texture = ExtResource("3_2qbig")
@@ -573,6 +657,22 @@ position = Vector2(998, 358)
 scale = Vector2(0.92, 0.92)
 metadata/_edit_lock_ = true
 
+[node name="snow2" type="GPUParticles2D" parent="zones/window"]
+z_index = 4
+material = SubResource("CanvasItemMaterial_wgf40")
+position = Vector2(1.0869699, 6.521739)
+scale = Vector2(1.0869565, 1.0869565)
+amount = 68
+texture = SubResource("GradientTexture2D_vxgch")
+lifetime = 2.6799999999999997
+preprocess = 2.17
+speed_scale = 0.25
+explosiveness = 0.06
+randomness = 0.36
+collision_base_size = 4.3
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_q8148")
+
 [node name="lock" parent="zones" instance=ExtResource("12_3sdmp")]
 z_index = -1
 position = Vector2(1299, 787)
@@ -679,6 +779,99 @@ z_index = 4
 position = Vector2(1471, 480.00003)
 scale = Vector2(0.815, 0.815)
 texture = ExtResource("23_35dfi")
+
+[node name="girlanda" type="Node2D" parent="cutscenes"]
+visible = false
+position = Vector2(1413, 520)
+
+[node name="ГирляндаВыкл" type="Sprite2D" parent="cutscenes/girlanda"]
+texture = ExtResource("28_wgf40")
+
+[node name="ГирляндаСвет" type="Sprite2D" parent="cutscenes/girlanda"]
+material = SubResource("ShaderMaterial_vrlke")
+texture = ExtResource("29_q8148")
+
+[node name="red" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(1379, 213)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.5647059, 0.1882353, 0.21568628, 1)
+energy = 1.14
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 2.58
+
+[node name="red3" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(-1332, -82)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.5647059, 0.1882353, 0.21568628, 1)
+energy = 1.14
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 2.58
+
+[node name="red2" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(-176, -403)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.5647059, 0.1882353, 0.21568628, 1)
+energy = 1.14
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 2.58
+
+[node name="green" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(1271, -403)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.26666668, 0.5254902, 0.42352942, 1)
+energy = 1.14
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 2.58
+
+[node name="green3" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(-1362, 378)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.26666668, 0.5254902, 0.42352942, 1)
+energy = 1.14
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 2.58
+
+[node name="green2" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(-515, -429)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.26666668, 0.5254902, 0.42352942, 1)
+energy = 1.14
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 2.58
+
+[node name="yelow" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(740, -374)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.78431374, 0.6156863, 0.33333334, 1)
+energy = 1.14
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 2.58
+
+[node name="yelow2" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(-729, -480)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.78431374, 0.6156863, 0.33333334, 1)
+energy = 1.14
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 2.58
+
+[node name="violet" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(202, -428)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.33536002, 0.2816, 0.64, 1)
+energy = 1.44
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 1.98
+
+[node name="violet2" type="PointLight2D" parent="cutscenes/girlanda"]
+position = Vector2(-1116, -422)
+scale = Vector2(11.609375, 11.25)
+color = Color(0.27468798, 0.22514561, 0.53548783, 1)
+energy = 1.51
+blend_mode = 2
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_qn3wp")
+texture_scale = 1.98
 
 [node name="SnowManager" type="Node" parent="."]
 script = ExtResource("27_8pgdl")
