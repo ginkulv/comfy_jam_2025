@@ -13,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://cqa63r0c6ooi6" path="res://scenes/props/firewood.tscn" id="8_t7v5p"]
 [ext_resource type="PackedScene" uid="uid://d3r4jskvs8x0j" path="res://scenes/props/key.tscn" id="9_t7v5p"]
 [ext_resource type="PackedScene" uid="uid://c7tcegynfsert" path="res://scenes/props/candle.tscn" id="11_p2pcn"]
-[ext_resource type="PackedScene" uid="uid://erxk7gmy73d2" path="res://scenes/props/window.tscn" id="11_pfbcd"]
 [ext_resource type="PackedScene" uid="uid://5aysjs1fwdih" path="res://scenes/props/lock.tscn" id="12_3sdmp"]
 [ext_resource type="Shader" uid="uid://834uwk1kh1fg" path="res://assets/shaders/candle.gdshader" id="13_tex4q"]
 [ext_resource type="FontFile" uid="uid://dgo3t53sw2gy2" path="res://assets/fonts/Junicode.ttf" id="14_5qa6u"]
 [ext_resource type="Script" uid="uid://bl5uldjmqbeg0" path="res://scripts/ui/cutscene_fadin_text.gd" id="15_5qa6u"]
+[ext_resource type="PackedScene" uid="uid://dwg080ll0fk7" path="res://scenes/props/window2.tscn" id="18_4f2b1"]
 [ext_resource type="Script" uid="uid://bwm3tpl4i4t36" path="res://scripts/ui/final_cutscene.gd" id="18_13oey"]
 [ext_resource type="Script" uid="uid://bj72sstg6ewd6" path="res://scripts/ladder_cutscene.gd" id="23_8sm3x"]
 [ext_resource type="Texture2D" uid="uid://ca1aqmp6s2ptk" path="res://assets/sprites/atlas/ladder_big.tres" id="23_35dfi"]
@@ -132,32 +132,14 @@ size = Vector2(35, 117)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qa6u"]
 size = Vector2(36, 106)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wgf40"]
-light_mode = 1
+[sub_resource type="Gradient" id="Gradient_4f2b1"]
+offsets = PackedFloat32Array(0, 0.34177214)
+colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q8148"]
-lifetime_randomness = 0.11
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(2.485, 2.335, 1)
-emission_shape = 1
-emission_sphere_radius = 37.85
-inherit_velocity_ratio = 0.289
-initial_velocity_min = -2.37
-initial_velocity_max = 4.48
-angular_velocity_min = -1.6093254e-05
-angular_velocity_max = -1.6093254e-05
-orbit_velocity_min = -0.014999906
-orbit_velocity_max = 0.030000096
-radial_velocity_min = -2.2351742e-05
-radial_velocity_max = -2.2351742e-05
-gravity = Vector3(38.445, 98.825, 0)
-linear_accel_min = -2.2351742e-06
-linear_accel_max = -2.2351742e-06
-radial_accel_min = -2.2351742e-06
-radial_accel_max = 2.9899976
-scale_min = 0.0
-scale_max = 0.03
-alpha_curve = SubResource("CurveTexture_13oey")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c5ku6"]
+gradient = SubResource("Gradient_4f2b1")
+fill = 1
+fill_from = Vector2(0.509009, 0.536036)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ql6yw"]
 shader = ExtResource("13_tex4q")
@@ -200,6 +182,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("begin_cutscene/TextureRect:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("begin_cutscene/TextureRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5qa6u"]
 resource_name = "start_game"
@@ -211,7 +217,7 @@ tracks/0/path = NodePath("../DirectionalLight2D:energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1, 5),
+"times": PackedFloat32Array(1.4, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [2.97, 0.92]
@@ -241,6 +247,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("begin_cutscene/TextureRect:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("begin_cutscene/TextureRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxgch"]
@@ -564,9 +594,65 @@ scroll_offset = Vector2(571.52374, -84.70064)
 position = Vector2(-602.2335, 858.5847)
 texture = ExtResource("51_rij7s")
 
+[node name="backroung_window3" type="Parallax2D" parent="blizzard"]
+scale = Vector2(0.5778595, 0.5778595)
+scroll_offset = Vector2(1662, -113.00001)
+
+[node name="Parallax2D" type="Parallax2D" parent="blizzard/backroung_window3"]
+scroll_scale = Vector2(0.95, 0.95)
+scroll_offset = Vector2(571.52374, -84.70064)
+
+[node name="Небо" type="Sprite2D" parent="blizzard/backroung_window3/Parallax2D"]
+position = Vector2(-90.00012, 909)
+texture = ExtResource("48_4jcq5")
+
+[node name="Месяц" type="Sprite2D" parent="blizzard/backroung_window3/Parallax2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_2r6g7")
+position = Vector2(-387.26553, 850.39545)
+texture = ExtResource("47_vj8sx")
+
+[node name="Parallax2D2" type="Parallax2D" parent="blizzard/backroung_window3"]
+scroll_scale = Vector2(0.9, 0.9)
+scroll_offset = Vector2(571.52374, -84.70064)
+
+[node name="Облака" type="Sprite2D" parent="blizzard/backroung_window3/Parallax2D2"]
+position = Vector2(-52.383057, 865.7503)
+texture = ExtResource("49_wkwk4")
+
+[node name="Parallax2D3" type="Parallax2D" parent="blizzard/backroung_window3"]
+scroll_scale = Vector2(0.85, 0.85)
+scroll_offset = Vector2(571.52374, -84.70064)
+
+[node name="2План" type="Sprite2D" parent="blizzard/backroung_window3/Parallax2D3"]
+position = Vector2(-336.08273, 846.3008)
+texture = ExtResource("50_cmqin")
+
+[node name="Parallax2D4" type="Parallax2D" parent="blizzard/backroung_window3"]
+visible = false
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(571.52374, -84.70064)
+
+[node name="1План" type="Sprite2D" parent="blizzard/backroung_window3/Parallax2D4"]
+position = Vector2(-229.6227, 854.49)
+texture = ExtResource("51_rij7s")
+
 [node name="snow" type="GPUParticles2D" parent="blizzard"]
 material = SubResource("CanvasItemMaterial_3mfa6")
-position = Vector2(925, 170)
+position = Vector2(925, 201)
+amount = 448
+texture = SubResource("GradientTexture2D_vxgch")
+lifetime = 2.6799999999999997
+preprocess = 2.17
+speed_scale = 0.28
+randomness = 0.36
+collision_base_size = 4.3
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_4mwer")
+
+[node name="snow2" type="GPUParticles2D" parent="blizzard"]
+material = SubResource("CanvasItemMaterial_3mfa6")
+position = Vector2(1750, 226)
 amount = 448
 texture = SubResource("GradientTexture2D_vxgch")
 lifetime = 2.6799999999999997
@@ -578,7 +664,6 @@ draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_4mwer")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 light_mask = 2
 color = Color(0.99215686, 0.8901961, 0.8666667, 1)
 energy = 16.0
@@ -778,27 +863,8 @@ position = Vector2(-2, -9)
 shape = SubResource("RectangleShape2D_5qa6u")
 metadata/_edit_lock_ = true
 
-[node name="window" parent="zones" instance=ExtResource("11_pfbcd")]
-z_index = 3
-position = Vector2(998, 358)
-scale = Vector2(0.92, 0.92)
-metadata/_edit_lock_ = true
-
-[node name="snow2" type="GPUParticles2D" parent="zones/window"]
-z_index = 4
-material = SubResource("CanvasItemMaterial_wgf40")
-position = Vector2(1.0869699, 6.521739)
-scale = Vector2(1.0869565, 1.0869565)
-amount = 68
-texture = SubResource("GradientTexture2D_vxgch")
-lifetime = 2.6799999999999997
-preprocess = 2.17
-speed_scale = 0.25
-explosiveness = 0.06
-randomness = 0.36
-collision_base_size = 4.3
-draw_order = 0
-process_material = SubResource("ParticleProcessMaterial_q8148")
+[node name="window" parent="zones" instance=ExtResource("18_4f2b1")]
+position = Vector2(997.99994, 358)
 
 [node name="lock" parent="zones" instance=ExtResource("12_3sdmp")]
 z_index = -1
@@ -809,6 +875,14 @@ metadata/_edit_lock_ = true
 script = ExtResource("1_ql6yw")
 
 [node name="begin_cutscene" type="Node" parent="cutscenes"]
+
+[node name="TextureRect" type="TextureRect" parent="cutscenes/begin_cutscene"]
+offset_left = 109.0
+offset_top = -398.0
+offset_right = 1941.0
+offset_bottom = 1028.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_c5ku6")
 
 [node name="narrative" type="Control" parent="cutscenes/begin_cutscene"]
 z_index = 20
@@ -892,7 +966,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="cutscenes/CanvasLayer/ending_cutscene/narrative2" node_paths=PackedStringArray("next_button")]
+[node name="RichTextLabel" type="RichTextLabel" parent="cutscenes/CanvasLayer/ending_cutscene/narrative2"]
 z_index = -2
 material = SubResource("ShaderMaterial_ql6yw")
 layout_mode = 1
@@ -931,7 +1005,6 @@ horizontal_alignment = 1
 visible_characters_behavior = 3
 text_direction = 1
 script = ExtResource("15_5qa6u")
-next_button = NodePath("")
 fade_duration = 8.595
 fade_length = 120
 metadata/_edit_lock_ = true
