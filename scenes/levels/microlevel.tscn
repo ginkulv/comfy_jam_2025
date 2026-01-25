@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=95 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scripts/ui/cutscene.gd" id="1_ql6yw"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
@@ -20,24 +20,33 @@
 [ext_resource type="Script" uid="uid://bl5uldjmqbeg0" path="res://scripts/ui/cutscene_fadin_text.gd" id="15_5qa6u"]
 [ext_resource type="Script" uid="uid://bwm3tpl4i4t36" path="res://scripts/ui/final_cutscene.gd" id="18_13oey"]
 [ext_resource type="Texture2D" uid="uid://2p8yw2wmx40k" path="res://assets/photo_2026-01-23_00-09-10.jpg" id="19_4mwer"]
-[ext_resource type="Texture2D" uid="uid://crw3l5a5rtih6" path="res://assets/images/photo_2026-01-18_02-18-48.jpg" id="20_4hadc"]
-[ext_resource type="Texture2D" uid="uid://bksjfcwxhabjq" path="res://assets/images/photo_2026-01-18_02-18-50.jpg" id="21_gv4x6"]
 [ext_resource type="Script" uid="uid://bj72sstg6ewd6" path="res://scripts/ladder_cutscene.gd" id="23_8sm3x"]
 [ext_resource type="Texture2D" uid="uid://ca1aqmp6s2ptk" path="res://assets/sprites/atlas/ladder_big.tres" id="23_35dfi"]
 [ext_resource type="Texture2D" uid="uid://djcycjk8xt41l" path="res://assets/sprites/atlas/ladder_small.tres" id="23_c7o10"]
 [ext_resource type="Texture2D" uid="uid://crenil64k002y" path="res://assets/sprites/atlas/ladder_medium.tres" id="24_8sm3x"]
+[ext_resource type="Texture2D" uid="uid://bf1wlcq2kt7lj" path="res://assets/images/cutscene/zamok_0.tres" id="26_c5ku6"]
+[ext_resource type="Texture2D" uid="uid://dlkp3ccirgs03" path="res://assets/images/cutscene/zamok_1.tres" id="27_1nbgv"]
 [ext_resource type="Script" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
 [ext_resource type="Texture2D" uid="uid://drnenmcy0k5ca" path="res://assets/sprites/atlas_snow/snow_12.tres" id="27_44426"]
 [ext_resource type="Texture2D" uid="uid://xnavcf00t7e6" path="res://assets/sprites/atlas_snow/snow_11.tres" id="27_muj0h"]
+[ext_resource type="Texture2D" uid="uid://dys3ig045bih2" path="res://assets/images/cutscene/8.png" id="28_4f2b1"]
 [ext_resource type="Texture2D" uid="uid://dlnjm63ain16r" path="res://assets/sprites/atlas_snow/snow_10.tres" id="28_mjvsw"]
+[ext_resource type="Texture2D" uid="uid://8aj4p1lbd7q0" path="res://assets/images/cutscene/zamok_2.tres" id="28_u3x7i"]
 [ext_resource type="Texture2D" uid="uid://b7pqdcak0e21c" path="res://assets/images/гирлянда выкл.png" id="28_wgf40"]
+[ext_resource type="Texture2D" uid="uid://dytff8d8en4fv" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://cvyqwhu6a5vh4" path="res://assets/images/гирлянда свет.png" id="29_q8148"]
 [ext_resource type="Script" path="res://scripts/props/snow.gd" id="29_qoveh"]
+[ext_resource type="Texture2D" uid="uid://dq5rfptcyn7p5" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
+[ext_resource type="Texture2D" uid="uid://jre2nik2iirr" path="res://assets/images/cutscene/5.png" id="31_u3x7i"]
 [ext_resource type="Texture2D" uid="uid://nxvguluw5yes" path="res://assets/sprites/atlas_snow/snow_5.tres" id="32_qoveh"]
+[ext_resource type="Texture2D" uid="uid://tf400f8i5bqi" path="res://assets/images/cutscene/4.png" id="32_yohhn"]
+[ext_resource type="Texture2D" uid="uid://dumfme2ygdbgy" path="res://assets/images/cutscene/3.png" id="33_e6cir"]
 [ext_resource type="Texture2D" uid="uid://hh8syhc24bw" path="res://assets/sprites/atlas_snow/snow_6.tres" id="33_wgf40"]
+[ext_resource type="Texture2D" uid="uid://bor7tf11d2ort" path="res://assets/images/cutscene/2.png" id="34_6da8u"]
 [ext_resource type="Texture2D" uid="uid://dxomw8bqt2ha5" path="res://assets/sprites/atlas_snow/snow_14.tres" id="34_q8148"]
+[ext_resource type="Texture2D" uid="uid://du6scfnff22bi" path="res://assets/images/cutscene/1.png" id="35_kbi6t"]
 [ext_resource type="Texture2D" uid="uid://pp2n4qd82c3m" path="res://assets/sprites/atlas_snow/snow_17.tres" id="35_vrlke"]
 [ext_resource type="Texture2D" uid="uid://dyljexq8duxe1" path="res://assets/sprites/atlas_snow/snow_16.tres" id="36_nr8hd"]
 [ext_resource type="Texture2D" uid="uid://n1uwt20oohvy" path="res://assets/sprites/atlas_snow/snow_18.tres" id="37_qn3wp"]
@@ -45,11 +54,18 @@
 [ext_resource type="Texture2D" uid="uid://dj3by4svyge2x" path="res://assets/sprites/atlas_snow/snow_20.tres" id="39_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://1fxg8uvnpqi4" path="res://assets/sprites/atlas_snow/snow_7.tres" id="40_wkwk4"]
 [ext_resource type="Texture2D" uid="uid://cb1qxbyeosjf8" path="res://assets/sprites/atlas_snow/snow_9.tres" id="41_cmqin"]
-[ext_resource type="Texture2D" uid="uid://075ydffrfqjp" path="res://assets/images/window_backround/месяц.png" id="47_vj8sx"]
-[ext_resource type="Texture2D" uid="uid://bs1mhvyckn83a" path="res://assets/images/window_backround/небо.png" id="48_4jcq5"]
-[ext_resource type="Texture2D" uid="uid://duhdtit5raqe1" path="res://assets/images/window_backround/облака.png" id="49_wkwk4"]
-[ext_resource type="Texture2D" uid="uid://d3p0ukx7iivmv" path="res://assets/images/window_backround/2 план.png" id="50_cmqin"]
-[ext_resource type="Texture2D" uid="uid://bcdybxgf7xmw2" path="res://assets/images/window_backround/1 план.png" id="51_rij7s"]
+[ext_resource type="Texture2D" path="res://assets/images/window_backround/месяц.png" id="47_vj8sx"]
+[ext_resource type="Texture2D" path="res://assets/images/window_backround/небо.png" id="48_4jcq5"]
+[ext_resource type="Texture2D" path="res://assets/images/window_backround/облака.png" id="49_wkwk4"]
+[ext_resource type="Texture2D" path="res://assets/images/window_backround/2 план.png" id="50_cmqin"]
+[ext_resource type="Texture2D" path="res://assets/images/window_backround/1 план.png" id="51_rij7s"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2r6g7"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3mfa6"]
+light_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_ql6yw"]
 interpolation_mode = 1
@@ -90,6 +106,8 @@ radial_accel_max = 2.9899976
 scale_min = 0.0
 scale_max = 0.04
 alpha_curve = SubResource("CurveTexture_13oey")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_224lv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x7r7"]
 size = Vector2(39, 189)
@@ -254,7 +272,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ending_cutscene/TextureRect:texture")
+tracks/0/path = NodePath("CanvasLayer/ending_cutscene/Node2D/TextureRect:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -263,6 +281,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("19_4mwer")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ending_cutscene/Node2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_2qbig"]
 resource_name = "win"
@@ -270,14 +300,14 @@ length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ending_cutscene/TextureRect:texture")
+tracks/0/path = NodePath("CanvasLayer/ending_cutscene/Node2D/TextureRect:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4, 8),
+"times": PackedFloat32Array(-0.033333335, 4, 8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("19_4mwer"), ExtResource("20_4hadc"), ExtResource("21_gv4x6")]
+"values": [ExtResource("26_c5ku6"), ExtResource("27_1nbgv"), ExtResource("28_u3x7i")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -292,6 +322,30 @@ tracks/1/keys = {
 "args": [],
 "method": &"quit_game"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ending_cutscene/Node2D/TextureRect:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ending_cutscene/Node2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.96666664, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gv4x6"]
@@ -396,8 +450,8 @@ fill_from = Vector2(0.5, 0.47435898)
 fill_to = Vector2(1, 0.43589744)
 
 [node name="microlevel" type="Node2D"]
-metadata/_edit_vertical_guides_ = [960.0]
-metadata/_edit_horizontal_guides_ = [576.0]
+metadata/_edit_vertical_guides_ = [911.0]
+metadata/_edit_horizontal_guides_ = [574.0]
 
 [node name="blizzard" type="CanvasLayer" parent="."]
 layer = -1
@@ -416,6 +470,7 @@ position = Vector2(-90.00012, 909)
 texture = ExtResource("48_4jcq5")
 
 [node name="Месяц" type="Sprite2D" parent="blizzard/backroung_window2/Parallax2D"]
+material = SubResource("CanvasItemMaterial_2r6g7")
 position = Vector2(-387.26553, 850.39545)
 texture = ExtResource("47_vj8sx")
 
@@ -444,6 +499,7 @@ position = Vector2(-602.2335, 858.5847)
 texture = ExtResource("51_rij7s")
 
 [node name="snow" type="GPUParticles2D" parent="blizzard"]
+material = SubResource("CanvasItemMaterial_3mfa6")
 position = Vector2(925, 170)
 amount = 448
 texture = SubResource("GradientTexture2D_vxgch")
@@ -465,6 +521,7 @@ height = 0.06
 max_distance = 6334.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+material = SubResource("ShaderMaterial_224lv")
 color = Color(0.69240695, 0.79439634, 0.99160784, 1)
 
 [node name="background_sprite" type="Sprite2D" parent="CanvasModulate"]
@@ -554,6 +611,9 @@ lamp_id = 5
 z_index = 3
 position = Vector2(2276.0002, 520)
 lamp_id = 2
+
+[node name="CollisionShape2D" parent="zones/lamp2/lamp" index="0"]
+visible = false
 
 [node name="lamp3" parent="zones" instance=ExtResource("6_q1y3u")]
 position = Vector2(744, 341)
@@ -745,7 +805,6 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="cutscenes"]
-visible = false
 
 [node name="ending_cutscene" type="Node" parent="cutscenes/CanvasLayer"]
 script = ExtResource("18_13oey")
@@ -756,14 +815,58 @@ libraries = {
 &"": SubResource("AnimationLibrary_gv4x6")
 }
 
-[node name="TextureRect" type="TextureRect" parent="cutscenes/CanvasLayer/ending_cutscene"]
+[node name="Node2D" type="Node2D" parent="cutscenes/CanvasLayer/ending_cutscene"]
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+
+[node name="8" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("28_4f2b1")
+
+[node name="7" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("29_c5ku6")
+
+[node name="6" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("30_1nbgv")
+
+[node name="5" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("31_u3x7i")
+
+[node name="4" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("32_yohhn")
+
+[node name="TextureRect" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(970, 544)
+scale = Vector2(0.92721295, 0.92721295)
 texture = ExtResource("19_4mwer")
+
+[node name="3" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("33_e6cir")
+
+[node name="2" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("34_6da8u")
+
+[node name="9" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("34_6da8u")
+
+[node name="1" type="Sprite2D" parent="cutscenes/CanvasLayer/ending_cutscene/Node2D"]
+position = Vector2(956.67004, 543.5081)
+scale = Vector2(0.92721295, 0.92721295)
+texture = ExtResource("35_kbi6t")
 
 [node name="ladder_cutscene" type="Node" parent="cutscenes"]
 script = ExtResource("23_8sm3x")
@@ -1060,3 +1163,5 @@ snow_id = 25
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes/CanvasLayer/ending_cutscene" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/narrative/RichTextLabel" method="_on_button_button_down"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/AnimationPlayer" method="play" binds= ["start_game"]]
+
+[editable path="zones/lamp2"]
