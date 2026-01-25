@@ -3,8 +3,8 @@ extends Control
 @onready var anim = $"../fireplace"
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	return data.item_id == Items.Id.FIREWOOD 
-	# return true
+    return data.item_id == Items.Id.FIREWOOD 
+
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
     InventoryManager.remove_item(data.item_id)
@@ -16,7 +16,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
     anim.visible = true
 
 func _gui_input(event):
-	if event is InputEventMouseButton \
-	and event.pressed \
-	and event.button_index == MOUSE_BUTTON_LEFT:
-		MessageManager.display_text_by_id("fireplace_not_lit")
+    if event is InputEventMouseButton \
+    and event.pressed \
+    and event.button_index == MOUSE_BUTTON_LEFT:
+        MessageManager.display_text_by_id("fireplace_not_lit")
