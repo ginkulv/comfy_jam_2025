@@ -1,7 +1,7 @@
 extends Node
 
-@export var melt_time := 0.75
-@export var wave_delay := 0.20
+@export var melt_time := 0.45
+@export var wave_delay := 0.05
 
 var snow_list : Array = []
 var current_index : int = 0
@@ -12,16 +12,22 @@ func _ready():
         return a.snow_id < b.snow_id
     )
     GameState.OnFireplace.connect(start_melting)
-    
+
 func start_melting():
-    for i in snow_list.size():
-        melt_with_delay(snow_list[i], i)
+    current_index = 0
+    melt_next()
 
+func melt_next():
+    if current_index >= snow_list.size():
+        return
 
-func melt_with_delay(snow, index: int):
+    var snow = snow_list[current_index]
+    current_index += 1
+
     var tween := create_tween()
-    tween.tween_interval(index * wave_delay)
     tween.tween_property(snow, "scale", Vector2.ZERO, melt_time)
-    tween.tween_callback(func():
+    tween.finished.connect(func():
         snow.queue_free()
+        await get_tree().create_timer(wave_delay).timeout
+        melt_next()
     )
