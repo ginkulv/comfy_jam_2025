@@ -25,7 +25,7 @@ func melt_next():
     current_index += 1
 
     var tween := create_tween()
-    tween.tween_property(snow, "scale", Vector2.ZERO, melt_time)
+    tween.tween_property(snow, "modulate:a", 0.0, melt_time)
     tween.finished.connect(func():
         snow.queue_free()
         await get_tree().create_timer(wave_delay).timeout
