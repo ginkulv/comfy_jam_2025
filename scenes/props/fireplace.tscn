@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0pmkk5hb1pya" path="res://assets/sprites/fire/fire_particle_2.tres" id="9_kfb1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0i4f"]
-size = Vector2(268, 233)
+size = Vector2(410, 233)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vfs4q"]
 blend_mode = 1
@@ -170,7 +170,7 @@ color = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-12, -17.5)
+position = Vector2(-2, -17.5)
 shape = SubResource("RectangleShape2D_d0i4f")
 
 [node name="fireplace" type="Node2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://20a4nwenb6bk"]
+[gd_scene load_steps=107 format=3 uid="uid://20a4nwenb6bk"]
 
 [ext_resource type="Script" uid="uid://clt4umcygnc73" path="res://scripts/ui/cutscene.gd" id="1_ql6yw"]
 [ext_resource type="PackedScene" uid="uid://i1l77n8k2vbs" path="res://scenes/player.tscn" id="2_0rrht"]
@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://crenil64k002y" path="res://assets/sprites/atlas/ladder_medium.tres" id="24_8sm3x"]
 [ext_resource type="Texture2D" uid="uid://bf1wlcq2kt7lj" path="res://assets/images/cutscene/zamok_0.tres" id="26_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://dlkp3ccirgs03" path="res://assets/images/cutscene/zamok_1.tres" id="27_1nbgv"]
-[ext_resource type="Script" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
+[ext_resource type="Script" uid="uid://c4dwk715g7skb" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
 [ext_resource type="Texture2D" uid="uid://drnenmcy0k5ca" path="res://assets/sprites/atlas_snow/snow_12.tres" id="27_44426"]
 [ext_resource type="Texture2D" uid="uid://xnavcf00t7e6" path="res://assets/sprites/atlas_snow/snow_11.tres" id="27_muj0h"]
 [ext_resource type="Texture2D" uid="uid://dys3ig045bih2" path="res://assets/images/cutscene/8.png" id="28_4f2b1"]
@@ -53,11 +53,15 @@
 [ext_resource type="Texture2D" uid="uid://dj3by4svyge2x" path="res://assets/sprites/atlas_snow/snow_20.tres" id="39_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://1fxg8uvnpqi4" path="res://assets/sprites/atlas_snow/snow_7.tres" id="40_wkwk4"]
 [ext_resource type="Texture2D" uid="uid://cb1qxbyeosjf8" path="res://assets/sprites/atlas_snow/snow_9.tres" id="41_cmqin"]
+[ext_resource type="Texture2D" uid="uid://cgq3dl7m1p4qt" path="res://assets/images/доб гирлянда выкл.png" id="42_u3x7i"]
+[ext_resource type="Texture2D" uid="uid://bqujynu54fvff" path="res://assets/images/доп гирлянда свет.png" id="43_yohhn"]
+[ext_resource type="Script" uid="uid://c63ey5e5o0hjj" path="res://scripts/girlanda.gd" id="44_yohhn"]
 [ext_resource type="Texture2D" uid="uid://075ydffrfqjp" path="res://assets/images/window_backround/месяц.png" id="47_vj8sx"]
 [ext_resource type="Texture2D" uid="uid://bs1mhvyckn83a" path="res://assets/images/window_backround/небо.png" id="48_4jcq5"]
 [ext_resource type="Texture2D" uid="uid://duhdtit5raqe1" path="res://assets/images/window_backround/облака.png" id="49_wkwk4"]
 [ext_resource type="Texture2D" uid="uid://d3p0ukx7iivmv" path="res://assets/images/window_backround/2 план.png" id="50_cmqin"]
 [ext_resource type="Texture2D" uid="uid://bcdybxgf7xmw2" path="res://assets/images/window_backround/1 план.png" id="51_rij7s"]
+[ext_resource type="Texture2D" uid="uid://bmbyc2tisbe5v" path="res://assets/images/доп лёд для гирлянды.png" id="61_e6cir"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2r6g7"]
 blend_mode = 1
@@ -531,9 +535,14 @@ _data = {
 &"ladder_out": SubResource("Animation_c7o10")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrlke"]
-shader = ExtResource("13_tex4q")
-shader_parameter/blend_mode = 4
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e6cir"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1nbgv"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6da8u"]
+light_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_nr8hd"]
 offsets = PackedFloat32Array(0, 0.7765958)
@@ -544,6 +553,282 @@ gradient = SubResource("Gradient_nr8hd")
 fill = 1
 fill_from = Vector2(0.5, 0.47435898)
 fill_to = Vector2(1, 0.43589744)
+
+[sub_resource type="Animation" id="Animation_2r6g7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parallax2D/ГирляндаСвет:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.4206093)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/red:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/red2:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/green:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/green2:energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node2D/yelow:energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node2D/yelow2:energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Node2D/violet:energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Node2D/violet2:energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ДопГирлянда/ДопГирляндаСвет:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Parallax2D/ГирляндаСвет:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kbi6t"]
+resource_name = "enable_girlanda"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parallax2D/ГирляндаСвет:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.30122736, 0.35729998, 0.4120686, 0.53725404, 0.719816, 0.8710817),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.5019608), Color(1, 1, 1, 0), Color(1, 1, 1, 0.74509805), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/red:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.29209927, 0.359908, 0.40946057, 0.537254, 0.7250321, 0.87629783),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0, 0.7, 0.0, 1.14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/red2:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.29209927, 0.35208392, 0.40815657, 0.537254, 0.72764015, 0.87629783),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0, 0.7, 0.0, 1.14]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/green:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.29209927, 0.358604, 0.40815657, 0.534646, 0.72764015, 0.8736898),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0, 0.7, 0.0, 1.14]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/green2:energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.29209927, 0.35729998, 0.41337264, 0.538558, 0.73285615, 0.87760186),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0, 0.7, 0.0, 1.14]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node2D/yelow:energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.29209927, 0.35599598, 0.40815657, 0.53986204, 0.72764015, 0.8789059),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0, 0.7, 0.0, 1.14]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node2D/yelow2:energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.29209927, 0.35338795, 0.40815657, 0.53595, 0.72764015, 0.8749938),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0, 0.7, 0.0, 1.14]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Node2D/violet:energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.29209927, 0.359908, 0.40946057, 0.538558, 0.7289442, 0.87760186),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0, 0.7, 0.0, 1.44]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Node2D/violet2:energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.29209927, 0.35599598, 0.40685254, 0.53334194, 0.7263361, 0.87238574),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0, 0.7, 0.0, 1.51]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ДопГирлянда/ДопГирляндаСвет:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0078240875, 0.039120425, 0.06520072, 0.1160573, 0.13300948, 0.15517773, 0.17734598, 0.19429816, 0.24906678),
+"transitions": PackedFloat32Array(1, 0.4061262, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.34117648), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.5137255), Color(1, 1, 1, 0), Color(1, 1, 1, 0.76862746), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Parallax2D/ГирляндаСвет:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mfa6"]
+_data = {
+&"RESET": SubResource("Animation_2r6g7"),
+&"enable_girlanda": SubResource("Animation_kbi6t")
+}
 
 [node name="microlevel" type="Node2D"]
 metadata/_edit_vertical_guides_ = [911.0]
@@ -674,7 +959,7 @@ max_distance = 6334.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("ShaderMaterial_224lv")
-color = Color(0.7175305, 0.8118557, 0.99269515, 1)
+color = Color(0.70778674, 0.80424225, 0.9833741, 1)
 
 [node name="background_sprite" type="Sprite2D" parent="CanvasModulate"]
 light_mask = 3
@@ -745,31 +1030,32 @@ scale = Vector2(0.555, 0.555)
 
 [node name="lamp" parent="zones" instance=ExtResource("6_q1y3u")]
 z_index = 9
-position = Vector2(393.00003, 829.00006)
-texture_scale = 21.38
+position = Vector2(301, 823.00006)
+texture_scale = 39.13
 lamp_id = 1
 
 [node name="candle" parent="zones" instance=ExtResource("11_p2pcn")]
-position = Vector2(1903, 568.00006)
+z_index = 6
+position = Vector2(1683.0001, 577)
+texture_scale = 32.21
 lamp_id = 4
 
 [node name="lamp5" parent="zones" instance=ExtResource("6_q1y3u")]
-z_index = 4
-position = Vector2(1390, 342)
-scale = Vector2(0.34, 0.34)
+z_index = 151
+position = Vector2(1379, 448)
+scale = Vector2(0.5, 0.5)
+texture_scale = 41.3
 lamp_id = 5
 
 [node name="lamp2" parent="zones" instance=ExtResource("6_q1y3u")]
 z_index = 3
 position = Vector2(2276.0002, 520)
+texture_scale = 29.32
 lamp_id = 2
 
-[node name="CollisionShape2D" parent="zones/lamp2/lamp" index="0"]
-visible = false
-
 [node name="lamp3" parent="zones" instance=ExtResource("6_q1y3u")]
-position = Vector2(744, 341)
-texture_scale = 15.73
+position = Vector2(715.00006, 341)
+texture_scale = 27.69
 lamp_id = 3
 
 [node name="music_puzzle" parent="zones" instance=ExtResource("5_q1y3u")]
@@ -1102,100 +1388,108 @@ scale = Vector2(0.815, 0.815)
 texture = ExtResource("23_35dfi")
 
 [node name="girlanda" type="Node2D" parent="cutscenes"]
-visible = false
 position = Vector2(1413, 520)
 
-[node name="ГирляндаВыкл" type="Sprite2D" parent="cutscenes/girlanda"]
+[node name="Parallax2D" type="Parallax2D" parent="cutscenes/girlanda"]
+scroll_scale = Vector2(1.115, 1.115)
+
+[node name="ГирляндаВыкл" type="Sprite2D" parent="cutscenes/girlanda/Parallax2D"]
+position = Vector2(53.569946, 0)
+scale = Vector2(1.0219512, 1)
 texture = ExtResource("28_wgf40")
 
-[node name="ГирляндаСвет" type="Sprite2D" parent="cutscenes/girlanda"]
-material = SubResource("ShaderMaterial_vrlke")
+[node name="ГирляндаСвет" type="Sprite2D" parent="cutscenes/girlanda/Parallax2D"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.4206093)
+material = SubResource("CanvasItemMaterial_e6cir")
+position = Vector2(53.569946, 0)
+scale = Vector2(1.022, 1)
 texture = ExtResource("29_q8148")
 
-[node name="red" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(1379, 213)
+[node name="ДопГирлянда" type="Node2D" parent="cutscenes/girlanda"]
+material = SubResource("CanvasItemMaterial_1nbgv")
+position = Vector2(-1413, -520)
+
+[node name="ДобГирляндаВыкл" type="Sprite2D" parent="cutscenes/girlanda/ДопГирлянда"]
+position = Vector2(1365, 346)
+texture = ExtResource("42_u3x7i")
+
+[node name="ДопГирляндаСвет" type="Sprite2D" parent="cutscenes/girlanda/ДопГирлянда"]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("CanvasItemMaterial_6da8u")
+position = Vector2(1365, 346)
+texture = ExtResource("43_yohhn")
+
+[node name="Node2D" type="Node2D" parent="cutscenes/girlanda"]
+position = Vector2(-1116, -422)
 scale = Vector2(11.609375, 11.25)
+
+[node name="red" type="PointLight2D" parent="cutscenes/girlanda/Node2D"]
+position = Vector2(214.9125, 56.444443)
 color = Color(0.5647059, 0.1882353, 0.21568628, 1)
-energy = 1.14
+energy = 0.0
 texture = SubResource("GradientTexture2D_qn3wp")
 texture_scale = 2.58
 
-[node name="red3" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(-1332, -82)
-scale = Vector2(11.609375, 11.25)
+[node name="red2" type="PointLight2D" parent="cutscenes/girlanda/Node2D"]
+position = Vector2(80.96905, 1.6888895)
 color = Color(0.5647059, 0.1882353, 0.21568628, 1)
-energy = 1.14
+energy = 0.0
 texture = SubResource("GradientTexture2D_qn3wp")
 texture_scale = 2.58
 
-[node name="red2" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(-176, -403)
-scale = Vector2(11.609375, 11.25)
-color = Color(0.5647059, 0.1882353, 0.21568628, 1)
-energy = 1.14
-texture = SubResource("GradientTexture2D_qn3wp")
-texture_scale = 2.58
-
-[node name="green" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(1271, -403)
-scale = Vector2(11.609375, 11.25)
+[node name="green" type="PointLight2D" parent="cutscenes/girlanda/Node2D"]
+position = Vector2(205.60968, 1.6888895)
 color = Color(0.26666668, 0.5254902, 0.42352942, 1)
-energy = 1.14
+energy = 0.0
 texture = SubResource("GradientTexture2D_qn3wp")
 texture_scale = 2.58
 
-[node name="green3" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(-1362, 378)
-scale = Vector2(11.609375, 11.25)
+[node name="green2" type="PointLight2D" parent="cutscenes/girlanda/Node2D"]
+position = Vector2(51.76851, -0.62222195)
 color = Color(0.26666668, 0.5254902, 0.42352942, 1)
-energy = 1.14
+energy = 0.0
 texture = SubResource("GradientTexture2D_qn3wp")
 texture_scale = 2.58
 
-[node name="green2" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(-515, -429)
-scale = Vector2(11.609375, 11.25)
-color = Color(0.26666668, 0.5254902, 0.42352942, 1)
-energy = 1.14
-texture = SubResource("GradientTexture2D_qn3wp")
-texture_scale = 2.58
-
-[node name="yelow" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(740, -374)
-scale = Vector2(11.609375, 11.25)
+[node name="yelow" type="PointLight2D" parent="cutscenes/girlanda/Node2D"]
+position = Vector2(159.87079, 4.2666674)
 color = Color(0.78431374, 0.6156863, 0.33333334, 1)
-energy = 1.14
+energy = 0.0
 texture = SubResource("GradientTexture2D_qn3wp")
 texture_scale = 2.58
 
-[node name="yelow2" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(-729, -480)
-scale = Vector2(11.609375, 11.25)
+[node name="yelow2" type="PointLight2D" parent="cutscenes/girlanda/Node2D"]
+position = Vector2(33.33513, -5.1555557)
 color = Color(0.78431374, 0.6156863, 0.33333334, 1)
-energy = 1.14
+energy = 0.0
 texture = SubResource("GradientTexture2D_qn3wp")
 texture_scale = 2.58
 
-[node name="violet" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(202, -428)
-scale = Vector2(11.609375, 11.25)
+[node name="violet" type="PointLight2D" parent="cutscenes/girlanda/Node2D"]
+position = Vector2(113.52894, -0.5333328)
 color = Color(0.33536002, 0.2816, 0.64, 1)
-energy = 1.44
+energy = 0.0
 texture = SubResource("GradientTexture2D_qn3wp")
 texture_scale = 1.98
 
-[node name="violet2" type="PointLight2D" parent="cutscenes/girlanda"]
-position = Vector2(-1116, -422)
-scale = Vector2(11.609375, 11.25)
+[node name="violet2" type="PointLight2D" parent="cutscenes/girlanda/Node2D"]
 color = Color(0.27468798, 0.22514561, 0.53548783, 1)
-energy = 1.51
-blend_mode = 2
+energy = 0.0
 range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_qn3wp")
 texture_scale = 1.98
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/girlanda"]
+libraries = {
+&"": SubResource("AnimationLibrary_3mfa6")
+}
+speed_scale = 0.3
+script = ExtResource("44_yohhn")
+
 [node name="SnowManager" type="Node" parent="."]
 script = ExtResource("27_8pgdl")
+wave_delay = 0.635
 
 [node name="Snow_0" type="Sprite2D" parent="SnowManager" groups=["snow"]]
 position = Vector2(524, 277)
@@ -1377,8 +1671,13 @@ texture = ExtResource("28_mjvsw")
 script = ExtResource("29_qoveh")
 snow_id = 25
 
+[node name="Snow_26" type="Sprite2D" parent="SnowManager" groups=["snow"]]
+z_index = 3
+position = Vector2(1377, 339.75)
+texture = ExtResource("61_e6cir")
+script = ExtResource("29_qoveh")
+snow_id = 26
+
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="OnWinningTheGame" from="zones/music_puzzle" to="cutscenes/CanvasLayer/ending_cutscene" method="_on_music_puzzle_on_winning_the_game"]
 [connection signal="button_down" from="cutscenes/begin_cutscene/narrative/Button" to="cutscenes/begin_cutscene/narrative/RichTextLabel" method="_on_button_button_down"]
-
-[editable path="zones/lamp2"]
