@@ -19,10 +19,11 @@ func start_melting():
 
 
 func melt_with_delay(snow, index: int):
-	var tween := create_tween()
-	tween.tween_interval(index * wave_delay)
-	
-	tween.tween_property(snow, "modulate", Color(1, 1, 1, 0), melt_time)
-	tween.tween_callback(func():
-		snow.queue_free()
-	)
+    var tween := create_tween()
+    tween.tween_interval(index * wave_delay)
+    tween.tween_property(snow, "modulate", Color(1, 1, 1, 0), melt_time)
+    tween.tween_property(snow, "modulate", Color(1, 1, 1, 0), melt_time)
+    tween.tween_callback(func():
+        snow.queue_free()
+        )
+ 
