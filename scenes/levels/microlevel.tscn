@@ -963,7 +963,6 @@ draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_4mwer")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 light_mask = 2
 color = Color(0.99215686, 0.8901961, 0.8666667, 1)
 energy = 16.0
