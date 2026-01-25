@@ -23,6 +23,7 @@ func register_note(note_id: int) -> void:
     
     if input_sequence.size() == correct_sequence.size():
         emit_signal("OnWinningTheGame")
+        AudioManager.add_layer()
         print("Victory!")
         #запускаем финальную катсцену
 
