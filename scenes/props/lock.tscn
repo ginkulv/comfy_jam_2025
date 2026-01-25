@@ -27,7 +27,7 @@ script = ExtResource("1_5cm7k")
 [node name="open_sprite" type="Sprite2D" parent="."]
 visible = false
 z_index = -2
-position = Vector2(128, -3)
+position = Vector2(125, 8)
 texture = ExtResource("2_l5fhu")
 
 [node name="door_sprite" type="Sprite2D" parent="open_sprite"]
