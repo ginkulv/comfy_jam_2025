@@ -36,8 +36,8 @@ func check_number_of_attempts():
         MessageManager.display_text_by_id("xylophone_10th")
     elif number_of_attempts == 25:
         MessageManager.display_text_by_id("xylophone_20th")
-    elif number_of_attempts == 45:
+    elif number_of_attempts == 40:
         MessageManager.display_text_by_id("xylophone_35th")
-    elif number_of_attempts == 65:
+    elif number_of_attempts == 60:
         MessageManager.display_text_by_id("xylophone_50th")
     else: return
