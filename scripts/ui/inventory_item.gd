@@ -15,7 +15,11 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
     if GameState.current_state == GameState.PAUSE_MENU:
         return null
     var preview = self.duplicate()
-    set_drag_preview(preview)
+
+    var c = Control.new() 
+    c.add_child(preview) 
+    preview.position = -0.5 * preview.size
+    set_drag_preview(c)
     hide()
     return self
 
