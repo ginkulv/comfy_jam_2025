@@ -32,12 +32,12 @@ func reset_sequence():
     
 func check_number_of_attempts():
     number_of_attempts += 1
-    if number_of_attempts == 10:
+    if number_of_attempts == 15:
         MessageManager.display_text_by_id("xylophone_10th")
-    elif number_of_attempts == 20:
+    elif number_of_attempts == 25:
         MessageManager.display_text_by_id("xylophone_20th")
-    elif number_of_attempts == 35:
+    elif number_of_attempts == 45:
         MessageManager.display_text_by_id("xylophone_35th")
-    elif number_of_attempts == 50:
+    elif number_of_attempts == 65:
         MessageManager.display_text_by_id("xylophone_50th")
     else: return
