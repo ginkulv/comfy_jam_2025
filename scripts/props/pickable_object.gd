@@ -16,7 +16,7 @@ func _on_mouse_entered():
 func _on_mouse_exited():
     mouse_over = false
 
-func _input(event):
+func _unhandled_input(event):
     if GameState.input_locked:
         return
     

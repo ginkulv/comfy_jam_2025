@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drvs4cktnwe74"
-path="res://.godot/imported/1.png-f36366d4f0bd8bf76f2a31c5d660de42.ctex"
+uid="uid://bkya10fvaod4v"
+path="res://.godot/imported/стол передний план.png-72f4a1cb327a3301c52bd29f6a9bcad1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cutscene/1.png"
-dest_files=["res://.godot/imported/1.png-f36366d4f0bd8bf76f2a31c5d660de42.ctex"]
+source_file="res://assets/sprites/стол передний план.png"
+dest_files=["res://.godot/imported/стол передний план.png-72f4a1cb327a3301c52bd29f6a9bcad1.ctex"]
 
 [params]
 

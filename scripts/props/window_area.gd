@@ -33,6 +33,5 @@ func _input_event(_viewport, event, _shape_idx):
         window_closed = true
         $snow2.emitting = false
         
-        await get_tree().create_timer(0.5).timeout
         MessageManager.display_text_by_id("window_closed")
              

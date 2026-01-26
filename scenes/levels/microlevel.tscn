@@ -31,24 +31,24 @@
 [ext_resource type="Script" uid="uid://c4dwk715g7skb" path="res://scripts/snow_manager.gd" id="27_8pgdl"]
 [ext_resource type="Texture2D" uid="uid://drnenmcy0k5ca" path="res://assets/sprites/atlas_snow/snow_12.tres" id="27_44426"]
 [ext_resource type="Texture2D" uid="uid://xnavcf00t7e6" path="res://assets/sprites/atlas_snow/snow_11.tres" id="27_muj0h"]
-[ext_resource type="Texture2D" uid="uid://dys3ig045bih2" path="res://assets/images/cutscene/8.png" id="28_4f2b1"]
+[ext_resource type="Texture2D" uid="uid://but4ce35b2kcy" path="res://assets/images/cutscene/8.png" id="28_4f2b1"]
 [ext_resource type="Texture2D" uid="uid://dlnjm63ain16r" path="res://assets/sprites/atlas_snow/snow_10.tres" id="28_mjvsw"]
 [ext_resource type="Texture2D" uid="uid://8aj4p1lbd7q0" path="res://assets/images/cutscene/zamok_2.tres" id="28_u3x7i"]
 [ext_resource type="Texture2D" uid="uid://b7pqdcak0e21c" path="res://assets/images/гирлянда выкл.png" id="28_wgf40"]
-[ext_resource type="Texture2D" uid="uid://dytff8d8en4fv" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
+[ext_resource type="Texture2D" uid="uid://bg6ygr4u4p1gn" path="res://assets/images/cutscene/7.png" id="29_c5ku6"]
 [ext_resource type="Texture2D" uid="uid://cvyqwhu6a5vh4" path="res://assets/images/гирлянда свет.png" id="29_q8148"]
 [ext_resource type="Script" uid="uid://cfdga3qg15f6u" path="res://scripts/props/snow.gd" id="29_qoveh"]
-[ext_resource type="Texture2D" uid="uid://dq5rfptcyn7p5" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
+[ext_resource type="Texture2D" uid="uid://tmowaa7n51y6" path="res://assets/images/cutscene/6.png" id="30_1nbgv"]
 [ext_resource type="Texture2D" uid="uid://cj8pj6e8fl7ee" path="res://assets/sprites/atlas_snow/snow_15.tres" id="30_kqe1q"]
 [ext_resource type="Texture2D" uid="uid://rl8pyapjrfgn" path="res://assets/sprites/atlas_snow/snow_8.tres" id="31_8pgdl"]
-[ext_resource type="Texture2D" uid="uid://jre2nik2iirr" path="res://assets/images/cutscene/5.png" id="31_u3x7i"]
+[ext_resource type="Texture2D" uid="uid://oygi2nu01dkn" path="res://assets/images/cutscene/5.png" id="31_u3x7i"]
 [ext_resource type="Texture2D" uid="uid://nxvguluw5yes" path="res://assets/sprites/atlas_snow/snow_5.tres" id="32_qoveh"]
-[ext_resource type="Texture2D" uid="uid://tf400f8i5bqi" path="res://assets/images/cutscene/4.png" id="32_yohhn"]
-[ext_resource type="Texture2D" uid="uid://dumfme2ygdbgy" path="res://assets/images/cutscene/3.png" id="33_e6cir"]
+[ext_resource type="Texture2D" uid="uid://d1jo2lscffh8h" path="res://assets/images/cutscene/4.png" id="32_yohhn"]
+[ext_resource type="Texture2D" uid="uid://b4qwdegx0njnq" path="res://assets/images/cutscene/3.png" id="33_e6cir"]
 [ext_resource type="Texture2D" uid="uid://hh8syhc24bw" path="res://assets/sprites/atlas_snow/snow_6.tres" id="33_wgf40"]
-[ext_resource type="Texture2D" uid="uid://bor7tf11d2ort" path="res://assets/images/cutscene/2.png" id="34_6da8u"]
+[ext_resource type="Texture2D" uid="uid://c133lxump6w4s" path="res://assets/images/cutscene/2.png" id="34_6da8u"]
 [ext_resource type="Texture2D" uid="uid://dxomw8bqt2ha5" path="res://assets/sprites/atlas_snow/snow_14.tres" id="34_q8148"]
-[ext_resource type="Texture2D" uid="uid://du6scfnff22bi" path="res://assets/images/cutscene/1.png" id="35_kbi6t"]
+[ext_resource type="Texture2D" uid="uid://drvs4cktnwe74" path="res://assets/images/cutscene/1.png" id="35_kbi6t"]
 [ext_resource type="Texture2D" uid="uid://pp2n4qd82c3m" path="res://assets/sprites/atlas_snow/snow_17.tres" id="35_vrlke"]
 [ext_resource type="Texture2D" uid="uid://dyljexq8duxe1" path="res://assets/sprites/atlas_snow/snow_16.tres" id="36_nr8hd"]
 [ext_resource type="Texture2D" uid="uid://n1uwt20oohvy" path="res://assets/sprites/atlas_snow/snow_18.tres" id="37_qn3wp"]
@@ -1067,7 +1067,7 @@ z_index = 9
 position = Vector2(292, 659)
 scale = Vector2(1, 1)
 left_boundary = 150.0
-right_boundary = 3000.0
+right_boundary = 2550.0
 
 [node name="right_light" parent="player" index="1"]
 visible = true
@@ -1117,8 +1117,9 @@ item_id = 6
 message_1 = "key_not_found"
 message_2 = "key_found"
 
-[node name="matches2" parent="pickables" instance=ExtResource("7_0x7r7")]
-position = Vector2(1138, 667)
+[node name="matches" parent="pickables" instance=ExtResource("7_0x7r7")]
+z_index = 8
+position = Vector2(1165, 705)
 message_1 = "matches_not_found"
 message_2 = "matches_found"
 
@@ -1157,8 +1158,8 @@ texture_scale = 15.12
 lamp_id = 7
 
 [node name="lamp5" parent="zones" instance=ExtResource("6_q1y3u")]
-z_index = 151
-position = Vector2(1379, 448)
+z_index = 5
+position = Vector2(1385, 456)
 scale = Vector2(0.5, 0.5)
 energy = 0.65
 blend_mode = 2
@@ -1371,10 +1372,10 @@ metadata/_edit_lock_ = true
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
 material = SubResource("CanvasItemMaterial_4f2b1")
 layout_mode = 0
-offset_left = 805.0
-offset_top = 652.0
-offset_right = 1194.0
-offset_bottom = 951.0
+offset_left = 927.0
+offset_top = 750.0
+offset_right = 1081.0
+offset_bottom = 867.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("14_5qa6u")
 theme_override_font_sizes/font_size = 81
@@ -1414,33 +1415,32 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 82.0
+offset_bottom = 68.9751
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("14_5qa6u")
 theme_override_font_sizes/normal_font_size = 31
 bbcode_enabled = true
-text = "LUMINA'S LAST STAND
+text = "Nikolai “Aske” Ginkul — Game Design, Programming, Animation
 
-Directed by Alistair Thorne
+Elisey Sinitsa — Animation, VFX, Production
 
-Written by Elara Vance
+Vasily Ginkul — Programming
 
-Lead Artist Julian Frost
+Vasya Zaitseva — Art Lead, 2D Artist, Concept Art
 
-Lead Animator Silas Grey
+ILmanyo — 2D Artist, UI Artist, Concept Art
 
-Technical Director Marcus Sterling
+po lesu — Soundtrack, Sound Design
 
-Music by Amara Lyra
+Galya Fedotova - Concept Art
+Fonts:
+Junicode by Peter Baker — SIL Open Font License 1.1
+TD Zvonar by Dmitry Tectov (cover)
 
-Sound Design Victor Low
-
-Voice Cast The Wanderer - Elias Kael The Shadow - Morgana Blackwood The Spirit - Sarah Bright
-
-Special Thanks The Midnight Coffee Society Professor Barnaby And all our supporters
-
-(C) 2026 NOIR LIGHT STUDIOS"
+Thank you for playing Winter Room!"
 autowrap_mode = 2
 horizontal_alignment = 1
 visible_characters_behavior = 3
@@ -1448,7 +1448,6 @@ text_direction = 1
 script = ExtResource("15_5qa6u")
 fade_duration = 8.595
 fade_length = 120
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscenes/CanvasLayer/ending_cutscene"]
 root_node = NodePath("../../..")
@@ -1522,10 +1521,6 @@ texture = ExtResource("35_kbi6t")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -41.0
-offset_top = -54.0
-offset_right = -41.0
-offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -1541,7 +1536,7 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="cutscenes/ladder_cutscene"]
 visible = false
-z_index = 4
+z_index = 6
 position = Vector2(1471, 480.00003)
 scale = Vector2(0.815, 0.815)
 texture = ExtResource("23_35dfi")
@@ -1698,7 +1693,7 @@ script = ExtResource("29_qoveh")
 snow_id = 5
 
 [node name="Snow_6" type="Sprite2D" parent="SnowManager" groups=["snow"]]
-z_index = 9
+z_index = 8
 position = Vector2(984.23145, 798.3305)
 texture = ExtResource("30_kqe1q")
 script = ExtResource("29_qoveh")
@@ -1720,7 +1715,8 @@ snow_id = 8
 
 [node name="Snow_9" type="Sprite2D" parent="SnowManager" groups=["snow"]]
 z_index = 6
-position = Vector2(718, 760)
+position = Vector2(699.25, 760)
+scale = Vector2(0.9562427, 1)
 texture = ExtResource("27_44426")
 script = ExtResource("29_qoveh")
 snow_id = 9
@@ -1777,7 +1773,7 @@ script = ExtResource("29_qoveh")
 snow_id = 16
 
 [node name="Snow_17" type="Sprite2D" parent="SnowManager" groups=["snow"]]
-z_index = 9
+z_index = 8
 position = Vector2(1701.3499, 795.67566)
 scale = Vector2(0.8057618, 0.8057618)
 texture = ExtResource("31_8pgdl")

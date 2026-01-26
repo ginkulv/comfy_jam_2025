@@ -25,6 +25,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
     close_the_trapdoor()
 
 func _gui_input(event):
+    if GameState.input_locked == true:
+        return
+        
     if event is InputEventMouseButton \
     and event.pressed \
     and event.button_index == MOUSE_BUTTON_LEFT:
