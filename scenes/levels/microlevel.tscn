@@ -1364,9 +1364,10 @@ visible_characters_behavior = 3
 text_direction = 1
 script = ExtResource("15_5qa6u")
 next_button = NodePath("../Button")
-fade_duration = 6.619
+fade_duration = 5.0
 fade_start_offset = -2.525
-fade_length = 120
+fade_length = 75
+fade_button_start = 1.0
 metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
