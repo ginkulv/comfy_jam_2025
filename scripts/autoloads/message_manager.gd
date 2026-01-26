@@ -6,10 +6,10 @@ var message_data: Dictionary[String, String] = {
     "start": "Brrr… what a chill! And the wind! No better than out there.",
     "window_closed": "Ah, that’s better… no more snow down my collar! I grow weary of this endless winter…",
     "window_after": "Whirling snow blinds the path… no soul could find their way home in this weather.",
-    "matches_not_found": "What lies beyond the windowpane?",
+    "matches_not_found": "I wouldn’t want to catch a chill picking this up",
     "matches_found": "Matches! Now we’re getting somewhere! if only I knew what to light.",
     "lamp_lit": "Another little flame!",
-    "all_lamps_lit": "Ah, now it’s properly bright! It's not any warmer than before though… my teeth are chattering.",
+    "all_lamps_lit": "Ah, now it’s properly bright! It's not any warmer though… my teeth are chattering.",
     "firewood_not_found": "Too high… I cannot reach there. I'm a gnome, after all!",
     "firewood_found": "Firewood is here, matches are here… and the hearth as well. What a fortunate gnome I am!",
     "key_not_found": "What’s that in the corner? I can’t make it out…",
@@ -25,6 +25,9 @@ var message_data: Dictionary[String, String] = {
     "xylophone_50th": "1… 3… 2… 3… 4… Why did that suddenly cross my mind?",
 }
 
+
 func display_text_by_id(text_id: String) -> void:
+    if not message_data.has(text_id):
+        return
     var message = message_data[text_id]
     message_shown.emit(message)

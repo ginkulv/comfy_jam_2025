@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7pog156leup4" path="res://assets/sprites/atlas/ui_item_spichki.tres" id="2_23so1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23so1"]
-size = Vector2(76, 53)
+size = Vector2(100, 76)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfqkx"]
 atlas = ExtResource("2_23so1")
@@ -14,9 +14,10 @@ script = ExtResource("1_23so1")
 required_flag = "window_closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -0.5)
+position = Vector2(51, 38)
 shape = SubResource("RectangleShape2D_23so1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(45.000004, 33.999996)
 scale = Vector2(0.8, 0.8)
 texture = SubResource("AtlasTexture_bfqkx")

@@ -16,9 +16,10 @@ item_id = 1
 required_flag = "ladder_standing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2.5)
+position = Vector2(62.499996, 62.499996)
 shape = SubResource("RectangleShape2D_fqfv3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(63.75, 53.75)
 scale = Vector2(1.2, 1.2)
 texture = SubResource("AtlasTexture_jtnpv")
