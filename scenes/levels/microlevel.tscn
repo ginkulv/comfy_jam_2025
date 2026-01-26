@@ -1373,10 +1373,10 @@ metadata/_edit_lock_ = true
 [node name="Button" type="Button" parent="cutscenes/begin_cutscene/narrative"]
 material = SubResource("CanvasItemMaterial_4f2b1")
 layout_mode = 0
-offset_left = 927.0
-offset_top = 750.0
-offset_right = 1081.0
-offset_bottom = 867.0
+offset_left = 911.0
+offset_top = 723.0
+offset_right = 1065.0
+offset_bottom = 840.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("14_5qa6u")
 theme_override_font_sizes/font_size = 81
