@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://be8i8rt02o20s"]
+[gd_scene format=3 uid="uid://be8i8rt02o20s"]
 
 [ext_resource type="Script" uid="uid://cdtbei6onelvh" path="res://scripts/props/lamp.gd" id="1_x604k"]
 [ext_resource type="Texture2D" uid="uid://22t43nejgc2g" path="res://assets/sprites/atlas/candle_2.tres" id="2_x604k"]
@@ -129,7 +129,7 @@ void fragment() {
 shader = SubResource("Shader_oygg1")
 shader_parameter/blend_mode = 7
 
-[node name="PointLight2D" type="PointLight2D"]
+[node name="PointLight2D" type="PointLight2D" unique_id=624113667]
 z_index = -1
 scale = Vector2(0.635, 0.647)
 color = Color(0.8539608, 0.6066461, 0.3926257, 1)
@@ -138,53 +138,53 @@ texture = SubResource("GradientTexture2D_gksna")
 texture_scale = 14.13
 script = ExtResource("1_x604k")
 
-[node name="lamp" type="Area2D" parent="."]
+[node name="lamp" type="Area2D" parent="." unique_id=8089507]
 position = Vector2(4.7683716e-07, 9.273569)
 scale = Vector2(0.647342, 0.647342)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lamp"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lamp" unique_id=1244480667]
 shape = SubResource("CircleShape2D_07hkx")
 
-[node name="LampBase" type="Sprite2D" parent="lamp"]
+[node name="LampBase" type="Sprite2D" parent="lamp" unique_id=2122237253]
 position = Vector2(-9.536743e-07, 26.263618)
 texture = ExtResource("2_x604k")
 
-[node name="off" type="Node2D" parent="lamp"]
+[node name="off" type="Node2D" parent="lamp" unique_id=1274761832]
 scale = Vector2(0.522, 0.522)
 
-[node name="on" type="Node2D" parent="lamp"]
+[node name="on" type="Node2D" parent="lamp" unique_id=737137549]
 visible = false
 modulate = Color(1, 1, 1, 0.84705883)
 material = SubResource("ShaderMaterial_gshpy")
 scale = Vector2(0.521551, 0.521551)
 
-[node name="LampGlassLight" type="Sprite2D" parent="lamp/on"]
+[node name="LampGlassLight" type="Sprite2D" parent="lamp/on" unique_id=2038524043]
 material = SubResource("ShaderMaterial_yxu02")
 position = Vector2(0, -36.623104)
 scale = Vector2(1.917358, 1.917358)
 texture = ExtResource("4_yuk6r")
 
-[node name="LampGalo2" type="Sprite2D" parent="lamp/on"]
+[node name="LampGalo2" type="Sprite2D" parent="lamp/on" unique_id=1470724828]
 modulate = Color(1, 1, 1, 0.20784314)
 material = SubResource("ShaderMaterial_yxu02")
 position = Vector2(-9.536743e-07, -59.512543)
 scale = Vector2(1.3870139, 1.3870139)
 texture = ExtResource("5_uo5js")
 
-[node name="LampGalo3" type="Sprite2D" parent="lamp/on"]
+[node name="LampGalo3" type="Sprite2D" parent="lamp/on" unique_id=1383314094]
 modulate = Color(2.056219, 2.056219, 2.056219, 0.33333334)
 material = SubResource("ShaderMaterial_yxu02")
 position = Vector2(-5.4353523, -59.322723)
 scale = Vector2(1.0753604, 1.0753604)
 texture = ExtResource("5_uo5js")
 
-[node name="LampGalo" type="Sprite2D" parent="lamp/on"]
+[node name="LampGalo" type="Sprite2D" parent="lamp/on" unique_id=1472988360]
 material = SubResource("ShaderMaterial_yxu02")
 position = Vector2(0, -59.512535)
 scale = Vector2(0.8075037, 0.80750376)
 texture = ExtResource("6_ybh5k")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1273719916]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -45.313942

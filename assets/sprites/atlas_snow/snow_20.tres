@@ -1,4 +1,4 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dj3by4svyge2x"]
+[gd_resource type="AtlasTexture" format=3 uid="uid://dj3by4svyge2x"]
 
 [ext_resource type="Texture2D" uid="uid://doff1s52oaej0" path="res://assets/sprites/ATLAS_SNOW.png" id="1_m4jht"]
 

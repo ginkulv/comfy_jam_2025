@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://806eu2d4e5sk"]
+[gd_scene format=3 uid="uid://806eu2d4e5sk"]
 
 [ext_resource type="Script" uid="uid://bd3pma8ucehpf" path="res://scripts/ui/inventory_item.gd" id="1_5nues"]
 [ext_resource type="Texture2D" uid="uid://dga5qdvho1v5r" path="res://assets/sprites/atlas/ui_item_rune_blue.tres" id="2_x4amh"]
 
-[node name="InventoryItem" type="Control"]
+[node name="InventoryItem" type="Control" unique_id=969220122]
 custom_minimum_size = Vector2(110, 110)
 layout_mode = 3
 anchor_left = -0.029000001
@@ -17,7 +17,7 @@ offset_bottom = 110.08
 mouse_behavior_recursive = 2
 script = ExtResource("1_5nues")
 
-[node name="ItemSprite" type="Sprite2D" parent="."]
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=2089717907]
 position = Vector2(55, 55)
 texture = ExtResource("2_x4amh")
 

@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://binobjc342npu"]
+[gd_scene format=3 uid="uid://binobjc342npu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us40e"]
 size = Vector2(384, 314)
 
-[node name="portal" type="Area2D" groups=["portals"]]
+[node name="portal" type="Area2D" unique_id=992194135 groups=["portals"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1267781742]
 shape = SubResource("RectangleShape2D_us40e")

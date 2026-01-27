@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqa63r0c6ooi6"]
+[gd_scene format=3 uid="uid://cqa63r0c6ooi6"]
 
 [ext_resource type="Script" uid="uid://h5haejjiphgy" path="res://scripts/props/pickable_object.gd" id="1_fqfv3"]
 [ext_resource type="Texture2D" uid="uid://bjpr1qxv6icq6" path="res://assets/sprites/atlas/ui_item_drova.tres" id="2_fqfv3"]
@@ -9,17 +9,17 @@ size = Vector2(122, 123)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtnpv"]
 atlas = ExtResource("2_fqfv3")
 
-[node name="firewood" type="Area2D"]
+[node name="firewood" type="Area2D" unique_id=1700695046]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_fqfv3")
 item_id = 1
 required_flag = "ladder_standing"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=261620848]
 position = Vector2(62.499996, 62.499996)
 shape = SubResource("RectangleShape2D_fqfv3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575912135]
 position = Vector2(63.75, 53.75)
 scale = Vector2(1.2, 1.2)
 texture = SubResource("AtlasTexture_jtnpv")

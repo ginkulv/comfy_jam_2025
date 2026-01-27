@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://5aysjs1fwdih"]
+[gd_scene format=3 uid="uid://5aysjs1fwdih"]
 
 [ext_resource type="Script" uid="uid://b532kccewf0kj" path="res://scripts/props/lock.gd" id="1_5cm7k"]
 [ext_resource type="Texture2D" uid="uid://c85pknn3otuca" path="res://assets/sprites/atlas/ui_lock.tres" id="1_yuwaw"]
@@ -9,13 +9,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cm7k"]
 size = Vector2(87, 78)
 
-[node name="lock" type="Area2D"]
+[node name="lock" type="Area2D" unique_id=331388294]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=839767140]
 position = Vector2(-3.5, -1)
 shape = SubResource("RectangleShape2D_5cm7k")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=616354459]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -45.0
@@ -24,22 +24,22 @@ offset_right = 40.0
 offset_bottom = 37.0
 script = ExtResource("1_5cm7k")
 
-[node name="open_sprite" type="Sprite2D" parent="."]
+[node name="open_sprite" type="Sprite2D" parent="." unique_id=846832532]
 visible = false
 z_index = -2
 position = Vector2(125, 8)
 texture = ExtResource("2_l5fhu")
 
-[node name="door_sprite" type="Sprite2D" parent="open_sprite"]
+[node name="door_sprite" type="Sprite2D" parent="open_sprite" unique_id=1312157252]
 z_index = -2
 position = Vector2(220, -74)
 texture = ExtResource("3_8eywx")
 
-[node name="closed_sprite" type="Sprite2D" parent="."]
+[node name="closed_sprite" type="Sprite2D" parent="." unique_id=763773028]
 z_index = -2
 position = Vector2(133, -8)
 texture = ExtResource("4_ojjqo")
 
-[node name="lock_sprite" type="Sprite2D" parent="closed_sprite"]
+[node name="lock_sprite" type="Sprite2D" parent="closed_sprite" unique_id=1011681309]
 position = Vector2(-133, 8)
 texture = ExtResource("1_yuwaw")

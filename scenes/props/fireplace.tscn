@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dlc34kcsyiwli"]
+[gd_scene format=3 uid="uid://dlc34kcsyiwli"]
 
 [ext_resource type="Script" uid="uid://cag5po0r5qil2" path="res://scripts/props/fireplace_control.gd" id="1_hjt24"]
 [ext_resource type="Texture2D" uid="uid://dkoy14o7g0420" path="res://assets/sprites/fire/Fire_1.png" id="2_1nfp5"]
@@ -148,9 +148,9 @@ fill = 1
 fill_from = Vector2(0.508547, 0.51282054)
 fill_to = Vector2(0, 0)
 
-[node name="fireplace" type="Area2D"]
+[node name="fireplace" type="Area2D" unique_id=1521102658]
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1653679353]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -143.0
@@ -159,7 +159,7 @@ offset_right = 137.0
 offset_bottom = 38.0
 script = ExtResource("1_hjt24")
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1082734947]
 layout_mode = 0
 offset_left = -115.0
 offset_top = -174.0
@@ -168,14 +168,14 @@ offset_bottom = 136.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055511296]
 position = Vector2(-3.5, -55.5)
 shape = SubResource("RectangleShape2D_d0i4f")
 
-[node name="fireplace" type="Node2D" parent="."]
+[node name="fireplace" type="Node2D" parent="." unique_id=666365460]
 visible = false
 
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="fireplace"]
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="fireplace" unique_id=220061118]
 material = SubResource("CanvasItemMaterial_vfs4q")
 position = Vector2(15.5000305, -18)
 amount = 50
@@ -188,7 +188,7 @@ interpolate = false
 fract_delta = false
 process_material = SubResource("ParticleProcessMaterial_mk35c")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fireplace"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fireplace" unique_id=1297183367]
 modulate = Color(1.4740754, 1.4740754, 1.4740754, 1)
 material = SubResource("CanvasItemMaterial_me31e")
 position = Vector2(11, -26)
@@ -196,7 +196,7 @@ sprite_frames = SubResource("SpriteFrames_vfs4q")
 autoplay = "default"
 frame_progress = 0.31490222
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="fireplace"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="fireplace" unique_id=1011700518]
 position = Vector2(-0.49996948, 1)
 amount = 138
 amount_ratio = 0.534
@@ -207,7 +207,7 @@ explosiveness = 0.1
 randomness = 0.47
 process_material = SubResource("ParticleProcessMaterial_tu4pb")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="fireplace"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="fireplace" unique_id=937532248]
 modulate = Color(2.678172, 2.678172, 0, 1)
 material = SubResource("CanvasItemMaterial_me31e")
 position = Vector2(-10.99996, 10.499987)
@@ -218,12 +218,12 @@ frame_progress = 0.31490222
 speed_scale = 1.135
 flip_h = true
 
-[node name="PointLight2D" type="PointLight2D" parent="fireplace/AnimatedSprite2D2"]
+[node name="PointLight2D" type="PointLight2D" parent="fireplace/AnimatedSprite2D2" unique_id=1157603253]
 position = Vector2(-7.0000153, 6)
 scale = Vector2(9.34375, 4.7265625)
 texture = SubResource("GradientTexture2D_3o33p")
 
-[node name="PointLight2D" type="PointLight2D" parent="fireplace"]
+[node name="PointLight2D" type="PointLight2D" parent="fireplace" unique_id=1640944948]
 position = Vector2(9.250024, -6.114753)
 scale = Vector2(14.601563, 7.3862424)
 color = Color(0.8647905, 0.8556097, 7.70092e-07, 1)

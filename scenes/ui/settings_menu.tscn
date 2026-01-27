@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bq6pp3yg2pf2q"]
+[gd_scene format=3 uid="uid://bq6pp3yg2pf2q"]
 
 [ext_resource type="Script" uid="uid://br5t2ogu2py56" path="res://scripts/ui/settings_menu.gd" id="1_qwcqe"]
 [ext_resource type="Texture2D" uid="uid://dne1af52dfikw" path="res://assets/sprites/atlas/ui_settings_menu.tres" id="2_ngbvi"]
@@ -42,21 +42,20 @@ font_size = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dpwb"]
 
-[node name="Settings" type="Node2D"]
+[node name="Settings" type="Node2D" unique_id=236835191]
 script = ExtResource("1_qwcqe")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=836618860]
 layer = 20
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=369222623]
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.46666667, 0.3019608, 0.24705882, 0.6)
 
-[node name="SettingsPanel" type="Panel" parent="CanvasLayer"]
+[node name="SettingsPanel" type="Panel" parent="CanvasLayer" unique_id=1362964322]
 process_mode = 3
-anchors_preset = -1
 offset_left = 522.0
 offset_top = 211.0
 offset_right = 1464.0
@@ -64,7 +63,7 @@ offset_bottom = 753.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ngbvi")
 metadata/_edit_use_anchors_ = true
 
-[node name="BackButton" type="Button" parent="CanvasLayer/SettingsPanel"]
+[node name="BackButton" type="Button" parent="CanvasLayer/SettingsPanel" unique_id=1911716426]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.28800002
@@ -81,7 +80,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_h271e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mishw")
 text = "BACK"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingsPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingsPanel" unique_id=1297622053]
 layout_mode = 1
 offset_left = 73.0
 offset_top = 122.0
@@ -89,10 +88,10 @@ offset_right = 779.0
 offset_bottom = 288.0
 theme_override_constants/separation = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=1568374447]
 layout_mode = 2
 
-[node name="SFXLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer"]
+[node name="SFXLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer" unique_id=1532425485]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme = ExtResource("3_0b1cv")
@@ -100,7 +99,7 @@ text = "SFX"
 label_settings = SubResource("LabelSettings_7pacj")
 horizontal_alignment = 1
 
-[node name="SFXSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer"]
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer" unique_id=1553604219]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -111,10 +110,10 @@ theme_override_styles/slider = SubResource("StyleBoxEmpty_iii5b")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_r6v77")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_pxswo")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=1619563982]
 layout_mode = 2
 
-[node name="MusicLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2"]
+[node name="MusicLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2" unique_id=589012976]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme = ExtResource("3_0b1cv")
@@ -122,7 +121,7 @@ text = "Music"
 label_settings = SubResource("LabelSettings_7pacj")
 horizontal_alignment = 1
 
-[node name="MusicSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2"]
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2" unique_id=354120791]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
