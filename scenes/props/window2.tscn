@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwg080ll0fk7"]
+[gd_scene format=3 uid="uid://dwg080ll0fk7"]
 
 [ext_resource type="Script" uid="uid://bidpopr5aibvq" path="res://scripts/props/window_area.gd" id="1_qm8j4"]
 [ext_resource type="Texture2D" uid="uid://dhqho1sbx41th" path="res://assets/sprites/atlas/window/window_rama.tres" id="2_hjqs4"]
@@ -69,13 +69,13 @@ shader_parameter/blend_mode = 7
 shader = ExtResource("3_tdbd7")
 shader_parameter/blend_mode = 7
 
-[node name="window" type="Area2D"]
+[node name="window" type="Area2D" unique_id=1660552637]
 z_index = 3
 scale = Vector2(0.92, 0.92)
 script = ExtResource("1_qm8j4")
 metadata/_edit_lock_ = true
 
-[node name="snow2" type="GPUParticles2D" parent="."]
+[node name="snow2" type="GPUParticles2D" parent="." unique_id=495810517]
 z_index = 4
 material = SubResource("CanvasItemMaterial_wgf40")
 position = Vector2(1.0869141, 6.5217285)
@@ -92,64 +92,64 @@ local_coords = true
 draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_q8148")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1529279033]
 position = Vector2(-3, -1)
 shape = SubResource("RectangleShape2D_pnvhp")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=252806189]
 
-[node name="WindowRama" type="Sprite2D" parent="Node2D"]
+[node name="WindowRama" type="Sprite2D" parent="Node2D" unique_id=468907000]
 position = Vector2(7, -5)
 texture = ExtResource("2_hjqs4")
 
-[node name="open" type="Node2D" parent="Node2D"]
+[node name="open" type="Node2D" parent="Node2D" unique_id=170589140]
 position = Vector2(-62, -62)
 
-[node name="WindowGlass0" type="Sprite2D" parent="Node2D/open"]
+[node name="WindowGlass0" type="Sprite2D" parent="Node2D/open" unique_id=442734926]
 light_mask = 3
 z_index = -1
 material = SubResource("ShaderMaterial_03daj")
 position = Vector2(70, 57)
 texture = ExtResource("4_t2tsy")
 
-[node name="WindowStvorkaL2" type="Sprite2D" parent="Node2D/open"]
+[node name="WindowStvorkaL2" type="Sprite2D" parent="Node2D/open" unique_id=1827749291]
 light_mask = 3
 position = Vector2(-90, 51)
 texture = ExtResource("5_qeki4")
 
-[node name="WindowStvorkaR2" type="Sprite2D" parent="Node2D/open"]
+[node name="WindowStvorkaR2" type="Sprite2D" parent="Node2D/open" unique_id=34912513]
 light_mask = 3
 position = Vector2(241, 45)
 texture = ExtResource("6_eo1bo")
 
-[node name="PointLight2D2" type="PointLight2D" parent="Node2D/open"]
+[node name="PointLight2D2" type="PointLight2D" parent="Node2D/open" unique_id=1533667833]
 position = Vector2(17, 245)
 color = Color(0, 0.54147065, 0.94096404, 1)
 energy = 1.1
 range_item_cull_mask = 2
 texture = ExtResource("7_byh58")
 
-[node name="close" type="Node2D" parent="Node2D"]
+[node name="close" type="Node2D" parent="Node2D" unique_id=1765949816]
 visible = false
 position = Vector2(-514, -208)
 
-[node name="WindowGlass1" type="Sprite2D" parent="Node2D/close"]
+[node name="WindowGlass1" type="Sprite2D" parent="Node2D/close" unique_id=791290946]
 light_mask = 3
 material = SubResource("ShaderMaterial_mr4qg")
 position = Vector2(520, 203)
 texture = ExtResource("8_qjuks")
 
-[node name="WindowStvorkaL" type="Sprite2D" parent="Node2D/close"]
+[node name="WindowStvorkaL" type="Sprite2D" parent="Node2D/close" unique_id=1105728733]
 light_mask = 3
 position = Vector2(467, 205)
 texture = ExtResource("9_rm4dd")
 
-[node name="WindowStvorkaR" type="Sprite2D" parent="Node2D/close"]
+[node name="WindowStvorkaR" type="Sprite2D" parent="Node2D/close" unique_id=350648824]
 light_mask = 3
 position = Vector2(574, 204)
 texture = ExtResource("10_s631t")
 
-[node name="PointLight2D" type="PointLight2D" parent="Node2D/close"]
+[node name="PointLight2D" type="PointLight2D" parent="Node2D/close" unique_id=802635003]
 position = Vector2(466, 391)
 color = Color(0, 0.54147065, 0.94096404, 1)
 energy = 0.5

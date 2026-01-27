@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl6s36krg6rpb"]
+[gd_scene format=3 uid="uid://cl6s36krg6rpb"]
 
 [ext_resource type="Script" uid="uid://bqi0aglpd20hm" path="res://scripts/props/music_key.gd" id="1_6486m"]
 
-[node name="Key_1" type="Area2D"]
+[node name="Key_1" type="Area2D" unique_id=2123632310]
 script = ExtResource("1_6486m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=943309006]

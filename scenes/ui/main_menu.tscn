@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dwg4kahwpqddq"]
+[gd_scene format=3 uid="uid://dwg4kahwpqddq"]
 
 [ext_resource type="Script" uid="uid://bn1dvgupxag0u" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
 [ext_resource type="Theme" uid="uid://dtiv81upl2jvn" path="res://assets/ui_theme.theme" id="3_1g8jr"]
@@ -44,15 +44,15 @@ bg_color = Color(0, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayp64"]
 
-[node name="Menu" type="Node2D"]
+[node name="Menu" type="Node2D" unique_id=2146403437]
 script = ExtResource("1_sl1te")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1946585017]
 process_mode = 3
 layer = 5
 visible = false
 
-[node name="MenuLabel" type="Label" parent="CanvasLayer"]
+[node name="MenuLabel" type="Label" parent="CanvasLayer" unique_id=1289204114]
 offset_left = 682.0
 offset_top = 67.0
 offset_right = 1276.0
@@ -61,7 +61,7 @@ theme = ExtResource("3_1g8jr")
 text = "NAZVANIE"
 label_settings = SubResource("LabelSettings_yqeox")
 
-[node name="PlayButton" type="Button" parent="CanvasLayer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer" unique_id=1746384712]
 offset_left = 764.0
 offset_top = 379.0
 offset_right = 1150.0
@@ -72,7 +72,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_y2j7i")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_fe2o3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8ekit")
 
-[node name="Label" type="Label" parent="CanvasLayer/PlayButton"]
+[node name="Label" type="Label" parent="CanvasLayer/PlayButton" unique_id=2010874503]
 layout_mode = 0
 offset_left = 136.0
 offset_top = 49.0
@@ -81,7 +81,7 @@ offset_bottom = 111.0
 theme = ExtResource("3_1g8jr")
 text = "PLAY"
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer"]
+[node name="SettingsButton" type="Button" parent="CanvasLayer" unique_id=1756271761]
 offset_left = 774.0
 offset_top = 540.0
 offset_right = 1153.0
@@ -93,7 +93,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_y1h5l")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7suek")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_otr3d")
 
-[node name="Label" type="Label" parent="CanvasLayer/SettingsButton"]
+[node name="Label" type="Label" parent="CanvasLayer/SettingsButton" unique_id=2131589889]
 layout_mode = 0
 offset_left = 90.0
 offset_top = 45.0
@@ -102,7 +102,7 @@ offset_bottom = 104.0
 theme = ExtResource("3_1g8jr")
 text = "SETTINGS"
 
-[node name="CreditsButton" type="Button" parent="CanvasLayer"]
+[node name="CreditsButton" type="Button" parent="CanvasLayer" unique_id=193502415]
 offset_left = 775.0
 offset_top = 693.0
 offset_right = 1154.0
@@ -114,7 +114,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_wb0q5")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_q85j6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8g5eo")
 
-[node name="Label" type="Label" parent="CanvasLayer/CreditsButton"]
+[node name="Label" type="Label" parent="CanvasLayer/CreditsButton" unique_id=1529990466]
 layout_mode = 0
 offset_left = 104.0
 offset_top = 45.0
@@ -123,7 +123,7 @@ offset_bottom = 137.0
 theme = ExtResource("3_1g8jr")
 text = "CREDITS"
 
-[node name="ExitButton" type="Button" parent="CanvasLayer"]
+[node name="ExitButton" type="Button" parent="CanvasLayer" unique_id=1167279860]
 offset_left = 773.0
 offset_top = 840.0
 offset_right = 1152.0
@@ -136,7 +136,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ayp64")
 text = "
 "
 
-[node name="Label" type="Label" parent="CanvasLayer/ExitButton"]
+[node name="Label" type="Label" parent="CanvasLayer/ExitButton" unique_id=1417395811]
 layout_mode = 0
 offset_left = 137.0
 offset_top = 43.0

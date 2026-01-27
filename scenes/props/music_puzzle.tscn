@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cag4ty2tywqe0"]
+[gd_scene format=3 uid="uid://cag4ty2tywqe0"]
 
 [ext_resource type="Script" uid="uid://cq1yig05hb1cs" path="res://scripts/props/music_puzzle.gd" id="1_50yks"]
 [ext_resource type="Texture2D" uid="uid://cc2vh7bwywih4" path="res://assets/sprites/atlas/ui_xylophone.tres" id="2_knrk0"]
@@ -6,9 +6,9 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_6l4o8"]
 atlas = ExtResource("2_knrk0")
 
-[node name="music_puzzle" type="Node2D"]
+[node name="music_puzzle" type="Node2D" unique_id=455926061]
 script = ExtResource("1_50yks")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=121409435]
 scale = Vector2(0.9, 0.9)
 texture = SubResource("AtlasTexture_6l4o8")
